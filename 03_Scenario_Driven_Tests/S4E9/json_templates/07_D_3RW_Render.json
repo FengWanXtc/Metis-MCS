@@ -1,0 +1,163 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "AudioSpecs": [
+        {
+            "Name": "AudioInDefault",
+            "SampleRate": 48000,
+            "Channels": 2
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "Audio_pull_aac_Codec",
+            "SourceName": "Audio_pull",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_2_aac_Codec",
+            "SourceName": "Audio_pull_2",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_3_aac_Codec",
+            "SourceName": "Audio_pull_3",
+            "Codec": "aac"
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Remote_pull_h264_Codec",
+            "SourceName": "Remote_pull",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_2_h264_Codec",
+            "SourceName": "Remote_pull_2",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_3_Codec",
+            "SourceName": "Remote_pull_3_pull",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "CodecStreamSpecs": [
+        {
+            "Name": "Remote_pull_2",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6675"
+        },
+        {
+            "Name": "Audio_pull_2",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6676"
+        },
+        {
+            "Name": "Remote_pull_3",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6677"
+        },
+        {
+            "Name": "Audio_pull_3",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6678"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "TcpAudioPull_Play",
+            "Sources": [
+                {
+                    "SourceName": "Audio_pull",
+                    "Volume": 70
+                },
+                {
+                    "SourceName": "Audio_pull_2",
+                    "Volume": 70
+                },
+                {
+                    "SourceName": "Audio_pull_3",
+                    "Volume": 70
+                }
+            ]
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Compositor"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull_2"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull_3"
+                }
+            ]
+        }
+    ]
+}

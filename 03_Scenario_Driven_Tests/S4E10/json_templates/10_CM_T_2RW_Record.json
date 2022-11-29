@@ -1,0 +1,52 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Director 3 Remote Pull Template",
+    "Version": "0.3",
+    "VideoCodecSpecs": [
+        {
+            "Name": "Teacher_h264_Codec",
+            "SourceName": "Teacher",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Compositor_Record",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "CompositorAudio_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E10_27_Compositor_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Remote_pull_Record",
+            "VideoCodecName": "Remote_pull_h264_Codec",
+            "AudioCodecName": "Remote_pull_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E10_27_Remote_pull_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Remote_pull_2_Record",
+            "VideoCodecName": "Remote_pull_2_h264_Codec",
+            "AudioCodecName": "Remote_pull_2_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E10_27_Remote_pull_2_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Teacher_Record",
+            "VideoCodecName": "Teacher_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E10_Teacher_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

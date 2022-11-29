@@ -1,0 +1,22 @@
+{
+    "Name": "media compositor",
+    "Type": "MCS",
+    "Description": "Pipeline example for media compositor",
+    "Version": "0.1",
+    "RemoteSpecs": [
+        {
+            "Name": "",
+            "Codec": "unknown",
+            "URI": "agora://S3V1_test/"
+        }
+    ],
+    "PreviewSpec": {
+        "Template": "four frame",
+        "Layout": [
+            {
+                "Position": 1,
+                "SourceName": ""
+            }
+        ]
+    }
+}

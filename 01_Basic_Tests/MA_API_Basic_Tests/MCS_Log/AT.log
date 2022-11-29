@@ -1,0 +1,8 @@
+
+--------------------------------------------------
+* Time Line: 2022-11-09 16:14:58.745202
+* API: GET http://10.12.224.135:6689/mediadevice/video/in
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!", "VideoIns": [{"DeviceName": "HDMI_CAM_1", "DeviceId": "0400-0000", "AliasName": "Teacher_HDMI", "Default": true, "Algorithms": ["teacher tracking"]}, {"DeviceName": "HDMI_CAM_2", "DeviceId": "0400-0001", "AliasName": "HDMI_2", "Default": false, "Algorithms": ["student tracking"]}, {"DeviceName": "USB_CAM_P3-2", "DeviceId": "0401-2320", "AliasName": "USB_CAM", "Default": false, "Algorithms": ["student tracking"]}, {"DeviceName": "IPC_CAM_1", "DeviceId": "0403-0001", "AliasName": "Student_IPC", "Default": false, "Algorithms": ["student tracking"]}, {"DeviceName": "IPC_CAM_3", "DeviceId": "0403-0003", "AliasName": "Blackboard_IPC", "Default": false, "Algorithms": ["blackboard tracking"]}, {"DeviceName": "IPC_CAM_4", "DeviceId": "0403-0004", "AliasName": "r57", "Default": false, "Algorithms": ["ppt tracking"]}]}

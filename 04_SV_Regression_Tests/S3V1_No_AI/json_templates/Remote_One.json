@@ -1,0 +1,33 @@
+{
+    "Name": "Remote_One",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume": 75,
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "Near_End"
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "Name": "Director Push",
+  "Type": "MCS",
+  "Description": "Far-End Teacher And Student Push and Preview",
+  "Version": "0.3",
+  "ServerSpecs": [
+    {
+      "Name": "Teacher_Server",
+      "VideoCodecName": "Teacher_h264_Codec",
+      "URI": "wp://10.12.224.135:6675"
+    },
+    {
+      "Name": "Student_Audio_Server",
+      "AudioCodecName": "AudioInDefault_aac_Codec",
+      "URI": "wp://10.12.224.135:6678"
+    }
+  ]
+}

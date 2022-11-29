@@ -1,0 +1,28 @@
+脚本说明：
+序号开头的是根据z510 story3 case表格设计的
+
+
+1：01_create_UI_background.py  -t=png（参数化构建，可选参数jpg 和 null）
+执行步骤：
+     (1)  python 01_create_UI_background.py -t=png 桌面变为png的图片
+     (2)  python 01_create_UI_background.py -t=jpg 桌面变为jpg的图片
+     (3)  python 01_create_UI_background.py -t=null 切换为桌面
+
+
+2：02_recovery_UI_bg.py  -t=png（参数化构建，可选参数jpg、null 和 black）
+执行步骤：
+     (1)  python 02_recovery_UI_bg.py -t=png 桌面变为png的图片
+     (2)  python 02_recovery_UI_bg.py -t=black 桌面变为黑屏
+     (3)  python 02_recovery_UI_bg.py -t=null 切换为桌面
+
+
+3：03_delete_UI_bg.py
+执行步骤：
+     (1)  03_delete_UI_bg.py （该脚本执行顺序：桌面变为png的图片，删除png图片，重新下发MCS最后背景变为桌面）
+
+
+4：04_UI_bg_get.py  -t=png （参数化构建，可选参数jpg,null,black,png）
+执行步骤：
+     (1) python 04_UI_bg_get.py -t=png   返回的打印内容，显示为自己设置的UI照片
+
+5: 05_background_post_4_positions.py

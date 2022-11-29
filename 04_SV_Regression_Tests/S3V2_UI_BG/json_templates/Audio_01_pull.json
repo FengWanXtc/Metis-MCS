@@ -1,0 +1,24 @@
+{
+    "Name": "Remote_Pull",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "DeviceId": "0203-0200",
+            "Sources": [
+                {
+                    "Volume": 100,
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "pull"
+    }
+}

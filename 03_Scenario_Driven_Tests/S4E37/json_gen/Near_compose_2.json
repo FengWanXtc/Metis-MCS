@@ -1,0 +1,131 @@
+{
+  "Name": "Basic_MCS",
+  "Type": "MCS",
+  "Description": "The four-channel AI scenario Basic MCS",
+  "Version": "0.3",
+  "AudioComposeSpecs": [
+      {
+          "Name": "AudioMixer",
+          "SampleRate": 44100,
+          "MixerSpec": [
+              {
+                  "SourceName": "AudioInDefault",
+                  "Volume": 60
+              },
+              {
+                  "SourceName": "Audio_pull_1",
+                  "Volume": 80
+              }
+          ]
+      }
+  ],
+  "AudioCodecSpecs": [
+      {
+          "Name": "AudioMixer_Codec",
+          "SourceName": "AudioMixer",
+          "Codec": "aac"
+      }
+  ],
+  "VideoComposeSpecs": [
+      {
+          "Name": "Compositor",
+          "Width": 1920,
+          "Height": 1080,
+          "FrameRate": 30,
+          "CompositionSpec": [
+              {
+                  "Geometry": [
+                      0,
+                      0,
+                      960,
+                      1080
+                  ],
+                  "ZOrder": 2,
+                  "SourceName": "Computer"
+              },
+              {
+                  "Geometry": [
+                      960,
+                      0,
+                      960,
+                      1080
+                  ],
+                  "ZOrder": 2,
+                  "SourceName": "Remote_pull_1"
+              }
+          ]
+      }
+  ],
+  "VideoCodecSpecs": [
+      {
+          "Name": "Compositor_Codec",
+          "SourceName": "Compositor",
+          "Codec": "h.264"
+      }
+  ],
+  "RecordSpecs": [
+      {
+          "Name": "Compose_Record",
+          "VideoCodecName": "Compositor_Codec",
+          "AudioCodecName": "AudioMixer_Codec",
+          "Format": "mp4",
+          "Path": "S1P37_Compose2_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+      }
+  ],
+  "ServerSpecs": [
+      {
+          "Name": "AudioMixer_Server",
+          "AudioCodecName": "AudioMixer_Codec",
+          "URI": "wp://10.12.224.140:6678"
+      },
+      {
+          "Name": "Compositor_Server",
+          "VideoCodecName": "Compositor_Codec",
+          "URI": "wp://10.12.224.140:6677"
+      }
+  ],
+  "RenderSpecs": [
+      {
+          "Name": "Render_test",
+          "DeviceId": "0800-0000",
+          "CompositionSpec": [
+              {
+                  "Geometry": [
+                      0,
+                      0,
+                      960,
+                      540
+                  ],
+                  "SourceName": "Compositor"
+              },
+              {
+                  "Geometry": [
+                      960,
+                      0,
+                      960,
+                      540
+                  ],
+                  "SourceName": "Remote_pull_1"
+              },
+              {
+                  "Geometry": [
+                      0,
+                      540,
+                      960,
+                      540
+                  ],
+                  "SourceName": "Remote_pull_2"
+              },
+              {
+                  "Geometry": [
+                      960,
+                      540,
+                      960,
+                      540
+                  ],
+                  "SourceName": "Remote_pull_3"
+              }
+          ]
+      }
+  ]
+}

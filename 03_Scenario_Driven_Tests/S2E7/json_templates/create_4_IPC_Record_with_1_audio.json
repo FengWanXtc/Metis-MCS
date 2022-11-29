@@ -1,0 +1,106 @@
+{
+  "Name": "S2E7_IPC_W_1_Audio",
+  "Type": "MCS",
+  "Description": "test mcs for 4 IPC Camera with 1 audio",
+  "Version": "0.3",
+  "AudioSpecs": [
+    {
+      "Name": "AudioInDefault",
+      "SampleRate": 44100,
+      "Channels": 2
+    }
+  ],
+  "AudioCodecSpecs": [
+    {
+      "Name": "AudioInDefault_Codec",
+      "SourceName": "AudioInDefault",
+      "Codec": "aac"
+    }
+  ],
+
+  "VideoSpecs": [
+    {
+      "Name": "IPC_1",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "IPC_2",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "IPC_3",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "IPC_4",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "VideoCodecSpecs": [
+    {
+      "Name": "IPC_1_Codec",
+      "SourceName": "IPC_1",
+      "Codec": "h.264"
+    },
+    {
+      "Name": "IPC_2_Codec",
+      "SourceName": "IPC_2",
+      "Codec": "h.264"
+    },
+    {
+      "Name": "IPC_3_Codec",
+      "SourceName": "IPC_3",
+      "Codec": "h.264"
+    },
+    {
+      "Name": "IPC_4_Codec",
+      "SourceName": "IPC_4",
+      "Codec": "h.264"
+    }
+  ],
+  "RecordSpecs": [
+    {
+      "Name": "IPC_1_Record",
+      "VideoCodecName": "IPC_1_Codec",
+      "AudioCodecName": "AudioInDefault_Codec",
+      "Format": "mp4",
+      "Path": "IPC_1_Record_with_1_audio.mp4"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": "IPC_1"
+        },
+        {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "IPC_2"
+        },
+        {
+          "Geometry": [0, 540, 960, 540],
+          "SourceName": "IPC_3"
+        },
+        {
+          "Geometry": [960, 540, 960, 540],
+          "SourceName": "IPC_4"
+        }
+      ]
+    }
+  ]
+}
+

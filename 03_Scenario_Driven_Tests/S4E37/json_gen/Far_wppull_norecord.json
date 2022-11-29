@@ -1,0 +1,43 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",  
+    "CodecStreamSpecs": [
+      {
+        "Name": "Remote_pull_1",
+        "VideoCodec": "h.264",
+        "URI": "wp://0.0.0.0:6677"
+      },
+      {
+        "Name": "Audio_pull_1",
+        "AudioCodec": "aac",
+        "SampleRate": 48000,
+        "Channels": 2,
+        "URI": "wp://0.0.0.0:6678"
+      }
+    ],
+    "PlaySpecs": [
+      {
+        "Name": "wpAudioPull_Play",
+        "Sources": [
+          {
+            "SourceName": "Audio_pull_1",
+            "Volume": 70
+          }
+        ]
+      }
+    ],
+    "RenderSpecs": [
+      {
+        "Name": "Render_test",
+        "DeviceId": "0800-0000",
+        "CompositionSpec": [
+          {
+            "Geometry": [0, 0, 1920, 1080],
+            "SourceName": "Remote_pull_1"
+          }
+        ]
+      }
+    ]
+  }

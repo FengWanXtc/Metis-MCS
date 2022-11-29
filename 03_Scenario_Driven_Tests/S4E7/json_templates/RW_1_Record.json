@@ -1,0 +1,14 @@
+{
+  "Name": "",
+  "Type": "MCS",
+  "Description": "One Remote Video Record without audio",
+  "Version": "0.3",
+  "RecordSpecs": [
+    {
+      "Name": "Remote_pull_Record",
+      "VideoCodecName": "Remote_pull_h264_Codec",
+      "Format": "mp4",
+      "Path": "S4E7_Remote_pull_yyyy-mm-dd-hh-mm-ss.mp4"
+    }
+  ]
+}

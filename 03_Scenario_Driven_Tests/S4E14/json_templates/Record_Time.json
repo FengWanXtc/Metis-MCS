@@ -1,0 +1,53 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Teacher",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "UYVY"
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Teacher_Codec",
+            "SourceName": "Teacher",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Teacher_Record",
+            "VideoCodecName": "Teacher_Codec",
+            "Format": "mp4",
+            "Path": "WP4_TimeSplit_yyyy-mm-dd-hh-mm-ss.mp4",
+            "SplitMethod": "Time",
+            "SplitUnit": 10
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "SourceName": "Teacher"
+                }
+            ]
+        }
+    ]
+}

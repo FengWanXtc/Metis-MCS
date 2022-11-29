@@ -1,0 +1,109 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "2 Audio AND Video Pull",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "Remote_pull",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6671"
+        },
+        {
+            "Name": "Remote_pull_2",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6673"
+        },
+        {
+            "Name": "Audio_pull_2",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6674"
+        },
+        {
+            "Name": "Remote_pull_3",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6675"
+        },
+        {
+            "Name": "Audio_pull_3",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6676"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "TcpAudioPull_Play",
+            "Sources": [
+                {
+                    "SourceName": "Audio_pull_2",
+                    "Volume": 70
+                },
+                {
+                    "SourceName": "Audio_pull_3",
+                    "Volume": 70
+                }
+            ]
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Remote_pull_h264_Codec",
+            "SourceName": "Remote_pull",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_2_h264_Codec",
+            "SourceName": "Remote_pull_2",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_3_h264_Codec",
+            "SourceName": "Remote_pull_3",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "Audio_pull_2_aac_Codec",
+            "SourceName": "Audio_pull_2",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_3_aac_Codec",
+            "SourceName": "Audio_pull_3",
+            "Codec": "aac"
+        }
+    ]
+
+}

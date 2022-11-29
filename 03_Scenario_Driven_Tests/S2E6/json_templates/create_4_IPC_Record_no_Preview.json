@@ -1,0 +1,73 @@
+{
+  "Name": "S2E6_IPC_No_Preview",
+  "Type": "MCS",
+  "Description": "test mcs for 4 IPC Camera",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "IPC_1",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "IPC_2",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "IPC_3",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "IPC_4",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "VideoCodecSpecs": [
+    {
+      "Name": "IPC_1_Codec",
+      "SourceName": "IPC_1",
+      "Codec": "h.264"
+    },
+    {
+      "Name": "IPC_2_Codec",
+      "SourceName": "IPC_2",
+      "Codec": "h.264"
+    },
+    {
+      "Name": "IPC_3_Codec",
+      "SourceName": "IPC_3",
+      "Codec": "h.264"
+    },
+    {
+      "Name": "IPC_4_Codec",
+      "SourceName": "IPC_4",
+      "Codec": "h.264"
+    }
+  ],
+  "RecordSpecs": [
+    {
+      "Name": "IPC_1_Record",
+      "VideoCodecName": "IPC_1_Codec",
+      "Format": "mp4",
+      "Path": "IPC1_no_preview_yyyy-mm-dd-hh-mm-ss.mp4"
+    },
+    {
+      "Name": "IPC_2_Record",
+      "VideoCodecName": "IPC_2_Codec",
+      "Format": "mp4",
+      "Path": "IPC2_no_preview_yyyy-mm-dd-hh-mm-ss.mp4"
+    }
+  ]
+}
+

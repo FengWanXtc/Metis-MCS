@@ -1,0 +1,129 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "AudioComposeSpecs": [
+        {
+            "Name": "AudioMixer",
+            "SampleRate": 44100,
+            "MixerSpec": [
+                {
+                    "SourceName": "AudioInDefault",
+                    "Volume": 60
+                },
+                {
+                    "SourceName": "Audio_pull_1",
+                    "Volume": 80
+                }
+            ]
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+        "Name": "AudioMixer_Codec", 
+        "SourceName": "AudioMixer", 
+        "Codec": "aac"
+        }
+    ], 
+    "VideoComposeSpecs": [
+        {
+            "Name": "Compositor",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        1080
+                    ],
+                    "ZOrder": 2,
+                    "SourceName": "Computer"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        1080
+                    ],
+                    "ZOrder": 2,
+                    "SourceName": "Remote_pull_1"
+                }
+            ]
+        }
+    ],
+    "VideoTransformSpecs": [
+      {
+          "Name": "VideoTransform",
+          "SourceName": "Compositor",
+          "Operation": "Scale",
+          "Width": 720,
+          "Height": 480
+      }
+    ],
+    "VideoCodecSpecs": [
+        {
+          "Name": "VideoTransform_Codec", 
+          "SourceName": "VideoTransform", 
+          "Codec": "h.264",
+          "BitRateMode": "VBR",
+          "BitRate": "2mbps",
+          "iFrameInterval": "30",
+          "idrInterval": "30",
+          "QpRange": [
+              28,
+              28
+            ],
+          "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+      {
+          "Name": "VideoTransform_Record",
+          "VideoCodecName": "VideoTransform_Codec",
+          "AudioCodecName": "AudioMixer_Codec",
+          "Format": "mp4",
+          "Path": "S1P37_VideoTransform_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+      }
+    ],
+    "ServerSpecs": [
+      {
+          "Name": "AudioMixer_Server",
+          "AudioCodecName": "AudioMixer_Codec",
+          "URI": "wp://10.12.224.140:6678"
+      },
+      {
+          "Name": "VideoTransform_Server",
+          "VideoCodecName": "VideoTransform_Codec",
+          "URI": "wp://10.12.224.140:6677"
+      }
+    ],
+    "RenderSpecs": [
+      {
+        "Name": "Render_test",
+        "DeviceId": "0800-0000",
+        "CompositionSpec": [
+          {
+            "Geometry": [0, 0, 960, 540],
+            "SourceName": "VideoTransform"
+          },
+          {
+            "Geometry": [960, 0, 960, 540],
+            "SourceName": "Remote_pull_1"
+          },
+          {
+            "Geometry": [0, 540, 960, 540],
+            "SourceName": "Remote_pull_2"
+          },
+          {
+            "Geometry": [960, 540, 960, 540],
+            "SourceName": "Remote_pull_3"
+          }
+        ]
+      }
+    ]
+  }

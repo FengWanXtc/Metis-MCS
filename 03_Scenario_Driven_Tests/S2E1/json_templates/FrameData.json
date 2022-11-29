@@ -1,0 +1,38 @@
+{
+  "Teacher": {
+    "DeviceId": "0403-0001",
+    "Geometry": [
+      0,
+      0,
+      960,
+      540
+    ]
+  },
+  "Student": {
+    "DeviceId": "0400-0001",
+    "Geometry": [
+      960,
+      0,
+      960,
+      540
+    ]
+  },
+  "BlackBoard": {
+    "DeviceId": "0403-0003",
+    "Geometry": [
+      0,
+      540,
+      960,
+      540
+    ]
+  },
+  "PPT": {
+    "DeviceId": "0400-0000",
+    "Geometry": [
+      960,
+      540,
+      960,
+      540
+    ]
+  }
+}

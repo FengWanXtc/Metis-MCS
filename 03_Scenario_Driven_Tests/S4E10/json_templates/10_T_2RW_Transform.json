@@ -1,0 +1,73 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Director,Teacher,Remote 2 lines Transform ",
+    "Version": "0.3",
+    "VideoTransformSpecs": [
+        {
+            "Name": "TeacherTransform",
+            "SourceName": "Teacher",
+            "Operation": "Scale",
+            "Width": 1280,
+            "Height": 720
+        },
+        {
+            "Name": "Remote_pull_Transform",
+            "SourceName": "Remote_pull",
+            "Operation": "Scale",
+            "Width": 720,
+            "Height": 480
+        },
+        {
+            "Name": "Remote_pull_2_Transform",
+            "SourceName": "Remote_pull_2",
+            "Operation": "Scale",
+            "Width": 320,
+            "Height": 240
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "TeacherTransform_Codec",
+            "SourceName": "TeacherTransform",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "2mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_Transform_Codec",
+            "SourceName": "Remote_pull_Transform",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "2mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_2_Transform_Codec",
+            "SourceName": "Remote_pull_2_Transform",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "2mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ]
+}

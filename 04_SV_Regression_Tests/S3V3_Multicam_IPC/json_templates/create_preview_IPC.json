@@ -1,0 +1,38 @@
+{
+  "Name": "IPC_S",
+  "Type": "MCS",
+  "Description": "test mcs for 2AI IPC",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0403-0002",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "YUY2"
+    }
+  ],
+  "VideoAiSpecs": [
+    {
+      "Name": "Student Tracking",
+      "SourceName": "Student",
+      "Algorithm": "Student Tracking",
+      "ProcessRate": 10,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}

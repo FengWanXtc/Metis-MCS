@@ -1,0 +1,14 @@
+{
+    "Name": "Pull",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Remote_pull_Record",
+            "VideoCodecName": "Remote_pull_h264_Codec",
+            "Format": "mp4",
+            "Path": "WP1_Remote_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

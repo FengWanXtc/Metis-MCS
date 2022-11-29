@@ -1,0 +1,52 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Add Teacher and Student Record Template",
+    "Version": "0.3",
+    "VideoCodecSpecs": [
+        {
+            "Name": "Teacher_h264_Codec",
+            "SourceName": "Teacher",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Student_h264_Codec",
+            "SourceName": "Student",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Teacher_Record",
+            "VideoCodecName": "Teacher_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E40_Agora_Teacher_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Student_Record",
+            "VideoCodecName": "Student_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E40_Agora_Student_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

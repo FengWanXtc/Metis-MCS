@@ -1,0 +1,66 @@
+{
+  "Name": "AudioComposeSpecTest",
+  "Type": "MCS",
+  "Description": "MCS Template",
+  "Version": "0.3",
+  "AudioSpecs": [
+    {
+      "Name": "MIC",
+      "DeviceId": "",
+      "SampleRate": 44100,
+      "Channels": 2,
+      "Format": "S16LE",
+      "Layout": "Interleaved"
+    },
+    {
+      "Name": "PC",
+      "DeviceId": "",
+      "SampleRate": 44100,
+      "Channels": 2,
+      "Format": "S16LE",
+      "Layout": "Interleaved"
+    }
+  ],
+  "AudioComposeSpecs": [
+    {
+      "Name": "CompositorAudio",
+      "SampleRate": 44100,
+      "MixerSpec": [
+        {
+          "SourceName": "MIC",
+          "Volume": 100
+        },
+        {
+          "SourceName": "PC",
+          "Volume": 100
+        }
+      ]
+    }
+  ],
+  "AudioCodecSpecs": [
+    {
+      "Name": "MICCodec",
+      "SourceName": "MIC",
+      "Codec": "pcm"
+    },
+    {
+      "Name": "PCCodec",
+      "SourceName": "PC",
+      "Codec": "opus",
+      "BitRateMode": "VBR",
+      "BitRate": "44Kbps"
+    }
+  ],
+  "PlaySpecs": [
+    {
+      "Name": "Audio_Play",
+      "DeviceId": "",
+      "Sources": [
+        {
+          "SourceName": "CompositorAudio",
+          "Volume": 100
+        }
+      ]
+    }
+  ]
+}

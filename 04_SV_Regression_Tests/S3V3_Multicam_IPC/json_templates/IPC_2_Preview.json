@@ -1,0 +1,40 @@
+{
+  "Name": "mcs0.3",
+  "Type": "MCS",
+  "Description": "test mcs",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "YUY2"
+    },
+    {
+      "Name": "Student",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "YUY2"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "DeviceId": "0800-0000",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}

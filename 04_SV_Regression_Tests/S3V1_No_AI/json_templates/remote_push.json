@@ -1,0 +1,71 @@
+{
+    "Name": "Remote_Pull",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "AudioSpecs": [
+        {
+            "Name": "AudioInDefault",
+            "SampleRate": 44100,
+            "Channels": 2
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "AudioInDefault_pcm_Codec",
+            "SourceName": "AudioInDefault",
+            "Codec": "pcm"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume": 75,
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ],
+    "VideoSpecs": [
+        {
+            "Name": "VideoSrc",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "UYVY"
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "VideoSrc_Codec",
+            "SourceName": "VideoSrc",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "VideoCodecName": "VideoSrc_Codec",
+        "AudioCodecName": "AudioInDefault_pcm_Codec",
+        "Identity": "Far_End"
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "SourceName": "VideoSrc"
+                }
+            ]
+        }
+    ]
+}

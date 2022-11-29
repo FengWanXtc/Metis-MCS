@@ -1,0 +1,15 @@
+{
+    "Name": "AI_3_Push_Audio",
+    "Type": "MCS",
+    "Description": "Pull Remote MCS Template",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Director_Record",
+            "VideoCodecName": "Director_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "AI_Director_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

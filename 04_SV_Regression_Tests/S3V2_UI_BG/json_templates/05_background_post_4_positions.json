@@ -1,0 +1,64 @@
+{
+  "Name": "S3V2_05_BG",
+  "Type": "MCS",
+  "Description": "S3V2 4 Positions Test",
+  "Version": "0.3",
+  "VideoSpecs": [
+      {
+          "Name": "Teacher",
+          "DeviceId": "0400-0000",
+          "Width": 1920,
+          "Height": 1080,
+          "FrameRate": 30,
+          "Format": "UYVY"
+      },
+      {
+          "Name": "Student",
+          "DeviceId": "0400-0001",
+          "Width": 1920,
+          "Height": 1080,
+          "FrameRate": 30,
+          "Format": "UYVY"
+      },
+      {
+          "Name": "PPT",
+          "DeviceId": "0400-0002",
+          "Width": 1920,
+          "Height": 1080,
+          "FrameRate": 30,
+          "Format": "UYVY"
+      }
+  ],
+  "RtcStreamSpec":
+      {
+          "Name": "S3V2_Pull",
+          "Protocol": "Agora",
+          "Channel": "S3V2_05_Channel",
+          "Identity": "S3V2_05_Pull"
+      },
+  "RenderSpecs": [
+      {
+          "Name": "Render_test",
+          "DeviceId": "0800-0000",
+          "Background": "/home/user/EST/MCSScripts/bgjpg.jpg",
+          "CompositionSpec": [
+              {
+                  "Geometry": [0, 0, 960, 540],
+                  "SourceName": "PPT"
+              },
+              {
+                  "Geometry": [960, 0, 960, 540],
+                  "SourceName": "Student"
+              },
+              {
+                  "Geometry": [0, 540, 960, 540],
+                  "SourceName": "Teacher"
+              },
+              {
+                  "Geometry": [960, 540, 960, 540],
+                  "SourceName": "S3V2_Pull"
+              }
+          ]
+      }
+  ]
+}

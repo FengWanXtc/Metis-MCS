@@ -1,0 +1,22 @@
+{
+    "Name": "AI_2_Pull",
+    "Type": "MCS",
+    "Description": "Far-End Director Push and Preview",
+    "Version": "0.3",
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ]
+}

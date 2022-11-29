@@ -1,0 +1,91 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "VideoTransformSpecs": [
+        {
+            "Name": "CompositorTransform",
+            "SourceName": "Compositor",
+            "Operation": "Scale",
+            "Width": 640,
+            "Height": 480
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "CompositorTransform_Codec",
+            "SourceName": "CompositorTransform",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "2mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "Near-End",
+        "AudioCodecName": "AudioInDefault_pcm_Codec",
+        "VideoCodecName": "Compositor_h264_Codec"
+    },
+    "RecordSpecs": [
+        {
+            "Name": "Transform_Record",
+            "VideoCodecName": "CompositorTransform_Codec",
+            "Format": "mp4",
+            "Path": "S4E1_Transform.mp4"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Compositor"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "CompositorTransform"
+                }
+            ]
+        }
+    ]
+}

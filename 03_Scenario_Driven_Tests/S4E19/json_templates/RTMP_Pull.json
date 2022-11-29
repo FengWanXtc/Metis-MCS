@@ -1,0 +1,42 @@
+{
+    "Name": "Director_push",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "RTMP_Pull",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "VideoCodec": "h.264",
+            "URI": "rtmp://10.12.224.135/metis/test"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "SourceName": "RTMP_Pull",
+                    "Volume": 70
+                }
+            ]
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        1920,
+                        1080
+                    ],
+                    "SourceName": "RTMP_Pull"
+                }
+            ]
+        }
+    ]
+}

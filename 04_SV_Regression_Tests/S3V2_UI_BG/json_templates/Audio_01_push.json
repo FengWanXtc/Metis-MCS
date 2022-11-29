@@ -1,0 +1,27 @@
+{
+    "Name": "Remote_Push",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "AudioSpecs": [
+        {
+            "Name": "AudioInDefault",
+            "SampleRate": 44100,
+            "Channels": 2
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "AudioInDefault_pcm_Codec",
+            "SourceName": "AudioInDefault",
+            "Codec": "pcm"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "AudioCodecName": "AudioInDefault_pcm_Codec",
+        "Identity": "push"
+    }
+}

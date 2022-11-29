@@ -1,0 +1,15 @@
+{
+  "Name": "",
+  "Type": "MCS",
+  "Description": "One Remote Audio and Video Record",
+  "Version": "0.3",
+  "RecordSpecs": [
+    {
+      "Name": "Remote_pull_2_Record",
+      "VideoCodecName": "Remote_pull_2_h264_Codec",
+      "AudioCodecName": "Audio_pull_2_aac_Codec",
+      "Format": "mp4",
+      "Path": "S4E8_Remote_pull_2_yyyy-mm-dd-hh-mm-ss.mp4"
+    }
+  ]
+}

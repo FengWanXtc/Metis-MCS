@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.1 小站IP地址设置 &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="3.Scripts API" href="../api/index.html" />
+    <link rel="prev" title="2.环境配置" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface/index.html">1.前言</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2.环境配置</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1 小站IP地址设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.2 脚本运行环境设置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">3.Scripts API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios/index.html">4.Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">2.环境配置</a> &raquo;</li>
+      <li>1.1 小站IP地址设置</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ip">
+<h1>1.1 小站IP地址设置<a class="headerlink" href="#ip" title="永久链接至标题"></a></h1>
+<p>MCS目录下存在libraries目录，该目录下存放5个py文件。其中 <br>
+<code class="docutils literal notranslate"><span class="pre">mediatasklib.py</span></code> 、<code class="docutils literal notranslate"><span class="pre">mediadevicelib.py</span></code> 、<code class="docutils literal notranslate"><span class="pre">mediatasklib.py</span></code>
+三个库文件封装了对应的3个MA API接口类函数。<br>
+<code class="docutils literal notranslate"><span class="pre">functionlib.py</span></code>封装了一些便于开发的函数。<br>
+<code class="docutils literal notranslate"><span class="pre">environment.py</span></code>文件设定运行脚本需要的一些环境变量。<br></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 设置对应小站IP函数</span>
+<span class="k">def</span> <span class="nf">check_eth_connect</span><span class="p">():</span>
+    <span class="n">ip_get_cmd</span> <span class="o">=</span> <span class="s2">&quot;ifconfig eth0 | grep &#39;inet &#39; | awk &#39;{print $2}&#39;&quot;</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;win&quot;</span><span class="p">):</span>
+        <span class="c1"># 如果是Windows系统，需要手动设置修改下面IP地址</span>
+        <span class="n">HOST_IP</span> <span class="o">=</span> <span class="s1">&#39;10.12.224.135&#39;</span>
+        <span class="c1"># print(HOST_IP)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="c1"># 如果是linux系统，而且脚本放在小站上,可以自动获取IP地址</span>
+            <span class="c1"># 但如果是放在开发机上，就不能调用这个函数获取IP地址</span>
+            <span class="c1"># 需要手动修改其他4个lib.py文件里HOST_IP的值</span>
+            <span class="n">HOST_IP</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="n">ip_get_cmd</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">HOST_IP</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">HOST_IP</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># print(HOST_IP)</span>
+                <span class="k">break</span>
+    <span class="k">return</span> <span class="n">HOST_IP</span>
+</pre></div>
+</div>
+<p>如上述所说，脚本在<strong>Windows</strong>上运行,需要修改该<code class="docutils literal notranslate"><span class="pre">environment.py</span></code>文件上述变量 <code class="docutils literal notranslate"><span class="pre">HOST_IP</span></code> 的值，将其修改成需要运行脚本的小站IP地址，
+如果脚本放在<strong>小站</strong>上运行，可以自动获取小站的IP，不用修改任何文件。</p>
+</section>
+<section id="id1">
+<h1>1.2 脚本运行环境设置<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<ul>
+<li><p><strong>方式一</strong>： DemoMCS目录下存放<code class="docutils literal notranslate"><span class="pre">set_environment_linux.py</span></code>，<code class="docutils literal notranslate"><span class="pre">set_environment_windows</span></code> 脚本，对应不同操作系统下Python模块库的安装方式。</p>
+<ul class="simple">
+<li><p><strong>优点</strong>：执行方式简单</p></li>
+<li><p><strong>缺点</strong>：会修改Linux系统环境，将 python 软链接指向 python3 而不是 python2。</p></li>
+</ul>
+<p>在终端输入下述指令安装环境</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># Linux系统执行下句</span>
+  $ python set_environment_linux.py
+
+  <span class="c1"># Windows系统执行下句</span>
+  &gt; python set_environment_windows.py
+</pre></div>
+</div>
+</li>
+<li><p><strong>方式二</strong>：
+通过Docker技术配置脚本运行环境，依次执行下述指令来配置环境。</p>
+<ul class="simple">
+<li><p><strong>优点</strong>：不会对小站环境造成影响，在Docker中的任何操作都不会对原小站系统造成影响</p></li>
+<li><p><strong>缺点</strong>：执行步骤复杂</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo usermod -aG docker user   <span class="c1"># 解决Docker sudo权限</span>
+$ su - user 
+$ docker pull sameswinhub/sam-story-python:1.0 <span class="c1"># 从dockerhub上下载需要使用的image</span>
+</pre></div>
+</div>
+<p>镜像文件下载完成后，终端输入下述指令查看是否成功,成功如图所示:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker images 
+</pre></div>
+</div>
+<p><img alt="docker_image" src="../_images/docker_success.png" /></p>
+<p>成功下载后，运行Docker容器</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ docker run -it --net<span class="o">=</span>host -v /home/user/EST/MCSScripts/DemoMCS:/home sameswinhub/sam-story-python:1.0
+$ <span class="nb">cd</span> /home
+$ ls  <span class="c1"># 可以看到小站中所存放的所有的DemoMCS的脚本目录</span>
+</pre></div>
+</div>
+<p>到这里之后用户就可以自由进入想要测试的目录下进行执行需要的脚本了，可以通过输入 <strong>exit</strong> 退出Docker容器，回到小站Linux系统。</p>
+</li>
+</ul>
+<br>
+<br></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="2.环境配置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../api/index.html" class="btn btn-neutral float-right" title="3.Scripts API" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

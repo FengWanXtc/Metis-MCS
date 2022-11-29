@@ -1,0 +1,319 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "AudioSpecs": [
+        {
+            "Name": "AudioInDefault",
+            "SampleRate": 48000,
+            "Channels": 2
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "AudioInDefault_aac_Codec",
+            "SourceName": "AudioInDefault",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_aac_Codec",
+            "SourceName": "Remote_pull",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_2_aac_Codec",
+            "SourceName": "Remote_pull_2",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_3_aac_Codec",
+            "SourceName": "Remote_pull_3",
+            "Codec": "aac"
+        }
+    ],
+    "VideoSpecs": [
+        {
+            "Name": "Teacher",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "UYVY"
+        },
+        {
+            "Name": "Student",
+            "DeviceId": "0403-0001",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "YUY2"
+        }
+    ],
+    "VideoAiSpecs": [
+        {
+            "Name": "Teacher_Ai",
+            "SourceName": "Teacher",
+            "Algorithm": "Teacher Tracking",
+            "ProcessRate": 10,
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        },
+        {
+            "Name": "Student_Ai",
+            "SourceName": "Student",
+            "Algorithm": "Student Tracking",
+            "ProcessRate": 30,
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoDirectorSpec": {
+        "Name": "Director",
+        "Width": 1920,
+        "Height": 1080,
+        "FrameRate": 30,
+        "VideoSourceSet": [
+            "Student",
+            "Teacher",
+            "Student_Ai",
+            "Teacher_Ai"
+        ],
+        "FrameSpec": {
+            "Template": "single frame",
+            "LayoutSpecs": [
+                {
+                    "Position": 1,
+                    "SelectionSpecs": [
+                        {
+                            "Priority": 1,
+                            "VideoSource": "Student_Ai",
+                            "State": "Stand_1",
+                            "Delay": 2,
+                            "Timeout": 2700
+                        },
+                        {
+                            "Priority": 6,
+                            "VideoSource": "Teacher_Ai",
+                            "State": "Stand",
+                            "Delay": 0,
+                            "Timeout": 2700
+                        },
+                        {
+                            "Priority": 7,
+                            "VideoSource": "Teacher",
+                            "State": "Many",
+                            "Delay": 0,
+                            "Timeout": 2700
+                        },
+                        {
+                            "Priority": 8,
+                            "VideoSource": "Teacher",
+                            "State": "Out",
+                            "Delay": 2,
+                            "Timeout": 2700
+                        },
+                        {
+                            "Priority": 9,
+                            "VideoSource": "Student",
+                            "State": "Stand_N",
+                            "Delay": 2,
+                            "Timeout": 600
+                        },
+                        {
+                            "Priority": 10,
+                            "VideoSource": "Student",
+                            "State": "Sit",
+                            "Delay": 2,
+                            "Timeout": 600
+                        },
+                        {
+                            "Priority": 11,
+                            "VideoSource": "Teacher",
+                            "State": "NoTeacher",
+                            "Delay": 2,
+                            "Timeout": 2700
+                        },
+                        {
+                            "Priority": 12,
+                            "VideoSource": "Teacher",
+                            "State": "Others",
+                            "Delay": 0,
+                            "Timeout": 2700
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "VideoCodecSpecs": [
+        {
+            "Name": "Director_Codec",
+            "SourceName": "Director",
+            "Codec": "h.264"
+        },
+        {
+            "Name": "Remote_pull_h264_Codec",
+            "SourceName": "Remote_pull",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_2_h264_Codec",
+            "SourceName": "Remote_pull_2",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Remote_pull_3_h264_Codec",
+            "SourceName": "Remote_pull_3",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Director_Record",
+            "VideoCodecName": "Director_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "SplitMethod": "Size",
+            "SplitUnit": 1048576,
+            "Path": "Director_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "remote1_Record",
+            "VideoCodecName": "Remote_pull_h264_Codec",
+            "AudioCodecName": "Audio_pull_aac_Codec",
+            "Format": "mp4",
+            "SplitMethod": "Size",
+            "SplitUnit": 1048576,
+            "Path": "remote1_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "remote2_Record",
+            "VideoCodecName": "Remote_pull_2_h264_Codec",
+            "AudioCodecName": "Audio_pull_2_aac_Codec",
+            "Format": "mp4",
+            "SplitMethod": "Size",
+            "SplitUnit": 1048576,
+            "Path": "remote2_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "remote3_Record",
+            "VideoCodecName": "Remote_pull_3_h264_Codec",
+            "AudioCodecName": "Audio_pull_3_aac_Codec",
+            "Format": "mp4",
+            "SplitMethod": "Size",
+            "SplitUnit": 1048576,
+            "Path": "remote3_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ],
+    "CodecStreamSpecs": [
+        {
+            "Name": "Remote_pull",
+            "VideoCodec": "h.264",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6671"
+        },
+        {
+            "Name": "Remote_pull_2",
+            "VideoCodec": "h.264",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6675"
+        },
+        {
+            "Name": "Remote_pull_3",
+            "VideoCodec": "h.264",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6677"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "TcpAudioPull_Play",
+            "Sources": [
+                {
+                    "SourceName": "Audio_pull",
+                    "Volume": 70
+                }
+            ]
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull_2"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull_3"
+                }
+            ]
+        }
+    ]
+}

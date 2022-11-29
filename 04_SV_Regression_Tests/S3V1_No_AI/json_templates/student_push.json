@@ -1,0 +1,38 @@
+{
+    "Name": "Student_Push",
+    "Type": "MCS",
+    "Description": "test mcs for create preview",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Student",
+            "DeviceId": "0403-0001",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Student_h264_Codec",
+            "SourceName": "Student",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "VideoCodecName": "Student_h264_Codec",
+        "Identity": "Near_End"
+    }
+}

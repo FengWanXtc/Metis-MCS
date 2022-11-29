@@ -1,0 +1,14 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Director Teacher,2 Remote Render",
+    "Version": "0.3",
+    "ServerSpecs": [
+        {
+            "Name": "Student_RtspPush",
+            "URI": "rtmp://10.12.224.140/test/ch3",
+            "VideoCodecName": "Student_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec"
+        }
+    ]
+}

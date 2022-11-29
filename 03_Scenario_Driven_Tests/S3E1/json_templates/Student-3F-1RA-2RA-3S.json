@@ -1,0 +1,81 @@
+{
+    "Name": "S3E1_Student",
+    "Type": "MCS",
+    "Description": "S3E1_Student",
+    "Version": "0.3",
+    "AudioSpecs": [
+        {
+            "Name": "AudioInDefault",
+            "DeviceId": "",
+            "SampleRate": 44100,
+            "Channels": 2
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+          "Name": "AudioInDefault_Codec",
+          "SourceName": "AudioInDefault",
+          "Codec": "pcm"
+        }
+      ],
+    "VideoSpecs": [
+        {
+            "Name": "Student",
+            "DeviceId": "",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Student_Codec",
+            "SourceName": "Student",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+      }
+    ],
+    "RtcStreamSpec":
+        {
+            "Name": "Student_pushpull",
+            "Protocol": "Agora",
+            "Channel": "S3E1_Channel",
+            "Identity": "S3E1_Student_i",
+            "VideoCodecName": "Student_Codec",
+            "AudioCodecName": "AudioInDefault_Codec"
+        },
+	"PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume":75,
+                    "SourceName": "Student_pushpull"
+                }
+            ]
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [0, 0, 960, 540],
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [0, 540, 960, 540],
+                    "SourceName": "Student_pushpull"
+                },
+                {
+                    "Geometry": [960, 0, 960, 540],
+                    "SourceName": "Student_pushpull"
+                }
+            ]
+        }
+    ]
+  }

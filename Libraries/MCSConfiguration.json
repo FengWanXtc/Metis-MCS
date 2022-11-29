@@ -1,0 +1,12 @@
+{
+    "CameraType": {
+        "Global_TeacherCamType": "HDMI",
+        "Global_StudentCamType": "IPC",
+        "Global_BlackBoardCamType": "IPC",
+        "Global_PPTCamType": "HDMI",
+        "Global_GeneralCamType": "IPC",
+        "Global_GeneralCamType_other": "HDMI"
+    },
+    "IsLogFile": false,
+    "FileName": "AT.log"
+}

@@ -1,0 +1,61 @@
+{
+  "Name": "mcs0.3",
+  "Type": "MCS",
+  "Description": "test mcs for create preview with audio",
+  "Version": "0.3",
+  "AudioSpecs": [
+    {
+      "Name": "AudioInDefault",
+      "SampleRate": 44100,
+      "Channels": 2
+    }
+  ],
+  "AudioCodecSpecs": [
+    {
+      "Name": "AudioInDefault_pcm_Codec",
+      "SourceName": "AudioInDefault",
+      "Codec": "pcm"
+    }
+  ],
+  "VideoSpecs": [
+    {
+      "Name": "",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    }
+  ],
+  "RtcStreamSpec": {
+    "Name": "Rtc_Spec",
+    "Protocol": "Agora",
+    "Channel": "Agora_Channel",
+    "Identity": "hdmi",
+    "AudioCodecName": "AudioInDefault_pcm_Codec",
+    "VideoCodecName": "CAM_Codec"
+  },
+  "VideoCodecSpecs": [
+    {
+      "Name": "CAM_Codec",
+      "SourceName": "",
+      "Codec": "h.264",
+      "iFrameInterval": 30,
+      "idrInterval": 30,
+      "BitRateMode": "vbr",
+      "BitRate": "4mbps",
+      "Profile": "main"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Audio And Video 2 Pull",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "Video_pull_2",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6675"
+        },
+        {
+            "Name": "Audio_pull_2",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6676"
+        },
+        {
+            "Name": "Video_pull_3",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6677"
+        },
+        {
+            "Name": "Audio_pull_3",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6678"
+        }
+    ]
+}

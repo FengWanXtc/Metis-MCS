@@ -1,0 +1,68 @@
+{
+  "Name": "RenderSpecTest",
+  "Type": "MCS",
+  "Description": "MCS Template",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    },
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    },
+    {
+      "Name": "Computer",
+      "DeviceId": "0400-0002",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    },
+    {
+      "Name": "Blackboard",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "YUY2"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "DeviceId": "0800-0000",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "ZOrder": 0,
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [480, 0, 960, 540],
+          "ZOrder": 1,
+          "SourceName": "Student"
+        },
+        {
+          "Geometry": [0, 540, 960, 540],
+          "ZOrder": 1,
+          "SourceName": "Computer"
+        },
+        {
+          "Geometry": [480, 270, 960, 540],
+          "ZOrder": 2,
+          "SourceName": "Blackboard"
+        }
+      ]
+    }
+  ]
+}

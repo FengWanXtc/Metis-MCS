@@ -1,0 +1,2324 @@
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:50.035978
+* API: GET http://10.12.224.135:6689/internal/mediadevice/camera
+* Using MCS As Follow: 
+"{}"
+* Response As Follow: 
+[{"deviceId": "0400-0000", "deviceName": "HDMI_CAM_1", "aliasName": "Teacher_HDMI", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "teacher tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0001", "deviceName": "HDMI_CAM_2", "aliasName": "HDMI_2", "deviceInterface": "HDMI", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0002", "deviceName": "HDMI_PC_IN", "aliasName": "HDMI_IN", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "ppt tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0401-2320", "deviceName": "USB_CAM_P3-2", "aliasName": "USB_CAM", "deviceInterface": "USB", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "YUY2", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0403-0001", "deviceName": "IPC_CAM_1", "aliasName": "Student_IPC", "deviceInterface": "NET_AI_IN", "isOpen": true, "rtspUrl": "rtsp://10.12.224.88/ch2", "aiStrategy": "student tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": true}, {"deviceId": "0403-0003", "deviceName": "IPC_CAM_3", "aliasName": "Blackboard_IPC", "deviceInterface": "NET", "isOpen": true, "rtspUrl": "rtsp://10.12.224.57/ch1", "aiStrategy": "blackboard tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}]
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:50.489463
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:52.542605
+* API: GET http://10.12.224.135:6689/internal/mediadevice/camera
+* Using MCS As Follow: 
+"{}"
+* Response As Follow: 
+[{"deviceId": "0400-0000", "deviceName": "HDMI_CAM_1", "aliasName": "Teacher_HDMI", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "teacher tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0001", "deviceName": "HDMI_CAM_2", "aliasName": "HDMI_2", "deviceInterface": "HDMI", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0002", "deviceName": "HDMI_PC_IN", "aliasName": "HDMI_IN", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "ppt tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0401-2320", "deviceName": "USB_CAM_P3-2", "aliasName": "USB_CAM", "deviceInterface": "USB", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "YUY2", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0403-0001", "deviceName": "IPC_CAM_1", "aliasName": "Student_IPC", "deviceInterface": "NET_AI_IN", "isOpen": true, "rtspUrl": "rtsp://10.12.224.88/ch2", "aiStrategy": "student tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": true}, {"deviceId": "0403-0003", "deviceName": "IPC_CAM_3", "aliasName": "Blackboard_IPC", "deviceInterface": "NET", "isOpen": true, "rtspUrl": "rtsp://10.12.224.57/ch1", "aiStrategy": "blackboard tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}]
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:52.611474
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:54.766038
+* API: GET http://10.12.224.135:6689/internal/mediadevice/camera
+* Using MCS As Follow: 
+"{}"
+* Response As Follow: 
+[{"deviceId": "0400-0000", "deviceName": "HDMI_CAM_1", "aliasName": "Teacher_HDMI", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "teacher tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0001", "deviceName": "HDMI_CAM_2", "aliasName": "HDMI_2", "deviceInterface": "HDMI", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0002", "deviceName": "HDMI_PC_IN", "aliasName": "HDMI_IN", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "ppt tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0401-2320", "deviceName": "USB_CAM_P3-2", "aliasName": "USB_CAM", "deviceInterface": "USB", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "YUY2", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0403-0001", "deviceName": "IPC_CAM_1", "aliasName": "Student_IPC", "deviceInterface": "NET_AI_IN", "isOpen": true, "rtspUrl": "rtsp://10.12.224.88/ch2", "aiStrategy": "student tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": true}, {"deviceId": "0403-0003", "deviceName": "IPC_CAM_3", "aliasName": "Blackboard_IPC", "deviceInterface": "NET", "isOpen": true, "rtspUrl": "rtsp://10.12.224.57/ch1", "aiStrategy": "blackboard tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}]
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:54.874875
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:56.616395
+* API: GET http://10.12.224.135:6689/internal/mediadevice/camera
+* Using MCS As Follow: 
+"{}"
+* Response As Follow: 
+[{"deviceId": "0400-0000", "deviceName": "HDMI_CAM_1", "aliasName": "Teacher_HDMI", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "teacher tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0001", "deviceName": "HDMI_CAM_2", "aliasName": "HDMI_2", "deviceInterface": "HDMI", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0002", "deviceName": "HDMI_PC_IN", "aliasName": "HDMI_IN", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "ppt tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0401-2320", "deviceName": "USB_CAM_P3-2", "aliasName": "USB_CAM", "deviceInterface": "USB", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "YUY2", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0403-0001", "deviceName": "IPC_CAM_1", "aliasName": "Student_IPC", "deviceInterface": "NET_AI_IN", "isOpen": true, "rtspUrl": "rtsp://10.12.224.88/ch2", "aiStrategy": "student tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": true}, {"deviceId": "0403-0003", "deviceName": "IPC_CAM_3", "aliasName": "Blackboard_IPC", "deviceInterface": "NET", "isOpen": true, "rtspUrl": "rtsp://10.12.224.57/ch1", "aiStrategy": "blackboard tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}]
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:56.724757
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:43:59.787255
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:01.411574
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:02.727680
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:04.071635
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:05.495677
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:06.916989
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:08.466966
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:09.915525
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:11.353247
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:12.911749
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:14.435756
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:15.811725
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:17.188479
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:18.605607
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:19.926428
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:21.524572
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:22.956218
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:24.298336
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:25.721061
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:27.165390
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:28.934772
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:31.784187
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:37.228690
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:42.982857
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:45.607592
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:48.068949
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:50.535169
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:53.316374
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:55.075734
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:57.819575
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:44:59.423184
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:01.304774
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:03.646594
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:07.715397
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:13.269278
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:15.361253
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:19.583857
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:21.257129
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:23.439043
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:29.119610
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:35.088655
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:40.301272
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:44.324515
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:48.934731
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:51.963481
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:45:56.901726
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:03.467753
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:20.062767
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:23.857799
+* API: DELETE http://10.12.224.135:6689/mediatask/Teacher
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!"}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:25.614626
+* API: DELETE http://10.12.224.135:6689/mediatask/Student
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!"}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:27.082623
+* API: DELETE http://10.12.224.135:6689/mediatask/BlackBoard
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!"}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:34.196272
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:37.839851
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:39.690794
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "PPT",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "PPT",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "PPT"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "PPT", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:41.323224
+* API: GET http://10.12.224.135:6689/internal/mediadevice/camera
+* Using MCS As Follow: 
+"{}"
+* Response As Follow: 
+[{"deviceId": "0400-0000", "deviceName": "HDMI_CAM_1", "aliasName": "Teacher_HDMI", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "teacher tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0001", "deviceName": "HDMI_CAM_2", "aliasName": "HDMI_2", "deviceInterface": "HDMI", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0002", "deviceName": "HDMI_PC_IN", "aliasName": "HDMI_IN", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "ppt tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0401-2320", "deviceName": "USB_CAM_P3-2", "aliasName": "USB_CAM", "deviceInterface": "USB", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "YUY2", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0403-0001", "deviceName": "IPC_CAM_1", "aliasName": "Student_IPC", "deviceInterface": "NET_AI_IN", "isOpen": true, "rtspUrl": "rtsp://10.12.224.88/ch2", "aiStrategy": "student tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": true}, {"deviceId": "0403-0003", "deviceName": "IPC_CAM_3", "aliasName": "Blackboard_IPC", "deviceInterface": "NET", "isOpen": true, "rtspUrl": "rtsp://10.12.224.57/ch1", "aiStrategy": "blackboard tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}]
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:41.428489
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Teacher",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Teacher", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:46.402638
+* API: GET http://10.12.224.135:6689/internal/mediadevice/camera
+* Using MCS As Follow: 
+"{}"
+* Response As Follow: 
+[{"deviceId": "0400-0000", "deviceName": "HDMI_CAM_1", "aliasName": "Teacher_HDMI", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "teacher tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0001", "deviceName": "HDMI_CAM_2", "aliasName": "HDMI_2", "deviceInterface": "HDMI", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0002", "deviceName": "HDMI_PC_IN", "aliasName": "HDMI_IN", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "ppt tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0401-2320", "deviceName": "USB_CAM_P3-2", "aliasName": "USB_CAM", "deviceInterface": "USB", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "YUY2", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0403-0001", "deviceName": "IPC_CAM_1", "aliasName": "Student_IPC", "deviceInterface": "NET_AI_IN", "isOpen": true, "rtspUrl": "rtsp://10.12.224.88/ch2", "aiStrategy": "student tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": true}, {"deviceId": "0403-0003", "deviceName": "IPC_CAM_3", "aliasName": "Blackboard_IPC", "deviceInterface": "NET", "isOpen": true, "rtspUrl": "rtsp://10.12.224.57/ch1", "aiStrategy": "blackboard tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}]
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:48.035279
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "Student",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "Student", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:51.692893
+* API: GET http://10.12.224.135:6689/internal/mediadevice/camera
+* Using MCS As Follow: 
+"{}"
+* Response As Follow: 
+[{"deviceId": "0400-0000", "deviceName": "HDMI_CAM_1", "aliasName": "Teacher_HDMI", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "teacher tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0001", "deviceName": "HDMI_CAM_2", "aliasName": "HDMI_2", "deviceInterface": "HDMI", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0400-0002", "deviceName": "HDMI_PC_IN", "aliasName": "HDMI_IN", "deviceInterface": "HDMI", "isOpen": true, "rtspUrl": "", "aiStrategy": "ppt tracking", "format": "UYVY", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0401-2320", "deviceName": "USB_CAM_P3-2", "aliasName": "USB_CAM", "deviceInterface": "USB", "isOpen": false, "rtspUrl": "", "aiStrategy": "student tracking", "format": "YUY2", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}, {"deviceId": "0403-0001", "deviceName": "IPC_CAM_1", "aliasName": "Student_IPC", "deviceInterface": "NET_AI_IN", "isOpen": true, "rtspUrl": "rtsp://10.12.224.88/ch2", "aiStrategy": "student tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": true}, {"deviceId": "0403-0003", "deviceName": "IPC_CAM_3", "aliasName": "Blackboard_IPC", "deviceInterface": "NET", "isOpen": true, "rtspUrl": "rtsp://10.12.224.57/ch1", "aiStrategy": "blackboard tracking", "format": "H264", "resolutionWidth": 1920, "resolutionHeight": 1080, "framerate": 30, "enableBuiltinAI": false}]
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:51.787355
+* API: POST http://10.12.224.135:6689/mediatask/create_update
+* Using MCS As Follow: 
+{
+  "Name": "BlackBoard",
+  "Type": "MCS",
+  "Description": "One Frame Preview for MCS 0.3",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "BlackBoard",
+      "DeviceId": "0403-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "BlackBoard"
+        }
+      ]
+    }
+  ]
+}
+* Response As Follow: 
+{"Code": 201, "Message": "Task created successfully!", "Results": [{"SpecName": "BlackBoard", "Success": true}, {"SpecName": "Render_SpecName", "Success": true}]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:54.427091
+* API: GET http://10.12.224.135:6689/mediatask/tasks
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!", "Names": ["BlackBoard", "PPT", "Teacher", "Student"]}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:54.525824
+* API: DELETE http://10.12.224.135:6689/mediatask/BlackBoard
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!"}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:54.651785
+* API: DELETE http://10.12.224.135:6689/mediatask/PPT
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!"}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:54.770111
+* API: DELETE http://10.12.224.135:6689/mediatask/Teacher
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!"}
+
+--------------------------------------------------
+* Time Line: 2022-11-09 19:46:54.952647
+* API: DELETE http://10.12.224.135:6689/mediatask/Student
+* Using MCS As Follow: 
+{}
+* Response As Follow: 
+{"Code": 200, "Message": "No error found!"}

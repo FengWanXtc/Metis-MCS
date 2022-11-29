@@ -1,0 +1,50 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Director Teacher,2 Remote Render",
+    "Version": "0.3",
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Compositor"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Compositor_B"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "TcpVideoA_pull"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "TcpVideoB_pull"
+                }
+            ]
+        }
+    ]
+}

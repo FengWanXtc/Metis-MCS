@@ -1,0 +1,14 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "ServerSpecs": [
+        {
+            "Name": "Compose_RtspPush",
+            "URI": "rtmp://0.0.0.0/metis/test",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "CompositorAudio_aac_Codec"
+        }
+    ]
+}

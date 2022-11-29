@@ -1,0 +1,39 @@
+{
+    "Name": "S4E2_Dynamic",
+    "Type": "MCS",
+    "Description": "Dynamic Preview for S3E3",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Dynamic_CAM",
+            "DeviceId": "",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Dynamic_Codec",
+            "SourceName": "Dynamic_CAM",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Dynamic_Render",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [960,0,960,540],
+                    "SourceName": "Dynamic_CAM"
+                }
+            ]
+        }
+    ]
+}

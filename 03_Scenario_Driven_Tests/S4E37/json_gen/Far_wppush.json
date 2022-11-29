@@ -1,0 +1,82 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "AudioSpecs": [
+      {
+        "Name": "AudioInDefault",
+        "SampleRate": 48000,
+        "Channels": 2
+      }
+    ],
+    "AudioCodecSpecs": [
+      {
+        "Name": "AudioInDefault_aac_Codec",
+        "SourceName": "AudioInDefault",
+        "Codec": "aac"
+      }
+    ],
+    "VideoSpecs": [
+      {
+        "Name": "Teacher",
+        "DeviceId": "0400-0000",
+        "Width": 1920,
+        "Height": 1080,
+        "FrameRate": 30,
+        "Format": "UYVY"
+      },
+      {
+        "Name": "Student",
+        "DeviceId": "0403-0001",
+        "Width": 1920,
+        "Height": 1080,
+        "FrameRate": 30,
+        "Format": "YUY2"
+      }
+    ],
+    "VideoCodecSpecs": [
+      {
+        "Name": "Teacher_Codec",
+        "SourceName": "Teacher",
+        "Codec": "h.264"
+      },
+      {
+        "Name": "Student_Codec",
+        "SourceName": "Student",
+        "Codec": "h.264"
+      }
+    ],
+    "ServerSpecs": [
+      {
+        "Name": "Teacher_Server",
+        "VideoCodecName": "Teacher_Codec",
+        "URI": "wp://10.12.224.135:6671"
+      },
+      {
+        "Name": "Teacher_Audio_Server",
+        "AudioCodecName": "AudioInDefault_aac_Codec",
+        "URI": "wp://10.12.224.135:6672"
+      },
+      {
+        "Name": "Teacher_2_Server",
+        "VideoCodecName": "Teacher_Codec",
+        "URI": "wp://10.12.224.135:6673"
+      },
+      {
+        "Name": "Teacher_2_Audio_Server",
+        "AudioCodecName": "AudioInDefault_aac_Codec",
+        "URI": "wp://10.12.224.135:6674"
+      },
+      {
+        "Name": "Student_Server",
+        "VideoCodecName": "Student_Codec",
+        "URI": "wp://10.12.224.135:6675"
+      },
+      {
+        "Name": "Student_Audio_Server",
+        "AudioCodecName": "AudioInDefault_aac_Codec",
+        "URI": "wp://10.12.224.135:6676"
+      }
+    ]
+  }

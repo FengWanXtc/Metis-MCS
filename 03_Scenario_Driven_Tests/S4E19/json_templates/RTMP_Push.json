@@ -1,0 +1,23 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Compose_Record",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "Compose(DynamicRTMP)_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ],
+    "ServerSpecs": [
+        {
+            "Name": "Compose_RtspPush",
+            "URI": "rtmp://10.12.224.135/metis/test",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec"
+        }
+    ]
+}

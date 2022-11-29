@@ -1,0 +1,13 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Near End Push Transform",
+    "Version": "0.3",
+    "ServerSpecs": [
+        {
+            "Name": "VideoTransform_Server",
+            "VideoCodecName": "VideoTransform_Codec",
+            "URI": "wp://10.12.224.40:6673"
+        }
+    ]
+}

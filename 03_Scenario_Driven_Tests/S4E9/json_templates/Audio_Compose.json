@@ -1,0 +1,29 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Audio Compose",
+    "Version": "0.3",
+    "AudioComposeSpecs":[
+        {
+            "Name": "CompositorAudio",
+            "SampleRate": 48000,
+            "MixerSpec" :[
+                {
+                    "SourceName": "AudioInDefault",
+                    "Volume": 70
+                },
+                {
+                    "SourceName": "Audio_pull",
+                    "Volume": 70
+                }
+            ]
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "CompositorAudio_aac_Codec",
+            "SourceName": "CompositorAudio",
+            "Codec": "aac"
+        }
+    ]
+}

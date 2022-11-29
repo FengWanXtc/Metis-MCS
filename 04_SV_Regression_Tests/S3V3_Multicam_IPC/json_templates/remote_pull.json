@@ -1,0 +1,32 @@
+{
+    "Name": "mcs0.3",
+    "Type": "MCS",
+    "Description": "mcs for CodecStreamSpec preview",
+    "Version": "0.3",
+     "CodecStreamSpecs": [
+        {
+            "Name": "CodecStreamSpec_pull",
+            "VideoCodec": "h.264",
+            "URI": "agora://S3V3_test/"
+        }
+    ],
+   "VideoCodecSpecs": [
+    {
+        "Name": "CodecStreamSpec_Codec",
+        "SourceName": "CodecStreamSpec_pull",
+        "Codec": "h.264"
+        }
+    ],
+    "RenderSpecs": [
+        {
+          "Name": "Render_test",
+          "DeviceId": "0800-0000",
+          "CompositionSpec": [
+            {
+              "Geometry": [960, 540, 960, 540],
+              "SourceName": "CodecStreamSpec_pull"
+            }
+          ]
+        }
+      ]
+  }

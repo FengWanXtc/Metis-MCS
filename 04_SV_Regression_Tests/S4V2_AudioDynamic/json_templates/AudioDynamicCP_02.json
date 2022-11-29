@@ -1,0 +1,22 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "AudioComposeSpecs": [
+        {
+            "Name": "CompositorAudio",
+            "SampleRate": 48000,
+            "MixerSpec": [
+                {
+                    "SourceName": "AudioInDefault",
+                    "Volume": 70
+                },
+                {
+                    "SourceName": "AudioInPC",
+                    "Volume": 70
+                }
+            ]
+        }
+    ]
+}

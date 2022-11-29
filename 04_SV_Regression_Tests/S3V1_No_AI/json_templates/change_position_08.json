@@ -1,0 +1,29 @@
+{
+  "Name": "RTSP_Pull_4F",
+  "Type": "MCS",
+  "Description": "Pull Remote MCS Template",
+  "Version": "0.3",
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": "IPC03"
+        },
+                {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "IPC04"
+        },
+                {
+          "Geometry": [0, 540, 960, 540],
+          "SourceName": "IPC01"
+        },
+                {
+          "Geometry": [960, 540, 960, 540],
+          "SourceName": "IPC02"
+        }
+      ]
+    }
+  ]
+}

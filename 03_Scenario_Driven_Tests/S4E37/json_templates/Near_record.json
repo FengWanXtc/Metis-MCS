@@ -1,0 +1,75 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Compose,Teacher,Student,Computer Record",
+    "Version": "0.3",
+    "VideoCodecSpecs": [
+        {
+            "Name": "Remote_pull_1_Codec",
+            "SourceName": "Remote_pull_1",
+            "Codec": "h.264"
+        },
+        {
+            "Name": "Remote_pull_2_Codec",
+            "SourceName": "Remote_pull_2",
+            "Codec": "h.264"
+        },
+        {
+            "Name": "Remote_pull_3_Codec",
+            "SourceName": "Remote_pull_3",
+            "Codec": "h.264"
+        },
+        {
+            "Name": "__record___Codec",
+            "SourceName": "__record__",
+            "Codec": "h.264"
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "Audio_pull_1_Codec",
+            "SourceName": "Audio_pull_1",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_2_Codec",
+            "SourceName": "Audio_pull_2",
+            "Codec": "aac"
+        },
+        {
+            "Name": "Audio_pull_3_Codec",
+            "SourceName": "Audio_pull_3",
+            "Codec": "aac"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Pull1_Record",
+            "VideoCodecName": "Remote_pull_1_Codec",
+            "AudioCodecName": "Audio_pull_1_Codec",
+            "Format": "mp4",
+            "Path": "S1P37_Pull1_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "__record___Record",
+            "VideoCodecName": "__record___Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S1P37_local_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Pull2_Record",
+            "VideoCodecName": "Remote_pull_2_Codec",
+            "AudioCodecName": "Audio_pull_2_Codec",
+            "Format": "mp4",
+            "Path": "S1P37_Pull2_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Pull3_Record",
+            "VideoCodecName": "Remote_pull_3_Codec",
+            "AudioCodecName": "Audio_pull_3_Codec",
+            "Format": "mp4",
+            "Path": "S1P37_Pull3_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

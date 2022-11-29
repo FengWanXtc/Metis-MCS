@@ -1,0 +1,38 @@
+{
+  "Name": "AudioCodecSpecTest",
+  "Type": "MCS",
+  "Description": "MCS Template",
+  "Version": "0.3",
+  "AudioSpecs": [
+    {
+      "Name": "MIC",
+      "DeviceId": "",
+      "SampleRate": 44100,
+      "Channels": 2,
+      "Format": "S16LE",
+      "Layout": "Interleaved"
+    },
+    {
+      "Name": "PC",
+      "DeviceId": "",
+      "SampleRate": 44100,
+      "Channels": 2,
+      "Format": "S16LE",
+      "Layout": "Interleaved"
+    }
+  ],
+  "AudioCodecSpecs": [
+    {
+      "Name": "MICCodec",
+      "SourceName": "MIC",
+      "Codec": "pcm"
+    },
+    {
+      "Name": "PCCodec",
+      "SourceName": "PC",
+      "Codec": "opus",
+      "BitRateMode": "VBR",
+      "BitRate": "44Kbps"
+    }
+  ]
+}

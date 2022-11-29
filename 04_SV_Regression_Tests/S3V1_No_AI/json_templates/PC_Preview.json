@@ -1,0 +1,27 @@
+{
+  "Name": "PC_Preview",
+  "Type": "MCS",
+  "Description": "The four-channel AI scenario Basic MCS",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Computer",
+      "DeviceId": "0400-0002",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "Computer"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+	"Name": "",
+    "Type": "MCS",
+    "Description": "One Frame Preview for MCS 0.3",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "",
+            "DeviceId": "",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+			"Format": "UYVY"
+        }
+    ],
+	"RenderSpecs": [
+    {
+      "Name": "Render_SpecName",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540], 
+          "SourceName": ""
+        }
+      ]
+    }
+  ]
+} 

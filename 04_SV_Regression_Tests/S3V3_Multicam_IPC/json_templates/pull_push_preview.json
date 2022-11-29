@@ -1,0 +1,54 @@
+{
+    "Name": "Pull_Push_Preview",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume": 100,
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ],
+    "AudioSpecs": [
+        {
+            "Name": "AudioInDefault",
+            "SampleRate": 44100,
+            "Channels": 2
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "AudioInDefault_pcm_Codec",
+            "SourceName": "AudioInDefault",
+            "Codec": "pcm"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "AudioCodecName": "AudioInDefault_pcm_Codec",
+        "Identity": "push"
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,210 @@
+{
+    "Name": "metis_live_mcs",
+    "Type": "MCS",
+    "Description": "Pipeline task for metis live",
+    "Version": "0.3",
+    "VideoAiSpecs": [
+        {
+            "Name": "Teacher_Tracking",
+            "SourceName": "Teacher",
+            "Algorithm": "teacher tracking",
+            "ProcessRate": 10,
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 10
+        },
+        {
+            "Name": "Student_Tracking",
+            "SourceName": "Student",
+            "Algorithm": "student tracking",
+            "ProcessRate": 10,
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 10
+        },
+        {
+            "Name": "Computer_Tracking",
+            "SourceName": "Computer",
+            "Algorithm": "ppt tracking",
+            "ProcessRate": 10,
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 10
+        }
+    ],
+    "VideoDirectorSpec": {
+        "Name": "Director",
+        "Width": 1920,
+        "Height": 1080,
+        "FrameRate": 30,
+        "VideoSourceSet": [
+            "Computer_Tracking",
+            "Student",
+            "Student_Tracking",
+            "Teacher",
+            "Teacher_Tracking"
+        ],
+        "FrameSpec": {
+            "Template": "single frame",
+            "LayoutSpecs": [
+                {
+                    "Position": 1,
+                    "SelectionSpecs": [
+                        {
+                            "Priority": 1,
+                            "VideoSource": "Student",
+                            "PadName": "sink_1",
+                            "State": "Stand_N",
+                            "Delay": 0,
+                            "Timeout": 180,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 2,
+                            "VideoSource": "Student_Tracking",
+                            "PadName": "sink_2",
+                            "State": "Stand_1",
+                            "Delay": 0,
+                            "Timeout": 180,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 3,
+                            "VideoSource": "Computer_Tracking",
+                            "PadName": "sink_0",
+                            "State": "PptMouseAction",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 15
+                        },
+                        {
+                            "Priority": 4,
+                            "VideoSource": "Teacher_Tracking",
+                            "PadName": "sink_4",
+                            "State": "Many",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 6,
+                            "VideoSource": "Teacher_Tracking",
+                            "PadName": "sink_4",
+                            "State": "Write",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 7,
+                            "VideoSource": "Teacher_Tracking",
+                            "PadName": "sink_4",
+                            "State": "Move",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 8,
+                            "VideoSource": "Teacher_Tracking",
+                            "PadName": "sink_4",
+                            "State": "Stand",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 9,
+                            "VideoSource": "Teacher",
+                            "PadName": "sink_3",
+                            "State": "Out",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 10,
+                            "VideoSource": "Student",
+                            "PadName": "sink_1",
+                            "State": "Sit",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 11,
+                            "VideoSource": "Teacher",
+                            "PadName": "sink_3",
+                            "State": "NoTeacher",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 12,
+                            "VideoSource": "Teacher",
+                            "PadName": "sink_3",
+                            "State": "Others",
+                            "Delay": 0,
+                            "Timeout": 3600,
+                            "Hold": 6
+                        },
+                        {
+                            "Priority": 1,
+                            "VideoSource": "Student",
+                            "PadName": "sink_1",
+                            "State": "Stand_2",
+                            "Delay": 0,
+                            "Timeout": 180,
+                            "Hold": 6
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Computer_Tracking"
+                }
+            ]
+        }
+    ]
+}

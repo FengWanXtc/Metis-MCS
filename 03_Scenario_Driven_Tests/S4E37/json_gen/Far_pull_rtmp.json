@@ -1,0 +1,62 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",  
+    "CodecStreamSpecs": [
+      {
+        "Name": "Rtmp_Pull",
+        "VideoCodec": "h.264",      
+        "AudioCodec": "aac",
+        "SampleRate": 48000,
+        "Channels": 2,
+        "URI": "rtmp://10.12.224.140/rtmp/test"
+      }
+    ],
+    "PlaySpecs": [
+      {
+        "Name": "rtmpAudioPull_Play",
+        "Sources": [
+          {
+            "SourceName": "Rtmp_Pull",
+            "Volume": 70
+          }
+        ]
+      }
+    ],
+    "AudioCodecSpecs": [
+      {
+          "Name": "Rtmp_Pull_audio_Codec",
+          "SourceName": "Rtmp_Pull",
+          "Codec": "aac"
+      }
+    ],
+    "VideoCodecSpecs": [
+      {
+          "Name": "Rtmp_Pull_video_Codec",
+          "SourceName": "Rtmp_Pull",
+          "Codec": "h.264"
+      }
+    ],
+    "RecordSpecs": [
+      {
+          "Name": "Pull_Record",
+          "VideoCodecName": "Rtmp_Pull_video_Codec",
+          "AudioCodecName": "Rtmp_Pull_audio_Codec",
+          "Format": "mp4",
+          "Path": "S1P37_Pull1_rtmp_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+      }
+    ],
+    "RenderSpecs": [
+      {
+        "Name": "Render_test",
+        "DeviceId": "0800-0000",
+        "CompositionSpec": [
+          {
+            "Geometry": [0, 0, 1920, 1080],
+            "SourceName": "Rtmp_Pull"
+          }
+        ]
+      }
+    ]
+  }

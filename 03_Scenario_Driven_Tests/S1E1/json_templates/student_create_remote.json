@@ -1,0 +1,47 @@
+{
+    "Name": "S1E1_Student",
+    "Type": "MCS",
+    "Description": "S1E1 student to push agora stream",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Student",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Student_Codec",
+            "SourceName": "Student",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+        }
+    ],
+    "RtcStreamSpec":
+    {
+        "Name": "Student_Push",
+        "Protocol": "Agora",
+        "Channel": "S1E1_Channel",
+        "Identity": "S1E1_Student",
+        "VideoCodecName": "Student_Codec"
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [0, 0, 960, 540],
+                    "SourceName": "Student"
+                }
+            ]
+        }
+    ]
+}

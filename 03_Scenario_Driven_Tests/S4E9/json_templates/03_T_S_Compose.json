@@ -1,0 +1,52 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Compose for Teacher and Student",
+    "Version": "0.3",
+    "VideoComposeSpecs": [
+        {
+            "Name": "Compositor",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        270,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        270,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Student"
+                }
+            ]
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Compositor_h264_Codec",
+            "SourceName": "Compositor",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ]
+}

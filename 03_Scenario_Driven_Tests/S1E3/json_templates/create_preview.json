@@ -1,0 +1,26 @@
+{
+	"Name": "S1E3_Preview",
+    "Type": "MCS",
+    "Description": "One Frame Preview for MCS 0.3",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Teacher",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }],
+	"RenderSpecs": [
+    {
+      "Name": "Render_SpecName", 
+      "DeviceId": "0800-0000", 
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540], 
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ]
+} 

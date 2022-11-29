@@ -1,0 +1,26 @@
+{
+    "Name": "S3E2_Pull_Template",
+    "Type": "MCS",
+    "Description": "S3E2_Pull_Template",
+    "Version": "0.3",
+
+    "RtcStreamSpec":
+    {
+        "Name": "S3E2_Agora_Rtc",
+        "Protocol": "Agora",
+        "Channel": "S3E2_Channel",
+        "Identity": ""
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [],
+                    "SourceName": "S3E2_Agora_Rtc"
+                }
+            ]
+        }
+    ]
+  }

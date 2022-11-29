@@ -1,0 +1,73 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Teacher,Student,PC 3 Ai Record Template",
+    "Version": "0.3",
+    "VideoCodecSpecs": [
+        {
+            "Name": "TeacherAi_h264_Codec",
+            "SourceName": "Teacher_Ai",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "StudentAi_h264_Codec",
+            "SourceName": "Student_Ai",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "ComputerAi_h264_Codec",
+            "SourceName": "Computer_Ai",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "TeacherAi_Record",
+            "VideoCodecName": "TeacherAi_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E3_TeacherAi_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "StudentAi_Record",
+            "VideoCodecName": "StudentAi_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E3_StudentAi_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "ComputerAi_Record",
+            "VideoCodecName": "ComputerAi_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E3_ComputerAi_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

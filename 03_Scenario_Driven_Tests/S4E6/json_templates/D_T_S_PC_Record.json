@@ -1,0 +1,94 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Restart Teacher,Student,Director,Computer Record",
+    "Version": "0.3",
+    "VideoCodecSpecs": [
+        {
+            "Name": "Director_h264_Codec",
+            "SourceName": "Director",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Teacher_h264_Codec",
+            "SourceName": "Teacher",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Student_h264_Codec",
+            "SourceName": "Student",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Computer_h264_Codec",
+            "SourceName": "Computer",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Director_Record",
+            "VideoCodecName": "Director_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E5_Director_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Teacher_Record",
+            "VideoCodecName": "Teacher_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E5_Teacher_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Student_Record",
+            "VideoCodecName": "Student_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E5_Student_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Computer_Record",
+            "VideoCodecName": "Computer_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E5_Computer_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

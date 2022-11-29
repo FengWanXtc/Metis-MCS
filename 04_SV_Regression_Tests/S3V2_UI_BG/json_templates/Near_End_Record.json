@@ -1,0 +1,14 @@
+{
+    "Name": "HDMI_0",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "HDMI0_Record",
+            "VideoCodecName": "HDMI0_Codec",
+            "Format": "mp4",
+            "Path": "Near_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

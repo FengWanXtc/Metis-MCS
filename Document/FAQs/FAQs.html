@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.1. 环境类 &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="5.FAQs" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface/index.html">1.前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">3.Scripts API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios/index.html">4.Scenario</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">5.FAQs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. 环境类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">5.1.1 本地管理页面配置摄像头</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#media-agent-api">5.1.2 Media Agent API文档</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deviceid">5.1.3 不同类型摄像头DeviceId命名规则</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">5.FAQs</a> &raquo;</li>
+      <li>5.1. 环境类</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>5.1. 环境类<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>5.1.1 本地管理页面配置摄像头<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<ul>
+<li><p>本地管理页面： http://<strong>{小站IP地址}</strong>:8080</p>
+<p>账户名： <code class="docutils literal notranslate"><span class="pre">admin</span></code></p>
+<p>密码：<code class="docutils literal notranslate"><span class="pre">z150&#64;2022</span></code></p>
+</li>
+<li><p>根据需求将对应的摄像头配上相应算法，详细配置过程可以参考
+<a class="reference download internal" download="" href="../_downloads/b40b79d7c15503741f36ca552be33373/MetisStationZ500UserManual.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Metis</span> <span class="pre">Station</span> <span class="pre">Z500</span> <span class="pre">用户手册</span></code></a>  <strong>5.2.1 本机登录章节内容</strong> 。</p></li>
+<li><p>相应摄像头配上算法可以参考下图所示</p>
+<blockquote>
+<div><img alt="../_images/LMS01.png" src="../_images/LMS01.png" />
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="media-agent-api">
+<h2>5.1.2 Media Agent API文档<a class="headerlink" href="#media-agent-api" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>MA API 文档下载处: <a class="reference download internal" download="" href="../_downloads/22440989877146d6b7ee77d8f4dfe3cc/MA_API_Spec.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p></li>
+</ul>
+</section>
+<section id="deviceid">
+<h2>5.1.3 不同类型摄像头DeviceId命名规则<a class="headerlink" href="#deviceid" title="永久链接至标题"></a></h2>
+<blockquote>
+<div><img alt="../_images/CameRule.png" src="../_images/CameRule.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><strong>Example</strong>:</p>
+<blockquote>
+<div><p>HDMI类型摄像头 : HDMI_CAM_1  —&gt;  0400-0000</p>
+<p>IPC网络摄像头  : IPC_CAM_1   —&gt;  0403-0001</p>
+<p>USB类型摄像头  : USB_CAM_P3-1—&gt;  0401-2310</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="5.FAQs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

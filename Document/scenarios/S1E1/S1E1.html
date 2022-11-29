@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.1. 外设配置 &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="4.2. S1E2" href="../S1E2/index.html" />
+    <link rel="prev" title="4.1. S1E1" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface/index.html">1.前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">3.Scripts API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">4.Scenario</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">4.1. S1E1</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. 外设配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demomcs">4.1.2. DemoMCS 演示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E2/index.html">4.2. S1E2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">4.Scenario</a> &raquo;</li>
+          <li><a href="index.html">4.1. S1E1</a> &raquo;</li>
+      <li>4.1.1. 外设配置</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>4.1.1. 外设配置<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p>2台Metis Station小站，一台主讲端，一台听课端</p></li>
+<li><p>主讲端需要 2个 摄像头，本地管理页面分别配置教师算法和学生算法。听课端需要1个摄像头，本地管理打开该摄像头。</p></li>
+<li><p>显示器要求：分辨率1920*1080及以上</p></li>
+</ul>
+</section>
+<section id="demomcs">
+<h1>4.1.2. DemoMCS 演示<a class="headerlink" href="#demomcs" title="永久链接至标题"></a></h1>
+<ul>
+<li><p>场景内容： <br>
+教师端启动四宫带录制，第一宫为导播画面，第二宫为本地教师摄像头回显，第三宫为本地学生摄像头回显
+第四宫为声网拉流。学生端声网推送一路视频画面。    <br><br></p></li>
+<li><p>脚本路径：<strong>/home/user/EST/MCSScripts/DemoMCS/03_Scenario_Driven_Tests/S1E1/</strong> <br>
+脚本详细执行步骤参考同目录下README.txt 文档 <br> <br></p></li>
+<li><p>下发的<strong>MCS</strong>：</p>
+<ul class="simple">
+<li><p>主讲端：</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1_Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MCS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1 teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;VideoSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;FrameRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;FrameRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;VideoAiSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher_Ai&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher Tracking&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;ProcessRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;FrameRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Ai&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student Tracking&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;ProcessRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;FrameRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;VideoDirectorSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Director&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;FrameRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;VideoSourceSet&quot;</span><span class="p">:[</span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="s2">&quot;Student_Ai&quot;</span><span class="p">,</span><span class="s2">&quot;Teacher_Ai&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;FrameSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Template&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single frame&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;LayoutSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;Position&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;SelectionSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Ai&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stand_1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher_Ai&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Move&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher_Ai&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stand&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Many&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Out&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stand_N&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sit&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NoTeacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="w"></span>
+<span class="w">                      </span><span class="p">},</span><span class="w"></span>
+<span class="w">                      </span><span class="p">{</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Others&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                          </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2700</span><span class="w"></span>
+<span class="w">                      </span><span class="p">}</span><span class="w"></span>
+<span class="w">                  </span><span class="p">]</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;VideoCodecSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Codec&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;Codec&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h.264&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;iFrameInterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;idrInterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;BitRateMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vbr&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;BitRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4mbps&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;Profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;RtcStreamSpec&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Pull&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Agora&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1_Channel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1_Teacher&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;RenderSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Render_test&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0800-0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;CompositionSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;Geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">540</span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Director&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;Geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">540</span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;Geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">540</span><span class="p">,</span><span class="w"> </span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">540</span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;Geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">540</span><span class="p">,</span><span class="w"> </span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">540</span><span class="p">],</span><span class="w"></span>
+<span class="w">                  </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Pull&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="p">]</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>说明：</p>
+<ol class="simple">
+<li><p>通过 <code class="docutils literal notranslate"><span class="pre">VideoSpecs</span></code> 添加2个摄像头作为<strong>原始视频流</strong>，并且通过 <code class="docutils literal notranslate"><span class="pre">VideoAiSpecs</span></code> 给摄像头配置算法，形成<strong>添加
+算法处理后的新视频流</strong>，<code class="docutils literal notranslate"><span class="pre">VideoAiSpecs</span></code>中的<code class="docutils literal notranslate"><span class="pre">SourceName</span></code>字段就是 <code class="docutils literal notranslate"><span class="pre">VideoSpec</span></code> 的<code class="docutils literal notranslate"><span class="pre">Name</span></code>字段。该Spec中
+未填写的 <code class="docutils literal notranslate"><span class="pre">DeviceId</span></code> 字段通过脚本调用 <strong><font color=#00CD00>GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/video/in</span></code></strong>
+接口，根据返回的响应体算法字段，匹配后自动填入该份MCS模板文件下发出去。</p></li>
+<li><p>本地管理需要给对应<code class="docutils literal notranslate"><span class="pre">DeviceId</span></code>的摄像头配置相应的算法。<code class="docutils literal notranslate"><span class="pre">VideoDirectorSpec</span></code>字段是导播Spec，
+其中的 <code class="docutils literal notranslate"><span class="pre">VideoSourceSet</span></code>需要添加对应的视频流。导播Spec中的 <code class="docutils literal notranslate"><span class="pre">FrameSpec</span></code>是导播策略内容，可以根据需求
+添加自己定制的策略，也可以通过 <strong><font color=#00CD00>GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/director-strategy</span></code></strong>
+接口获取我们提供的几个导播策略模板，模板内容可以参考第3章节的
+<a class="reference external" href="../../api/mediadevice.html#get-md-director-strategy">3.2.13 DemoMCS演示效果</a> 。</p></li>
+<li><p>利用 <code class="docutils literal notranslate"><span class="pre">VideoCodecSpecs</span></code> 将视频流经过编码后才能进行推拉流，录制等操作，其 <code class="docutils literal notranslate"><span class="pre">SourceName</span></code> 即相应视频流的
+<code class="docutils literal notranslate"><span class="pre">Name</span></code>字段。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RtcStreamSpec</span></code> 是通过声网方式进行视频推拉流，因为没有 <code class="docutils literal notranslate"><span class="pre">AudioSource</span></code> 和 <code class="docutils literal notranslate"><span class="pre">VideoSource</span></code>字段，所以
+只能进行音视频的拉流。下方听课端 <strong>MCS</strong> 里包含了 <code class="docutils literal notranslate"><span class="pre">VideoSource</span></code>字段,即听课段推出对应名字的视频流，字段的值
+就是相应视频流的 <code class="docutils literal notranslate"><span class="pre">Name</span></code> 字段。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RenderSpecs</span></code> 是用于视频回显的 Spec, 坐标字段<code class="docutils literal notranslate"><span class="pre">Geometry</span></code> 用于设置回显画面在显示屏的位置， <code class="docutils literal notranslate"><span class="pre">SourceName</span></code> 即对应的视频
+源的 <code class="docutils literal notranslate"><span class="pre">Name</span></code> 字段。坐标字段[x, y, width, height]，x是矩形框左上角在显示设备上的水平坐标，y是左上角在显示设备上的垂直坐标
+width是矩形框的水平长度，height是矩形框的垂直高度。不指定坐标字段时表示回显的视频流将占据整个屏幕。</p></li>
+<li><p>各个Spec字段的详细描述请阅读 <a class="reference external" href="../../FAQs/FAQs.html#media-agent-api">MA API 文档</a>。 <br><br></p></li>
+</ol>
+<ul class="simple">
+<li><p>听课端:</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1_Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MCS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1 student to push agora stream&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;VideoSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0400-0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;FrameRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;VideoCodecSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Codec&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Codec&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;h.264&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;iFrameInterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;idrInterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;BitRateMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vbr&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;BitRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4mbps&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;RtcStreamSpec&quot;</span><span class="p">:</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Push&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;Protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Agora&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;Channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1_Channel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;Identity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E1_Student&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;VideoSource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student_Codec&quot;</span><span class="w"></span>
+<span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;RenderSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Render_test&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0800-0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;CompositionSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;Geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">960</span><span class="p">,</span><span class="w"> </span><span class="mi">540</span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Student&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="p">]</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>说明：</p>
+<ol class="simple">
+<li><p>通过 <code class="docutils literal notranslate"><span class="pre">VideoSpec</span></code> 添加2个摄像头作为<strong>原始视频流</strong>，并且通过<code class="docutils literal notranslate"><span class="pre">VideoCodecSpecs</span></code>将原始视频流进行编码，随后作为
+声网推拉流Spec <code class="docutils literal notranslate"><span class="pre">RtcStreamSpec</span></code>中的<code class="docutils literal notranslate"><span class="pre">VideoSource</span></code>字段，实现视频的本地推流。</p></li>
+<li><p>各个Spec字段的详细描述请阅读 <a class="reference external" href="../../FAQs/FAQs.html#media-agent-api">MA API 文档</a>。 <br><br></p></li>
+</ol>
+</li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="4.1. S1E1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../S1E2/index.html" class="btn btn-neutral float-right" title="4.2. S1E2" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

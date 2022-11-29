@@ -1,0 +1,11 @@
+{
+    "Name": "Basic_MCS",
+    "SpecNames": [
+        "Remote_pull_1",
+        "Audio_pull_1",
+        "wpAudioPull_Play",
+        "Audio_pull_1_Codec",
+        "Remote_pull_1_Codec",
+        "Pull_Record"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Compose_Record",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "CompositorAudio_aac_Codec",
+            "Format": "mp4",
+            "Path": "Compose_Audio_(Dynamic)_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "Name": "S2E3_Push_Pull",
+    "Type": "MCS",
+    "Description": "S2E3_Push_Pull MCS,4F-4.1D1PAR-4.2T-4.3S",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Teacher",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+         "Name": "Teacher_Codec",
+         "SourceName": "Teacher",
+         "Codec": "h.264",
+         "iFrameInterval": 30,
+          "idrInterval": 30,
+          "BitRateMode": "vbr",
+          "BitRate": "4mbps",
+          "Profile": "main"
+      }
+    ],
+    "RtcStreamSpec":
+        {
+            "Name": "Agora_Push_Pull",
+            "Protocol": "Agora",
+            "Channel": "S2E3_Channel",
+            "Identity": "S2E3_Identity",
+            "VideoCodecName": "Teacher_Codec"
+        },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [0, 0, 960, 540],
+                    "SourceName": "Teacher"
+                },
+              {
+                    "Geometry": [0, 540, 960, 540],
+                    "SourceName": "Agora_Push_Pull"
+              }
+            ]
+        }
+    ]
+  }

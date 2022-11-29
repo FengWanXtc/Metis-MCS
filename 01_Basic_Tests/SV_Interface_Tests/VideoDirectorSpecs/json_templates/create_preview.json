@@ -1,0 +1,37 @@
+{
+    "Name": "metis_live_mcs",
+    "Type": "MCS",
+    "Description": "Pipeline task for metis live",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Teacher",
+            "DeviceId": "0400-0000"
+        },
+        {
+            "Name": "Student",
+            "DeviceId": "0403-0001"
+        },
+        {
+            "Name": "Computer",
+            "DeviceId": "0400-0002"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Teacher"
+                }
+            ]
+        }
+    ]
+}

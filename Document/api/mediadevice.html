@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.2 Mediadevice——mediadevicelib &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="3.3 Mediatask——mediatasklib" href="mediatask.html" />
+    <link rel="prev" title="3.1 Auth——authlib" href="auth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface/index.html">1.前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3.Scripts API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="auth.html">3.1 Auth——authlib</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2 Mediadevice——mediadevicelib</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-audio-in">3.2.1 get_md_audio_in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-audio-out">3.2.2 get_md_audio_out</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-video-in">3.2.3 get_md_video_in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-video-out">3.2.4 get_md_video_out</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-audio-in-capability">3.2.5 get_md_audio_in_capability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-audio-out-capability">3.2.6 get_md_audio_out_capability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-video-in-capability">3.2.7 get_md_video_in_capability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-video-out-capability">3.2.8 get_md_video_out_capability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-video-out-background">3.2.9 get_md_video_out_background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-list">3.2.10 get_md_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-audio-in-configuration">3.2.11 get_audio_in_configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-audio-out-configuration">3.2.12 get_audio_out_configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-md-director-strategy">3.2.13 get_md_director_strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mediatask.html">3.3 Mediatask——mediatasklib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function.html">3.4 Function——functionlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response.html">3.5 Response结构体说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios/index.html">4.Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">3.Scripts API</a> &raquo;</li>
+      <li>3.2 Mediadevice——mediadevicelib</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mediadevicemediadevicelib">
+<h1>3.2 Mediadevice——mediadevicelib<a class="headerlink" href="#mediadevicemediadevicelib" title="永久链接至标题"></a></h1>
+<section id="get-md-audio-in">
+<h2>3.2.1 get_md_audio_in<a class="headerlink" href="#get-md-audio-in" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_audio_in</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备上 <strong>音频输入</strong> 子信息系统，对应 MA 文档 <strong><font color=#00CD00>GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/audio/in</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1001_device_get_audio_in.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice audio in success! No error found!
+
++---------------------------+-----------+----------------------------+---------+
+| DeviceName                | DeviceId  | AliasName                  | Default |
++---------------------------+-----------+----------------------------+---------+
+| BuiltIn USB Audio Capture | 0103-0200 | BuiltInUSBAudioCapture_333 | True    |
++---------------------------+-----------+----------------------------+---------+ 
+
+&lt; BuiltIn USB Audio Capture &gt; Has SubDevices. List As Follow: 
++-----------+------------------------------------+-------------------------------------+
+| Id        | Name                               | Alias                               |
++-----------+------------------------------------+-------------------------------------+
+| 0120-0200 | Mobile Mic Audio Capture - BuiltIn | MobileMicAudioCapture-BuiltIn_19342 |
+| 0111-0200 | Mic2 Audio Capture - BuiltIn       | Mic2AudioCapture-BuiltIn_41454      |
++-----------+------------------------------------+-------------------------------------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-audio-out">
+<h2>3.2.2 get_md_audio_out<a class="headerlink" href="#get-md-audio-out" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_audio_out</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备上 <strong>音频输出</strong> 子信息系统，对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/audio/out</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1002_device_get_audio_out.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice audio out success! No error found!
+
++----------------------------+-----------+-------------------------------+---------+
+| DeviceName                 | DeviceId  | AliasName                     | Default |
++----------------------------+-----------+-------------------------------+---------+
+| HDMI Audio Playback        | 0200-0007 | HDMIAudioPlayback_1988        | False   |
+| BuiltIn USB Audio Playback | 0203-0200 | BuiltInUSBAudioPlayback_53583 | True    |
++----------------------------+-----------+-------------------------------+---------+ 
+
+&lt; BuiltIn USB Audio Playback &gt; Has SubDevices. List As Follow: 
++-----------+-----------------------------------------+------------------------------------------+
+| Id        | Name                                    | Alias                                    |
++-----------+-----------------------------------------+------------------------------------------+
+| 0210-0200 | Speaker Audio Playback - BuiltIn        | SpeakerAudioPlayback-BuiltIn_57039       |
+| 0220-0200 | Mobile Speaker Audio Playback - BuiltIn | MobileSpeakerAudioPlayback-BuiltIn_61039 |
++-----------+-----------------------------------------+------------------------------------------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-video-in">
+<h2>3.2.3 get_md_video_in<a class="headerlink" href="#get-md-video-in" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_video_in</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备上 <strong>视频输入</strong> 子信息系统，对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/video/in</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1003_device_get_video_in.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice video in success! No error found!
+
++------------+-----------+--------------+---------+----------------------+
+| DeviceName | DeviceId  | AliasName    | Default | Algorithms           |
++------------+-----------+--------------+---------+----------------------+
+| HDMI_CAM_1 | 0400-0000 | Teacher_HDMI | True    | [&#39;teacher tracking&#39;] |
+| HDMI_PC_IN | 0400-0002 | HDMI_IN      | False   | [&#39;ppt tracking&#39;]     |
+| IPC_CAM_1  | 0403-0001 | Student_IPC  | False   | [&#39;student tracking&#39;] |
++------------+-----------+--------------+---------+----------------------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-video-out">
+<h2>3.2.4 get_md_video_out<a class="headerlink" href="#get-md-video-out" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_video_out</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备上 <strong>视频输出</strong> 子信息系统，对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/video/out</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1004_device_get_video_out.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice video out success! No error found!
+
++--------------+-----------+--------------------+---------+
+| DeviceName   | DeviceId  | AliasName          | Default |
++--------------+-----------+--------------------+---------+
+| HDMI-Monitor | 0800-0000 | HDMI-Monitor_36646 | True    |
++--------------+-----------+--------------------+---------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-audio-in-capability">
+<h2>3.2.5 get_md_audio_in_capability<a class="headerlink" href="#get-md-audio-in-capability" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_audio_in_capability</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备 <strong>音频采集</strong> 的能力列表。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/audio/in/capability</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1005_device_get_audio_in_capability.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice audio in capability success! No error found!
+
++---------------+---------------+------------------------------------+---------+-----------------+------------------------+
+|    DeviceId   | ChannelsRange |          SampleRateRange           | Formats |     Layouts     |         Codecs         |
++---------------+---------------+------------------------------------+---------+-----------------+------------------------+
+|   0103-0200   |     [1, 2]    | [8000, 16000, 32000, 44100, 48000] |  S16LE  | [&#39;Interleaved&#39;] | [&#39;WAV&#39;, &#39;AAC&#39;, &#39;OPUS&#39;] |
+| CurrentConfig |       2       |               44100                |  S16LE  |   Interleaved   |                        |
++---------------+---------------+------------------------------------+---------+-----------------+------------------------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-audio-out-capability">
+<h2>3.2.6 get_md_audio_out_capability<a class="headerlink" href="#get-md-audio-out-capability" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_audio_out_capability</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备 <strong>音频播放</strong> 的能力列表。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/audio/out/capability</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1006_device_get_audio_out_capability.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice audio out capability success! No error found!
+
++-----------+---------------+----------+--------+
+| DeviceId  | ChannelsRange | Formats  | Codecs |
++-----------+---------------+----------+--------+
+| 0200-0007 | [1, 2]        | S16LE    | []     |
+|           |               | S16BE    |        |
+|           |               | F32LE    |        |
+|           |               | F32BE    |        |
+|           |               | S32LE    |        |
+|           |               | S32BE    |        |
+|           |               | S24LE    |        |
+|           |               | S24BE    |        |
+|           |               | S24_32LE |        |
+|           |               | S24_32BE |        |
+|           |               | U8       |        |
+| 0203-0200 | [1, 2]        | S16LE    | []     |
++-----------+---------------+----------+--------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-video-in-capability">
+<h2>3.2.7 get_md_video_in_capability<a class="headerlink" href="#get-md-video-in-capability" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_video_in_capability</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备 <strong>视频采集</strong> 的能力列表。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/video/in/capability</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1007_device_get_video_in_capability.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice video in capability success! No error found!
+
++-------------------------+
+|          Codecs         |
++-------------------------+
+| [&#39;H264&#39;, &#39;H265&#39;, &#39;VP9&#39;] |
++-------------------------+
++-----------+-----------+----------+---------------+---------+--------+-------------------------+
+|  DeviceId | FormatSet | [ Format | ResolutionSet | [ Width | Height |      FrameRate ] ]      |
++-----------+-----------+----------+---------------+---------+--------+-------------------------+
+| 0400-0000 |           |   UYVY   |               |   3840  |  2160  |           [30]          |
+|           |           |          |               |   1920  |  1080  |       [60, 50, 30]      |
+| 0400-0001 |           |   UYVY   |               |   3840  |  2160  |           [30]          |
+|           |           |          |               |   1920  |  1080  |       [60, 50, 30]      |
+| 0400-0002 |           |   UYVY   |               |   3840  |  2160  |           [30]          |
+|           |           |          |               |   1920  |  1080  |       [60, 50, 30]      |
+| 0401-2310 |           |   YUY2   |               |   640   |  480   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   320   |  180   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   480   |  270   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   640   |  360   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   800   |  448   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   800   |  600   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   1024  |  576   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   1280  |  720   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   1920  |  1080  | [30, 25, 20, 15, 10, 5] |
+|           |           |   NV12   |               |   640   |  480   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   320   |  180   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   480   |  270   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   640   |  360   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   800   |  448   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   800   |  600   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   1024  |  576   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   1280  |  720   | [30, 25, 20, 15, 10, 5] |
+|           |           |          |               |   1920  |  1080  | [30, 25, 20, 15, 10, 5] |
+| 0403-0001 |           |   H264   |               |   1920  |  1080  |       [25, 30, 60]      |
+|           |           |          |               |   3840  |  2160  |       [25, 30, 60]      |
+|           |           |   H265   |               |   1920  |  1080  |       [25, 30, 60]      |
+|           |           |          |               |   3840  |  2160  |       [25, 30, 60]      |
+| 0403-0002 |           |   H264   |               |   1920  |  1080  |       [25, 30, 60]      |
+|           |           |          |               |   3840  |  2160  |       [25, 30, 60]      |
+|           |           |   H265   |               |   1920  |  1080  |       [25, 30, 60]      |
+|           |           |          |               |   3840  |  2160  |       [25, 30, 60]      |
+| 0403-0003 |           |   H264   |               |   1920  |  1080  |       [25, 30, 60]      |
+|           |           |          |               |   3840  |  2160  |       [25, 30, 60]      |
+|           |           |   H265   |               |   1920  |  1080  |       [25, 30, 60]      |
+|           |           |          |               |   3840  |  2160  |       [25, 30, 60]      |
++-----------+-----------+----------+---------------+---------+--------+-------------------------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-video-out-capability">
+<h2>3.2.8 get_md_video_out_capability<a class="headerlink" href="#get-md-video-out-capability" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_video_out_capability</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备 <strong>视频输出</strong> 的能力列表。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/video/out/capability</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1008_device_get_video_out_capability.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Mediadevice video out capability success!No error found!
+
++-----------+-------+--------+
+| DeviceId  | Width | Height |
++-----------+-------+--------+
+| 0800-0000 | 2560  | 1440   |
++-----------+-------+--------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-video-out-background">
+<h2>3.2.9 get_md_video_out_background<a class="headerlink" href="#get-md-video-out-background" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_video_out_background</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 获取边缘设备 <strong>视频输出</strong> 子系统的永久背景设置。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/video/out/background</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1009_device_get_video_out_background.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get video out background success! No error found!
+
++-----------+------------+
+| DeviceId  | Background |
++-----------+------------+
+| 0800-0000 | null       |
++-----------+------------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-list">
+<h2>3.2.10 get_md_list<a class="headerlink" href="#get-md-list" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_list</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 用于获取边缘设备上所有 <strong>音、视频输入</strong> 子系统信息。对应 MA 文档 <strong><font color=#00CD00>GET
+</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/list</span></code></strong> 接口。该接口调用相当于一次调用 <strong><font color=#00CD00>GET
+</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">mediadevice/audio/in</span></code></strong>,<strong><font color=#00CD00>GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">mediadevice/audio/out</span></code></strong>,<strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">mediadevice/video/in</span></code></strong>,<strong><font color=#00CD00>GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">mediadevice/video/out</span></code></strong> 四个接口。</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1010_device_get_md_list.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get Device List success!No error found!
+
+Audio In Devices As Follow.
++---------------------------+-----------+------------------------------+---------+
+| DeviceName                | DeviceId  | AliasName                    | Default |
++---------------------------+-----------+------------------------------+---------+
+| BuiltIn USB Audio Capture | 0103-0200 | BuiltInUSBAudioCapture_33376 | True    |
++---------------------------+-----------+------------------------------+---------+ 
+
+&lt; BuiltIn USB Audio Capture &gt; Has SubDevices. List As Follow: 
++-----------+------------------------------------+-------------------------------------+
+| Id        | Name                               | Alias                               |
++-----------+------------------------------------+-------------------------------------+
+| 0111-0200 | Mic2 Audio Capture - BuiltIn       | Mic2AudioCapture-BuiltIn_20480      |
+| 0120-0200 | Mobile Mic Audio Capture - BuiltIn | MobileMicAudioCapture-BuiltIn_26976 |
++-----------+------------------------------------+-------------------------------------+ 
+
+******************************************* Split Line **********************************************
+
+Audio Out Devices As Follow.
++----------------------------+-----------+-------------------------------+---------+
+| DeviceName                 | DeviceId  | AliasName                     | Default |
++----------------------------+-----------+-------------------------------+---------+
+| BuiltIn USB Audio Playback | 0203-0200 | BuiltInUSBAudioPlayback_33088 | True    |
+| HDMI Audio Playback        | 0200-0007 | HDMIAudioPlayback_13248       | False   |
++----------------------------+-----------+-------------------------------+---------+ 
+
+&lt; BuiltIn USB Audio Playback &gt; Has SubDevices. List As Follow: 
++-----------+-----------------------------------------+------------------------------------------+
+| Id        | Name                                    | Alias                                    |
++-----------+-----------------------------------------+------------------------------------------+
+| 0210-0200 | Speaker Audio Playback - BuiltIn        | SpeakerAudioPlayback-BuiltIn_49088       |
+| 0220-0200 | Mobile Speaker Audio Playback - BuiltIn | MobileSpeakerAudioPlayback-BuiltIn_53632 |
++-----------+-----------------------------------------+------------------------------------------+ 
+
+******************************************* Split Line **********************************************
+
+Video In Devices As Follow.
++------------+-----------+-------------+---------+----------------------+
+| DeviceName | DeviceId  | AliasName   | Default | Algorithms           |
++------------+-----------+-------------+---------+----------------------+
+| IPC_CAM_1  | 0403-0001 | Student_IPC | False   | [&#39;student tracking&#39;] |
+| IPC_CAM_2  | 0403-0002 | Teacher_IPC | False   | [&#39;teacher tracking&#39;] |
++------------+-----------+-------------+---------+----------------------+ 
+
+******************************************* Split Line **********************************************
+
+Video Out Devices As Follow.
++--------------+-----------+--------------------+---------+
+| DeviceName   | DeviceId  | AliasName          | Default |
++--------------+-----------+--------------------+---------+
+| HDMI-Monitor | 0800-0000 | HDMI-Monitor_25664 | True    |
++--------------+-----------+--------------------+---------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-audio-in-configuration">
+<h2>3.2.11 get_audio_in_configuration<a class="headerlink" href="#get-audio-in-configuration" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_audio_in_configuration</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 获取边缘设备 <strong>音频输入</strong> 子系统的永久配置信息。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/audio/in/configuration</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1011_device_get_audio_in_cfg.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get audio in configuration success! No error found!
+
++-----------+--------+-------+--------------------+
+| DeviceId  | Volume | Mute  | LocalAmplification |
++-----------+--------+-------+--------------------+
+| 0103-0200 |   85   | False |       False        |
++-----------+--------+-------+--------------------+ 
+
+DeviceId &lt; 0103-0200 &gt; Has SubDevices. List As Follow: 
++-----------+--------+-------+
+| Id        | Volume | Mute  |
++-----------+--------+-------+
+| 0120-0200 |   70   | False |
+| 0111-0200 |   70   | False |
++-----------+--------+-------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-audio-out-configuration">
+<h2>3.2.12 get_audio_out_configuration<a class="headerlink" href="#get-audio-out-configuration" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_audio_out_configuration</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 获取边缘设备 <strong>音频输出</strong> 子系统的永久配置信息。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/audio/out/configuration</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1012_device_get_audio_out_cfg.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get audio out configuration success! No error found!
+
++-----------+--------+-------+
+| DeviceId  | Volume | Mute  |
++-----------+--------+-------+
+| 0200-0007 |   70   | False |
+| 0203-0200 |   85   | False |
++-----------+--------+-------+ 
+
+DeviceId &lt; 0203-0200 &gt; Has SubDevices. List As Follow: 
++-----------+--------+-------+
+| Id        | Volume | Mute  |
++-----------+--------+-------+
+| 0210-0200 |   70   | False |
+| 0220-0200 |   70   | False |
++-----------+--------+-------+
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="get-md-director-strategy">
+<h2>3.2.13 get_md_director_strategy<a class="headerlink" href="#get-md-director-strategy" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>函数声明:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">get_md_director_strategy</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="n">HOST_IP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>描述： 获取边缘设备当前存储的导播策略信息。对应 MA 文档 <strong><font color=#00CD00>
+GET</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/director-strategy</span></code></strong> 接口</p></li>
+<li><p>输入参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">token</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">鉴权码</td>
+<td style="text-align: center;">缺省为空，目前未使能</td>
+</tr>
+<tr>
+<td style="text-align: center;">ip</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">发送请求的小站IP</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>输出参数说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">参数名称</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">描述</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response</td>
+<td style="text-align: center;">Response</td>
+<td style="text-align: center;">响应体特殊结构</td>
+<td style="text-align: center;">参考响应体描述<a href="/api/response.html">Response</a></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>DemoMCS 演示效果</p>
+<p>脚本：DemoMCS\01_Basic_Tests\MA_API_Basic_Tests\1013_device_get_director_strategy.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get director strategy success! 
+
+[Scenario] &lt;Teacher_With_Blackboard&gt;  Template is &lt;TEMPLATE_ONE_FRAME&gt;. Strategy As follows: 
+
++----------------+----------+---------------------+-------+------+---------+
+|     State      | Priority |     VideoSource     | Delay | Hold | Timeout |
++----------------+----------+---------------------+-------+------+---------+
+|    Stand_N     |    1     |       Student       |   0   |  6   |   180   |
+|    Stand_1     |    2     |   Student_Tracking  |   0   |  6   |   180   |
+| PptMouseAction |    3     |  Computer_Tracking  |   0   |  15  |   3600  |
+|      Many      |    4     |   Teacher_Tracking  |   0   |  6   |   3600  |
+|     Write      |    6     | Blackboard_Tracking |   0   |  6   |   3600  |
+|      Move      |    7     |   Teacher_Tracking  |   0   |  6   |   3600  |
+|     Stand      |    8     |   Teacher_Tracking  |   0   |  6   |   3600  |
+|      Out       |    9     |       Teacher       |   0   |  6   |   3600  |
+|      Sit       |    10    |       Student       |   0   |  6   |   3600  |
+|   NoTeacher    |    11    |       Teacher       |   0   |  6   |   3600  |
+|     Others     |    12    |       Teacher       |   0   |  6   |   3600  |
++----------------+----------+---------------------+-------+------+---------+ 
+
+**********************************************************************************************
+
+[Scenario] &lt;Teacher_Without_Blackboard&gt;  Template is &lt;TEMPLATE_ONE_FRAME&gt;. Strategy As follows: 
+
++----------------+----------+-------------------+-------+------+---------+
+|     State      | Priority |    VideoSource    | Delay | Hold | Timeout |
++----------------+----------+-------------------+-------+------+---------+
+|    Stand_N     |    1     |      Student      |   0   |  6   |   180   |
+|    Stand_1     |    2     |  Student_Tracking |   0   |  6   |   180   |
+| PptMouseAction |    3     | Computer_Tracking |   0   |  15  |   3600  |
+|      Many      |    4     |  Teacher_Tracking |   0   |  6   |   3600  |
+|     Write      |    6     |  Teacher_Tracking |   0   |  6   |   3600  |
+|      Move      |    7     |  Teacher_Tracking |   0   |  6   |   3600  |
+|     Stand      |    8     |  Teacher_Tracking |   0   |  6   |   3600  |
+|      Out       |    9     |      Teacher      |   0   |  6   |   3600  |
+|      Sit       |    10    |      Student      |   0   |  6   |   3600  |
+|   NoTeacher    |    11    |      Teacher      |   0   |  6   |   3600  |
+|     Others     |    12    |      Teacher      |   0   |  6   |   3600  |
++----------------+----------+-------------------+-------+------+---------+ 
+
+**********************************************************************************************
+
+[Scenario] &lt;Student_With_Blackboard&gt;  Template is &lt;TEMPLATE_ONE_FRAME&gt;. Strategy As follows: 
+
++----------------+----------+---------------------+-------+------+---------+
+|     State      | Priority |     VideoSource     | Delay | Hold | Timeout |
++----------------+----------+---------------------+-------+------+---------+
+|    Stand_N     |    1     |       Student       |   0   |  6   |   180   |
+|    Stand_1     |    2     |   Student_Tracking  |   0   |  6   |   180   |
+| PptMouseAction |    3     |  Computer_Tracking  |   0   |  15  |   3600  |
+|     Write      |    5     | Blackboard_Tracking |   0   |  6   |   3600  |
+|      Move      |    6     |   Teacher_Tracking  |   0   |  6   |   3600  |
+|     Stand      |    7     |   Teacher_Tracking  |   0   |  6   |   3600  |
+|      Many      |    8     |       Teacher       |   0   |  6   |   3600  |
+|      Sit       |    9     |       Student       |   0   |  6   |   3600  |
+|      Out       |    10    |       Teacher       |   0   |  6   |   3600  |
+|   NoTeacher    |    11    |       Teacher       |   0   |  6   |   3600  |
+|     Others     |    12    |       Teacher       |   0   |  6   |   3600  |
++----------------+----------+---------------------+-------+------+---------+ 
+
+**********************************************************************************************
+
+[Scenario] &lt;Student_Without_Blackboard&gt;  Template is &lt;TEMPLATE_ONE_FRAME&gt;. Strategy As follows: 
+
++----------------+----------+-------------------+-------+------+---------+
+|     State      | Priority |    VideoSource    | Delay | Hold | Timeout |
++----------------+----------+-------------------+-------+------+---------+
+|    Stand_N     |    1     |      Student      |   0   |  6   |   180   |
+|    Stand_1     |    2     |  Student_Tracking |   0   |  6   |   180   |
+| PptMouseAction |    3     | Computer_Tracking |   0   |  15  |   3600  |
+|     Write      |    5     |  Teacher_Tracking |   0   |  6   |   3600  |
+|      Move      |    6     |  Teacher_Tracking |   0   |  6   |   3600  |
+|     Stand      |    7     |  Teacher_Tracking |   0   |  6   |   3600  |
+|      Many      |    8     |      Teacher      |   0   |  6   |   3600  |
+|      Sit       |    9     |      Student      |   0   |  6   |   3600  |
+|      Out       |    10    |      Teacher      |   0   |  6   |   3600  |
+|   NoTeacher    |    11    |      Teacher      |   0   |  6   |   3600  |
+|     Others     |    12    |      Teacher      |   0   |  6   |   3600  |
++----------------+----------+-------------------+-------+------+---------+ 
+
+**********************************************************************************************
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="auth.html" class="btn btn-neutral float-left" title="3.1 Auth——authlib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="mediatask.html" class="btn btn-neutral float-right" title="3.3 Mediatask——mediatasklib" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

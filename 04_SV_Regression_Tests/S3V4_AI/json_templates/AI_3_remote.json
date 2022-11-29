@@ -1,0 +1,28 @@
+{
+    "Name": "Agora_Four_Frames_Teacher",
+    "Type": "MCS",
+    "Description": "Layout(left->right, top->down): director (1 frame with 3 cameras), teacher, student, remote 2",
+    "Version": 0.1,
+    "RemoteSpecs": [
+        {
+            "Name": "Remote_1",
+            "Codec": "Unknown",
+            "URI": "agora://S3V4_test/",
+            "PlaySpec":{
+            "DeviceName": "xxBuilt-in Audio Playback Stereo",
+            "DeviceId": "xx0202-0200",
+            "PlayDeviceName": "DefaultSpeaker",
+            "Volume": 50
+        }
+        }
+    ],
+    "PreviewSpec": {
+        "Template": "four frame",
+        "Layout": [
+            {
+                "Position": 4,
+                "SourceName": "Remote_1"
+            }
+        ]
+    }
+}

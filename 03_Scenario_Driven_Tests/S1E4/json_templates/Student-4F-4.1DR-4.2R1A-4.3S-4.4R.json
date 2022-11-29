@@ -1,0 +1,128 @@
+{
+    "Name": "S1E4_Student",
+    "Type": "MCS",
+    "Description": "S1E4_Student MCS,4F-4.1DR-4.2R1A-4.3S-4.4R",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Student",
+            "DeviceId": "",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoAiSpecs": [
+        {
+            "Name": "Student_Ai",
+            "SourceName": "Student",
+            "Algorithm": "Student Tracking",
+            "ProcessRate": 30,
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoDirectorSpec": {
+        "Name": "Director",
+        "Width": 1920,
+        "Height": 1080,
+        "FrameRate": 30,
+        "VideoSourceSet":["Student", "Student_Ai"],
+        "FrameSpec": {
+            "Template": "single frame",
+            "LayoutSpecs": [
+                {
+                    "Position": 1,
+                    "SelectionSpecs": [
+                        {
+                            "Priority": 1,
+                            "VideoSource": "Student_Ai",
+                            "State": "Stand_1",
+                            "Delay": 2,
+                            "Timeout": 2700
+                        },
+                        {
+                            "Priority": 9,
+                            "VideoSource": "Student",
+                            "State": "Stand_N",
+                            "Delay": 2,
+                            "Timeout": 600
+                        },
+                        {
+                            "Priority": 10,
+                            "VideoSource": "Student",
+                            "State": "Sit",
+                            "Delay": 2,
+                            "Timeout": 600
+                        },
+                        {
+                            "Priority": 11,
+                            "VideoSource": "Student",
+                            "State": "Others",
+                            "Delay": 0,
+                            "Timeout": 600
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "VideoCodecSpecs": [
+        {
+            "Name": "Director_Codec",
+            "SourceName": "Director",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Director_Record",
+            "VideoCodecName": "Director_Codec",
+            "Format": "mp4",
+            "Path": "/home/user/Videos/eswin/S1E4_Student_Record.mp4"
+        }
+    ],
+    "CodecStreamSpecs": [
+        {
+            "Name": "CodecStreamSpec_pull",
+            "VideoCodec": "h.264",
+            "URI": "rtsp://10.12.224.57/ch2"
+        }
+    ],
+    "RtcStreamSpec":
+    {
+        "Name": "Director_pull",
+        "Protocol": "Agora",
+        "Channel": "S1E4_Channel",
+        "Identity": "S1E4_Student"
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [0, 0, 960, 540],
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [960, 0, 960, 540],
+                    "SourceName": "Director_pull"
+                },
+                {
+                    "Geometry": [0, 540, 960, 540],
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [960, 540, 960, 540],
+                    "SourceName": "CodecStreamSpec_pull"
+                }
+            ]
+        }
+    ]
+  }

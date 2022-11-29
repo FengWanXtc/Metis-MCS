@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.Scripts API &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="3.1 Auth——authlib" href="auth.html" />
+    <link rel="prev" title="1.1 小站IP地址设置" href="../environment/environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface/index.html">1.前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3.Scripts API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auth.html">3.1 Auth——authlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html">3.2 Mediadevice——mediadevicelib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatask.html">3.3 Mediatask——mediatasklib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function.html">3.4 Function——functionlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response.html">3.5 Response结构体说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios/index.html">4.Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>3.Scripts API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scripts-api">
+<h1>3.Scripts API<a class="headerlink" href="#scripts-api" title="永久链接至标题"></a></h1>
+<p>操作系统：Windows/Linux</p>
+<p>开发语言：Python 3.7 以上版本</p>
+<p>引入模块库： requests、prettytable、paramiko</p>
+<p>脚本存放路径： /home/user/EST/MCSScripts/DemoMCS_V0.3/</p>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">3.1 Auth——authlib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auth.html#post-auth">3.1.1 post_auth</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mediadevice.html">3.2 Mediadevice——mediadevicelib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-audio-in">3.2.1 get_md_audio_in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-audio-out">3.2.2 get_md_audio_out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-video-in">3.2.3 get_md_video_in</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-video-out">3.2.4 get_md_video_out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-audio-in-capability">3.2.5 get_md_audio_in_capability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-audio-out-capability">3.2.6 get_md_audio_out_capability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-video-in-capability">3.2.7 get_md_video_in_capability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-video-out-capability">3.2.8 get_md_video_out_capability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-video-out-background">3.2.9 get_md_video_out_background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-list">3.2.10 get_md_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-audio-in-configuration">3.2.11 get_audio_in_configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-audio-out-configuration">3.2.12 get_audio_out_configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html#get-md-director-strategy">3.2.13 get_md_director_strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mediatask.html">3.3 Mediatask——mediatasklib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function.html">3.4 Function——functionlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="response.html">3.5 Response结构体说明</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../environment/environment.html" class="btn btn-neutral float-left" title="1.1 小站IP地址设置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="auth.html" class="btn btn-neutral float-right" title="3.1 Auth——authlib" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

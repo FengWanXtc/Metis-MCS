@@ -1,0 +1,22 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "VideoTransformSpecs": [
+        {
+            "Name": "VideoTransform",
+            "SourceName": "Director",
+            "Operation": "Scale",
+            "Width": 480,
+            "Height": 240
+        }
+    ],
+    "ServerSpecs": [
+        {
+            "Name": "VideoTransform_Server",
+            "VideoCodecName": "VideoTransform_Codec",
+            "URI": "tcp://0.0.0.0:6671"
+        }
+    ]
+}

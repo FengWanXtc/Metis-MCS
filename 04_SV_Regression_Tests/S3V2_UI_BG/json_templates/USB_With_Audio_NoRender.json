@@ -1,0 +1,61 @@
+{
+    "Name": "USB_0",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "AudioSpecs": [
+        {
+            "Name": "AudioInDefault",
+            "SampleRate": 44100,
+            "Channels": 2
+        }
+    ],
+    "AudioCodecSpecs": [
+        {
+            "Name": "AudioInDefault_pcm_Codec",
+            "SourceName": "AudioInDefault",
+            "Codec": "pcm"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume": 75,
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ],
+    "VideoSpecs": [
+        {
+            "Name": "USB",
+            "DeviceId": "0403-2310",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "YUY2"
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "USB_Codec",
+            "SourceName": "USB",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "usb",
+        "AudioCodecName": "AudioInDefault_pcm_Codec",
+        "VideoCodecName": "USB_Codec"
+    }
+}

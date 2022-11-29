@@ -1,0 +1,15 @@
+{
+    "Name": "Director_push",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "RTMP_Pull",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "VideoCodec": "h.264",
+            "URI": "rtmp://0.0.0.0/metis/test"
+        }
+    ]
+}

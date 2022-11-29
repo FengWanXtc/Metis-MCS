@@ -1,0 +1,35 @@
+{
+  "Name": "S2E4_RTSP_PUSH",
+  "Type": "MCS",
+  "Description": "test mcs for VT_HDMI_RTSP_PUSH_H265",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "HDMI_CAM",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    }
+  ],
+  "VideoCodecSpecs": [
+    {
+      "Name": "HDMI_Codec",
+      "SourceName": "HDMI_CAM",
+      "Codec": "h.264",
+      "iFrameInterval": 30,
+      "idrInterval": 30,
+      "BitRateMode": "vbr",
+      "BitRate": "4mbps",
+      "Profile": "main"
+    }
+  ],
+  "ServerSpecs":[
+    {
+      "Name": "Teacher_Server",
+      "VideoCodecName": "HDMI_Codec",
+      "URI":"rtsp://:8554/metis/ch1"
+    }
+  ]
+}

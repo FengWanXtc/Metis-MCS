@@ -1,0 +1,56 @@
+{
+    "Name": "VideoComposeSpecTest",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "VideoComposeSpecs": [
+        {
+            "Name": "Compositor",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        1344,
+                        1080
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        1344,
+                        0,
+                        576,
+                        360
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        1344,
+                        360,
+                        576,
+                        360
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [
+                        1344,
+                        720,
+                        576,
+                        360
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Computer"
+                }
+            ]
+        }
+    ]
+}

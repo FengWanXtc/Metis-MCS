@@ -1,0 +1,40 @@
+{
+    "Name": "Teacher_Record",
+    "Type": "MCS",
+    "Description": "Restart Teacher,Student,Director,Computer Record",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Teacher",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "UYVY"
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Teacher_h264_Codec",
+            "SourceName": "Teacher",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Teacher_Record",
+            "VideoCodecName": "Teacher_h264_Codec",
+            "Format": "mp4",
+            "Path": "Teacher_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

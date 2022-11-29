@@ -1,0 +1,30 @@
+{
+  "Name": "Basic_MCS",
+  "Type": "MCS",
+  "Description": "The four-channel AI scenario Basic MCS",
+  "Version": "0.3",
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "DeviceId": "0800-0000",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": "__preview__"
+        },
+        {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "Remote_pull_1"
+        },
+        {
+          "Geometry": [0, 540, 960, 540],
+          "SourceName": "Remote_pull_2"
+        },
+        {
+          "Geometry": [960, 540, 960, 540],
+          "SourceName": "Remote_pull_3"
+        }
+      ]
+    }
+  ]
+}

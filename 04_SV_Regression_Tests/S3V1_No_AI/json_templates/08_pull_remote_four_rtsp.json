@@ -1,0 +1,51 @@
+{
+  "Name": "RTSP_Pull_4F",
+  "Type": "MCS",
+  "Description": "Pull Remote MCS Template",
+  "Version": "0.3",
+  "CodecStreamSpecs": [
+    {
+        "Name": "IPC01",
+        "VideoCodec": "h.264",
+        "URI": "rtsp://10.12.224.48/ch2"
+    },
+        {
+        "Name": "IPC02",
+        "VideoCodec": "h.264",
+        "URI": "rtsp://10.12.224.56/ch2"
+    },
+        {
+        "Name": "IPC03",
+        "VideoCodec": "h.264",
+        "URI": "rtsp://10.12.224.57/ch1"
+    },
+        {
+        "Name": "IPC04",
+        "VideoCodec": "h.264",
+        "URI": "rtsp://10.12.224.57/ch2"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": "IPC01"
+        },
+                {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "IPC02"
+        },
+                {
+          "Geometry": [0, 540, 960, 540],
+          "SourceName": "IPC03"
+        },
+                {
+          "Geometry": [960, 540, 960, 540],
+          "SourceName": "IPC04"
+        }
+      ]
+    }
+  ]
+}

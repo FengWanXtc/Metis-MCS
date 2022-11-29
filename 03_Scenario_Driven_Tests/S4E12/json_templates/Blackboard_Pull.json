@@ -1,0 +1,53 @@
+{
+    "Name": "Pull",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Remote_pull_Record",
+            "VideoCodecName": "Remote_pull_h264_Codec",
+            "Format": "mp4",
+            "Path": "WP1_Remote_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Remote_pull_h264_Codec",
+            "SourceName": "Remote_pull",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "CodecStreamSpecs": [
+        {
+            "Name": "Remote_pull",
+            "VideoCodec": "h.264",
+            "URI": "tcp://0.0.0.0:6671"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull"
+                }
+            ]
+        }
+    ]
+}

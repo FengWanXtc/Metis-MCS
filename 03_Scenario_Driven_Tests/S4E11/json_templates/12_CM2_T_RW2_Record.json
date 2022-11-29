@@ -1,0 +1,36 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Director 3 Remote Pull Template",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Compositor_Record",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "CompositorAudio_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E11_Compositor_RemA_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Compositor_B_Record",
+            "VideoCodecName": "Compositor_B_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E11_Compositor_LocB_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "TcpVideoB_Record",
+            "VideoCodecName": "TcpVideoB_pull_h264_Codec",
+            "AudioCodecName": "TcpAudioB_pull_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E11_TcpVideoB_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "Teacher_Record",
+            "VideoCodecName": "Teacher_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E11_Teacher_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "Name": "Director_push",
+    "Type": "MCS",
+    "Description": "Far-End Director Push Video And Audio",
+    "Version": "0.3",
+    "VideoCodecSpecs": [
+        {
+            "Name": "Teacher_h264_Codec",
+            "SourceName": "Teacher",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Student_h264_Codec",
+            "SourceName": "Student",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "ServerSpecs": [
+        {
+            "Name": "Teacher_Server",
+            "VideoCodecName": "Teacher_h264_Codec",
+            "URI": "wp://10.12.224.135:6675"
+        },
+        {
+            "Name": "Teacher_Audio_Server",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "URI": "wp://10.12.224.135:6676"
+        },
+        {
+            "Name": "Student_Server",
+            "VideoCodecName": "Student_h264_Codec",
+            "URI": "wp://10.12.224.135:6677"
+        },
+        {
+            "Name": "Student_Audio_Server",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "URI": "wp://10.12.224.135:6678"
+        }
+    ]
+}

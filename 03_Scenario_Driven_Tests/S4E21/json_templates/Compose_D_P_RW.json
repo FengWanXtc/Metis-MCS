@@ -1,0 +1,62 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "VideoComposeSpecs": [
+        {
+            "Name": "Compositor",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        1920,
+                        1080
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 2,
+                    "SourceName": "Computer"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 2,
+                    "SourceName": "TcpVideoA_pull"
+                }
+            ]
+        }
+    ],
+    "AudioComposeSpecs": [
+        {
+            "Name": "CompositorAudio",
+            "SampleRate": 48000,
+            "MixerSpec": [
+                {
+                    "SourceName": "AudioInDefault",
+                    "Volume": 70
+                },
+                {
+                    "SourceName": "TcpAudioA_pull",
+                    "Volume": 70
+                }
+            ]
+        }
+    ]
+}

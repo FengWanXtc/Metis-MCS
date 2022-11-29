@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.1. 概述 &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="2.环境配置" href="../environment/index.html" />
+    <link rel="prev" title="1.前言" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1.前言</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. 概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.2. 目的</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.3. 脚本目录结构安排</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-tests">1.3.1. 01_Basic_Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-driven-tests">1.3.2. 02_Data_Driven_Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-driven-tests">1.3.3. 03_Scenario_Driven_Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sv-regression-tests">1.3.4. 04_SV_Regression_Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.4. 架构</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">3.Scripts API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios/index.html">4.Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">1.前言</a> &raquo;</li>
+      <li>1.1. 概述</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>1.1. 概述<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<p>DemoMCS是演示如何使用MA/MCS API触发Metis Station进行各种工作及其组合的Python脚本。
+与MCS定义一样，它可以使Metis Station进行捕获、AI处理、记录、解码、编码、推/拉流、回放和预览。</p>
+<p>DemoMCS不仅是一个面向半自动测试套件的演示脚本，也是一个帮助最终用户(RD或Tester)
+理解如何使用ESWIN MCS restful API和MA API的应用程序。</p>
+<p>本文作为 DemoMCS 的使用手册，目标是为了满足客户了解 <strong>MA API</strong> 及
+<strong>MCS</strong> 的使用，观看 Metis Station 功能演示，同时辅助进行功能测试的需求.
+为了使用MA接口，我们需要借助Postman工具，同时还要花费很多时间去理解以及编写下发的MCS
+Json文件，借助DemoMCS脚本与该手册，可以快速了解 <strong>MA API</strong> 与
+<strong>MCS</strong> 的功能。</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<p>如果为了快速上手 <strong>MCS</strong> ，可以直接阅读第4章节 <a class="reference internal" href="../scenarios/index.html"><span class="doc">Scenario</span></a> 。
+如果想了解 <strong>MA API</strong> 并按照自己方式对接口进行封装使用，可以参考第3章节 <a class="reference internal" href="../api/index.html"><span class="doc">Scripts API</span></a> ，
+<strong>MA API</strong> 文档可以在第5章节 <a class="reference internal" href="../FAQs/index.html"><span class="doc">FAQs</span></a> 下载。</p>
+</div>
+</section>
+<section id="id2">
+<h1>1.2. 目的<a class="headerlink" href="#id2" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p>1.当 Metis Live
+遇到问题阻塞，新版本未发布，作为替代Postman调试的工具。同时也是为了丰富
+Metis Live， 作为一种补充，使用不同的MA API。</p></li>
+<li><p>2.可以提供给客户展示，以故事脚本的形式调用MA
+API，通过不同的组合（AI、录制、宫格切换等）体现MA
+API的优越性与灵活性。</p></li>
+<li><p>3.方便SV
+Team对新版本进行快速的冒烟测试，及时发现新版本引入的问题，同时也包含了很多脚本用于回归性测试，
+极大缩短了利用Postman去一个个下发MCS进行测试的时间。</p></li>
+</ul>
+</section>
+<section id="id3">
+<h1>1.3. 脚本目录结构安排<a class="headerlink" href="#id3" title="永久链接至标题"></a></h1>
+<figure class="align-default">
+<img alt="directory" src="../_images/directoryNew.png" />
+</figure>
+<section id="basic-tests">
+<h2>1.3.1. 01_Basic_Tests<a class="headerlink" href="#basic-tests" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p><strong>MA_API_Basic_Tests</strong> : 该目录下存放基础的接口API测试，每个脚本与
+<strong>Libraries</strong> 目录下 <code class="docutils literal notranslate"><span class="pre">mediadevicelib.py</span></code>
+里的接口函数一一对应，将返回的结果以表格的形式打印出来。 详情可参考 <a class="reference internal" href="../api/mediadevice.html"><span class="doc">3.2章节</span></a>
+DemoMCS演示效果。</p></li>
+<li><p><strong>SV_Interface_Tests</strong> : 该目录下存放的是对于 <strong>MA</strong> 各个接口 以及
+<strong>MCS</strong> 各个Spec 的拓展测试，包含接口并发，MCS并发等内容。</p></li>
+</ul>
+</section>
+<section id="data-driven-tests">
+<h2>1.3.2. 02_Data_Driven_Tests<a class="headerlink" href="#data-driven-tests" title="永久链接至标题"></a></h2>
+<p>数据驱动测试，通过下发错误的消息体，或者修改外设环境依次执行相应步骤，查看对应接口返回的内容。</p>
+</section>
+<section id="scenario-driven-tests">
+<h2>1.3.3. 03_Scenario_Driven_Tests<a class="headerlink" href="#scenario-driven-tests" title="永久链接至标题"></a></h2>
+<p>故事驱动型测试，S1E1 即 Scenario 1 Episode 1
+，每一个目录下包含若干个Action脚本文件，将各个Action 整合一起执行的 <code class="docutils literal notranslate"><span class="pre">Act_Story.py</span></code> 脚本，以及
+一个用于存放脚本需要下发的MCS模板目录（json_templates目录)。
+详细内容可以看第4章节 <a class="reference internal" href="../scenarios/index.html"><span class="doc">Scenario</span></a> 的内容</p>
+</section>
+<section id="sv-regression-tests">
+<h2>1.3.4. 04_SV_Regression_Tests<a class="headerlink" href="#sv-regression-tests" title="永久链接至标题"></a></h2>
+<p>由SV
+Team设计的针对Story场景的回归测试内容。每个测试脚本针对单个功能进行一系列测试，
+测试广度相比于 <strong>03_Scenario_Driven_Tests</strong> 有所欠缺，但是深度有所加强。
+提前准备了下发的MCS模板，通过脚本带参数的形式修改下发的MCS模板内容，达到测试目的。
+该目录下脚本命名规范则是完全按照Case设计的内容以及副标题来命名的，
+方便测试人员回归性测试时与测试任务表一 一对应，极大地提高了测试效率。</p>
+</section>
+</section>
+<section id="id4">
+<h1>1.4. 架构<a class="headerlink" href="#id4" title="永久链接至标题"></a></h1>
+<figure class="align-default">
+<img alt="structure" src="../_images/structure.png" />
+</figure>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="1.前言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../environment/index.html" class="btn btn-neutral float-right" title="2.环境配置" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

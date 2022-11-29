@@ -1,0 +1,74 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "Blackboard",
+            "DeviceId": "0403-0001",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "YUY2"
+        }
+    ],
+    "VideoAiSpecs": [
+        {
+            "Name": "Blackboard_Ai",
+            "SourceName": "Blackboard",
+            "Algorithm": "Blackboard Tracking",
+            "ProcessRate": 10,
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Blackboard_Ai_h264_Codec",
+            "SourceName": "Blackboard_Ai",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Blackboard_Ai_Record",
+            "VideoCodecName": "Blackboard_Ai_h264_Codec",
+            "Format": "mp4",
+            "Path": "WP1_BAi_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ],
+    "ServerSpecs": [
+        {
+            "Name": "Blackboard_Ai_Server",
+            "VideoCodecName": "Blackboard_Ai_h264_Codec",
+            "URI": "tcp://0.0.0.0:6671"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Blackboard_Ai"
+                }
+            ]
+        }
+    ]
+}

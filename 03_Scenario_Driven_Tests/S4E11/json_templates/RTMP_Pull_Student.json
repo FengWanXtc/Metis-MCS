@@ -1,0 +1,59 @@
+{
+    "Name": "Director_push",
+    "Type": "MCS",
+    "Description": "Far-End Director Push and Preview",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "RTMP_Pull_3",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "VideoCodec": "h.264",
+            "URI": "rtmp://10.12.224.140/test/ch3"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "RTMP_Pull"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "RTMP_Pull_2"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "RTMP_Pull_3"
+                }
+            ]
+        }
+    ]
+}

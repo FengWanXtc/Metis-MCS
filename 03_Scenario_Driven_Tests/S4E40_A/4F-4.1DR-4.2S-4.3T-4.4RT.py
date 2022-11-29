@@ -1,0 +1,46 @@
+import argparse
+import json
+import sys
+sys.path.append('../../Libraries')
+from mediatasklib import *
+from functionlib import *
+
+
+def S4E3_Basic():
+    parser = argparse.ArgumentParser(description='usage: python3 delete_all_tasks --ip=10.12.224.135')
+    parser.add_argument('-ip', type=str, default='', help='The IP address of the METIS')
+    parser.add_argument('-TCam', type=str, default='HDMI', help='The Teacher Cam Type')
+    parser.add_argument('-SCam', type=str, default='IPC', help='The Student Cam Type')
+    args = parser.parse_args()
+    IP = args.ip
+    TCAM = args.TCam
+    SCAM = args.SCam
+    # 设置对应的MCS
+    S4E3_data = read_json_file('4F-4.1DR-4.2S-4.3T-4.4RT.json')
+    # CAM1、CAM2、CAM_IN 的 DeviceId基本已定,需修改的是IPC
+    Teacher_DeviceId = get_DeviceId_by_aiStrategy(ip=IP, camType=TCAM, aiStrategy='teacher')
+    S4E3_data['VideoSpecs'][0]['DeviceId'] = Teacher_DeviceId
+    Student_DeviceId = get_DeviceId_by_aiStrategy(ip=IP, camType=SCAM, aiStrategy='student')
+    S4E3_data['VideoSpecs'][1]['DeviceId'] = Student_DeviceId
+
+    Blackboard_DeviceId = get_DeviceId_by_aiStrategy(ip=IP, camType='IPC', aiStrategy='blackboard')
+    S4E3_data['VideoSpecs'][3]['DeviceId'] = Blackboard_DeviceId
+    # print(json.dumps(S4E3_data, indent=2))
+
+    try:
+        response = post_mt_create_update(ip=IP, data=S4E3_data)
+        # print(response.url)
+
+    except:
+        print('Post Create Task Failed.')
+        print(response)
+
+    if response.json()['Code'] == 201 or response.json()['Code'] == 202:
+        print('S4E40 Basic Test Pass!')
+    else:
+        print('S4E40 Basic Test Fail!')
+        print(response.json())
+
+
+if __name__ == '__main__':
+    S4E3_Basic()

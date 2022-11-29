@@ -1,0 +1,35 @@
+{
+    "Name": "OneCamPush",
+    "Type": "MCS",
+    "Description": "S3E2 One Camera Push Template",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "OneCam",
+            "DeviceId": "",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "OneCam_Codec",
+            "SourceName": "OneCam",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+        }
+    ],
+    "RtcStreamSpec":
+    {
+        "Name": "Remote_Push",
+        "Protocol": "Agora",
+        "Channel": "S3E2_Channel",
+        "Identity": "S3E2_Push",
+        "VideoCodecName": "OneCam_Codec"
+    }
+}

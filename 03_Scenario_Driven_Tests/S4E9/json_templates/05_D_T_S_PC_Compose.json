@@ -1,0 +1,72 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Director,Teacher,Student,PC Compose",
+    "Version": "0.3",
+    "VideoComposeSpecs": [
+        {
+            "Name": "Compositor",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Computer"
+                }
+            ]
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Compositor_h264_Codec",
+            "SourceName": "Compositor",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ]
+}

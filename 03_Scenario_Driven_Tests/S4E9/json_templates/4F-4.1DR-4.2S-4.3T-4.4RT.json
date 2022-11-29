@@ -1,0 +1,257 @@
+{
+  "Name": "Basic_MCS",
+  "Type": "MCS",
+  "Description": "The four-channel AI scenario Basic MCS",
+  "Version": "0.3",
+  "AudioSpecs": [
+    {
+      "Name": "AudioInDefault",
+      "SampleRate": 48000,
+      "Channels": 2
+    }
+  ],
+  "AudioCodecSpecs": [
+    {
+      "Name": "AudioInDefault_aac_Codec",
+      "SourceName": "AudioInDefault",
+      "Codec": "aac"
+    }
+  ],
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Student",
+      "DeviceId": "0400-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Computer",
+      "DeviceId": "0400-0002",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Blackboard",
+      "DeviceId": "0403-0001",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "VideoAiSpecs": [
+    {
+      "Name": "Teacher_Ai",
+      "SourceName": "Teacher",
+      "Algorithm": "Teacher Tracking",
+      "ProcessRate": 10,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Student_Ai",
+      "SourceName": "Student",
+      "Algorithm": "Student Tracking",
+      "ProcessRate": 30,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Computer_Ai",
+      "SourceName": "Computer",
+      "Algorithm": "Ppt Tracking",
+      "ProcessRate": 10,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Blackboard_Ai",
+      "SourceName": "Blackboard",
+      "Algorithm": "Blackboard Tracking",
+      "ProcessRate": 10,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    }
+  ],
+  "VideoDirectorSpec": {
+    "Name": "Director",
+    "Width": 1920,
+    "Height": 1080,
+    "FrameRate": 30,
+    "VideoSourceSet":["Student","Teacher","Student_Ai","Teacher_Ai","Computer_Ai","Blackboard_Ai"],
+    "FrameSpec": {
+      "Template": "single frame",
+      "LayoutSpecs": [
+        {
+          "Position": 1,
+          "SelectionSpecs": [
+            {
+                "State": "Stand_N",
+                "Priority": 1,
+                "VideoSource": "Student",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 180
+            },
+            {
+                "State": "Stand_1",
+                "Priority": 2,
+                "VideoSource": "Student_Ai",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 180
+            },
+            {
+                "State": "PptMouseAction",
+                "Priority": 3,
+                "VideoSource": "Computer_Ai",
+                "Delay": 0,
+                "Hold": 15,
+                "Timeout": 3600
+            },
+            {
+                "State": "Many",
+                "Priority": 4,
+                "VideoSource": "Teacher_Ai",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            },
+            {
+                "State": "Write",
+                "Priority": 6,
+                "VideoSource": "Blackboard_Ai",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            },
+            {
+                "State": "Move",
+                "Priority": 7,
+                "VideoSource": "Teacher_Ai",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            },
+            {
+                "State": "Stand",
+                "Priority": 8,
+                "VideoSource": "Teacher_Ai",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            },
+            {
+                "State": "Out",
+                "Priority": 9,
+                "VideoSource": "Teacher",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            },
+            {
+                "State": "Sit",
+                "Priority": 10,
+                "VideoSource": "Student",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            },
+            {
+                "State": "NoTeacher",
+                "Priority": 11,
+                "VideoSource": "Teacher",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            },
+            {
+                "State": "Others",
+                "Priority": 12,
+                "VideoSource": "Teacher",
+                "Delay": 0,
+                "Hold": 6,
+                "Timeout": 3600
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "VideoCodecSpecs": [
+    {
+      "Name": "Director_Codec",
+      "SourceName": "Director",
+      "Codec": "h.264"
+    }
+  ],
+  "RecordSpecs": [
+    {
+      "Name": "Director_Record",
+      "VideoCodecName": "Director_Codec",
+      "Format": "mp4",
+      "Path": "S4E9_Basic_yyyy-mm-dd-hh-mm-ss.mp4"
+    }
+  ],
+  "CodecStreamSpecs": [
+    {
+      "Name": "Remote_pull",
+      "VideoCodec": "h.264",
+      "URI": "wp://0.0.0.0:6671"
+    },
+    {
+      "Name": "Audio_pull",
+      "AudioCodec": "aac",
+      "SampleRate": 48000,
+      "Channels": 2,
+      "URI": "wp://0.0.0.0:6672"
+    }
+  ],
+  "PlaySpecs": [
+    {
+      "Name": "TcpAudioPull_Play",
+      "Sources": [
+        {
+          "SourceName": "Audio_pull",
+          "Volume": 70
+        }
+      ]
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "DeviceId": "0800-0000",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": "Director"
+        },
+        {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "Student"
+        },
+        {
+          "Geometry": [0, 540, 960, 540],
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [960, 540, 960, 540],
+          "SourceName": "Remote_pull"
+        }
+      ]
+    }
+  ]
+}

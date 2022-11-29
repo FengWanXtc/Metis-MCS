@@ -1,0 +1,14 @@
+{
+    "Name": "S4E2_Dynamic",
+    "Type": "MCS",
+    "Description": "Dynamic Record MCS Spec",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Dynamic_Record",
+            "VideoCodecName": "Dynamic_Codec",
+            "Format": "mp4",
+            "Path": "/home/user/Videos/eswin/Dynamic_Record.mp4"
+        }
+    ]
+}

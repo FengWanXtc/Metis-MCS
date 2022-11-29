@@ -1,0 +1,23 @@
+{
+    "Name": "Pull Remote MCS",
+    "Type": "MCS",
+    "Description": "Pull Remote MCS Template",
+    "Version": "0.1",
+
+    "RemoteSpecs": [
+        {
+            "Name": "",
+            "Codec": "Unknown",
+            "URI": ""
+        }
+    ],
+    "PreviewSpec": {
+        "Template": "four frame",
+        "Layout": [
+            {
+                "Position": 1,
+                "SourceName": ""
+            }
+        ]
+    }
+}

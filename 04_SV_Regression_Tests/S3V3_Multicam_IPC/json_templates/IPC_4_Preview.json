@@ -1,0 +1,90 @@
+{
+  "Name": "mcs0.3",
+  "Type": "MCS",
+  "Description": "test mcs",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "Teacher",
+      "DeviceId": "0400-0000",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    },
+    {
+      "Name": "Student",
+      "DeviceId": "0401-0003",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "YUY2"
+    },
+    {
+      "Name": "Blackboard",
+      "DeviceId": "0400-0000"
+    },
+    {
+      "Name": "Computer",
+      "DeviceId": "0401-0003"
+    }
+  ],
+  "VideoAiSpecs": [
+    {
+      "Name": "Teacher Tracking",
+      "SourceName": "Teacher",
+      "Algorithm": "Teacher Tracking",
+      "ProcessRate": 10,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Student Tracking",
+      "SourceName": "Student",
+      "Algorithm": "Student Tracking",
+      "ProcessRate": 30,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+    {
+      "Name": "Ppt Tracking",
+      "SourceName": "Computer",
+      "Algorithm": "Ppt Tracking",
+      "ProcessRate": 10,
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30
+    },
+     {
+        "Name":"Blackboard_Tracking",
+        "SourceName":"Blackboard",
+        "Algorithm":"blackboard tracking"
+     }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "DeviceId": "0800-0000",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [960, 0, 960, 540],
+          "SourceName": "Student"
+        },
+        {
+          "Geometry": [0,540,960,540],
+          "SourceName": "Blackboard"
+        },
+        {
+          "Geometry": [960,540,960,540],
+          "SourceName": "Computer"
+        }
+      ]
+    }
+  ]
+}

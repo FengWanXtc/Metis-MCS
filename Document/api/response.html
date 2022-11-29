@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.5 Response结构体说明 &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="4.Scenario" href="../scenarios/index.html" />
+    <link rel="prev" title="3.4 Function——functionlib" href="function.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface/index.html">1.前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3.Scripts API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="auth.html">3.1 Auth——authlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediadevice.html">3.2 Mediadevice——mediadevicelib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mediatask.html">3.3 Mediatask——mediatasklib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function.html">3.4 Function——functionlib</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.5 Response结构体说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios/index.html">4.Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">3.Scripts API</a> &raquo;</li>
+      <li>3.5 Response结构体说明</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="response">
+<h1>3.5 Response结构体说明<a class="headerlink" href="#response" title="永久链接至标题"></a></h1>
+<p>大部分接口函数返回值为特殊数据类型 <strong><code class="docutils literal notranslate"><span class="pre">Response</span></code></strong>,使用返回值的不同处理方式，可以获取相应的结果。</p>
+<br><table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">内容</th>
+<th style="text-align: center;">类型</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">response.json()</td>
+<td style="text-align: center;">dict</td>
+<td style="text-align: left;">Requests中内置的JSON解码器,返回的是一个字典类<br/>型数据，就是Spec中的Body内容，可以用 <strong>键值对</strong> 方<br/>式获取body中的字段,比如 response.json()[“Message”]</td>
+</tr>
+<tr>
+<td style="text-align: center;">response.status_code</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: left;">响应状态码，200为正常响应，此外有404、500等等</td>
+</tr>
+<tr>
+<td style="text-align: center;">response.headers</td>
+<td style="text-align: center;">dict</td>
+<td style="text-align: left;">以字典类型对象存储服务器响应头，但是这个字典比较<br/>特殊，字典键不区分大小写，若键不存在则返回None</td>
+</tr>
+<tr>
+<td style="text-align: center;">response.text</td>
+<td style="text-align: center;">str</td>
+<td style="text-align: left;">字符串方式的响应体，会自动根据响应头部的字符编码<br/>进行解码 ,内容和response.json()一样</td>
+</tr>
+<tr>
+<td style="text-align: center;">response.content</td>
+<td style="text-align: center;">bytes</td>
+<td style="text-align: left;">字节方式的响应体，会自动解码gzip和deflate压缩</td>
+</tr>
+<tr>
+<td style="text-align: center;">response.url</td>
+<td style="text-align: center;">str</td>
+<td style="text-align: left;">获取下发的url</td>
+</tr>
+<tr>
+<td style="text-align: center;">response.cookies</td>
+<td style="text-align: center;">特殊类型</td>
+<td style="text-align: left;">获取cookie</td>
+</tr>
+<tr>
+<td style="text-align: center;">response.raw</td>
+<td style="text-align: center;">特殊类型</td>
+<td style="text-align: left;">返回原始响应体</td>
+</tr>
+</tbody>
+</table></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="function.html" class="btn btn-neutral float-left" title="3.4 Function——functionlib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../scenarios/index.html" class="btn btn-neutral float-right" title="4.Scenario" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

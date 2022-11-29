@@ -1,0 +1,41 @@
+{
+    "Name": "RTSP_Pull",
+    "Type": "MCS",
+    "Description": "mcs for CodecStreamSpec preview",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "RTSP_LOCAL_HDMI_PULL",
+            "AudioCodec": "aac",
+            "VideoCodec": "h.264",
+            "SampleRate": 48000,
+            "URI": "rtsp://10.12.224.140:8554/metis/ch1"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "SourceName": "RTSP_LOCAL_HDMI_PULL"
+                }
+            ]
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "RTSP_LOCAL_HDMI_PULL"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "Name": "",
+  "Type": "MCS",
+  "Description": "Compose to Push",
+  "Version": "0.3",
+  "ServerSpecs": [
+    {
+      "Name": "Compositor_Server",
+      "VideoCodecName": "Compositor_h264_Codec",
+      "URI": "wp://127.0.0.1:6673"
+    },
+    {
+      "Name": "Audio_Server",
+      "AudioCodecName": "AudioInDefault_aac_Codec",
+      "URI": "wp://127.0.0.1:6674"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.Scenario &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="4.1. S1E1" href="S1E1/index.html" />
+    <link rel="prev" title="3.5 Response结构体说明" href="../api/response.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preface/index.html">1.前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">3.Scripts API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4.Scenario</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="S1E1/index.html">4.1. S1E1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="S1E2/index.html">4.2. S1E2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>4.Scenario</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scenario">
+<h1>4.Scenario<a class="headerlink" href="#scenario" title="永久链接至标题"></a></h1>
+<ul>
+<li><dl class="simple">
+<dt>简述：</dt><dd><ul class="simple">
+<li><p>DemoMCS目录下都存放一个 <strong>SXEX</strong> 目录,该目录由存放一些MCS 模板文件目录和若干功能脚本。</p></li>
+<li><p>为了体现MA API灵活性，脚本设计为动作脚本，即一个动作对应一个脚本。几乎所有动作脚本都需要在一个基础脚本运行后
+才能执行。一个故事是由许多个动作脚本组成的，通过一个 <code class="docutils literal notranslate"><span class="pre">Act_Story.py</span></code> 脚本触发故事。</p></li>
+<li><p>该文档会对脚本下发的 <strong>MCS</strong> 进行一些说明，讲述各个Spec之间的关系。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Scenario脚本存放路径： /home/user/EST/MCSScripts/DemoMCS_V0.3/03_scenario_driven_tests/</p></li>
+<li><p>基础脚本命名规范：</p>
+<p>大部分脚本会以一个基础脚本启动任务，即调用 <code class="docutils literal notranslate"><span class="pre">/mediatask/create_update</span></code> 接口
+下发一个MCS，启动基础任务,命名规范可以参考下图。</p>
+<figure class="align-default">
+<img alt="../_images/rule.png" src="../_images/rule.png" />
+</figure>
+</li>
+</ul>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="S1E1/index.html">4.1. S1E1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="S1E1/S1E1.html">4.1.1. 外设配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="S1E1/S1E1.html#demomcs">4.1.2. DemoMCS 演示</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="S1E2/index.html">4.2. S1E2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="S1E2/S1E2.html">4.2.1 外设配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="S1E2/S1E2.html#demomcs">4.2.2. DemoMCS 演示</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../api/response.html" class="btn btn-neutral float-left" title="3.5 Response结构体说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="S1E1/index.html" class="btn btn-neutral float-right" title="4.1. S1E1" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

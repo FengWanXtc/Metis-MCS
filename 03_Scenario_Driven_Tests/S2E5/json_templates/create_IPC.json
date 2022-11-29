@@ -1,0 +1,14 @@
+{
+  "Name": "S2E5_IPC",
+  "Type": "MCS",
+  "Description": "test mcs for 4 IPC Camera",
+  "Version": "0.3",
+  "VideoSpecs": [
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": []
+    }
+  ]
+}

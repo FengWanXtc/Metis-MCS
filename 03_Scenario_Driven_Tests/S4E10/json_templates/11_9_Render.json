@@ -1,0 +1,95 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Render 9 (CM,T,TAi,S,SAi,PC,BAi,2RW)",
+    "Version": "0.3",
+     "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Compositor"
+                },
+                {
+                    "Geometry": [
+                        640,
+                        0,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        1280,
+                        0,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Teacher_Ai"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        360,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [
+                        640,
+                        360,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Student_Ai"
+                },
+                {
+                    "Geometry": [
+                        1280,
+                        360,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Computer"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        720,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Blackboard_Ai"
+                },
+                {
+                    "Geometry": [
+                        640,
+                        720,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Remote_pull"
+                },
+                {
+                    "Geometry": [
+                        1280,
+                        720,
+                        640,
+                        360
+                    ],
+                    "SourceName": "Remote_pull_2"
+                }
+            ]
+        }
+    ]
+}

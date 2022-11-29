@@ -1,0 +1,30 @@
+{
+    "Name": "media compositor",
+    "Type": "MCS",
+    "Description": "Pipeline example for media compositor",
+    "Version": "0.1",
+    "VideoSpecs": [
+        {
+            "Name": "",
+            "DeviceOrAliasName": "",
+            "DeviceId": "",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CodecSpec": {
+                "Type": "h.264",
+                "BitRateMode": "VBR",
+                "BitRate": "4mbps",
+                "Profile": "main"
+            }
+        }],
+    "PreviewSpec": {
+        "Template": "four frame",
+        "Layout": [
+            {
+                "Position": 1,
+                "SourceName": ""
+            }
+        ]
+    }
+}

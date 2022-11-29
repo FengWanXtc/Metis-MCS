@@ -1,0 +1,13 @@
+{
+    "Name": "Director_push",
+    "Type": "MCS",
+    "Description": "Far-end Pull",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "Remote_pull",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6673"
+        }
+    ]
+}

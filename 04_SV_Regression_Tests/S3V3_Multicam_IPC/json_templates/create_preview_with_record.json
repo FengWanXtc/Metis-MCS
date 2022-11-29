@@ -1,0 +1,52 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "VideoSpecs": [
+        {
+            "Name": "HDMI0",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "Format": "UYVY"
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "CAM_Codec",
+            "SourceName": "HDMI0",
+            "Codec": "h.264",
+            "iFrameInterval": 30,
+            "idrInterval": 30,
+            "BitRateMode": "vbr",
+            "BitRate": "4mbps",
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "CAM_Record",
+            "VideoCodecName": "CAM_Codec",
+            "Format": "mp4",
+            "Path": "CAM_Record_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "HDMI0"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "Name": "Basic_MCS",
+    "SpecNames": [
+        "AudioMixer",
+        "Compositor",
+        "Compose_Record"
+    ]
+}

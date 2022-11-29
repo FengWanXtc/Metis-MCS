@@ -1,0 +1,20 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Director Teacher,2 Remote Render",
+    "Version": "0.3",
+    "ServerSpecs": [
+        {
+            "Name": "Compositor_RtspPush",
+            "URI": "rtmp://10.12.224.140/test/ch1",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "CompositorAudio_aac_Codec"
+        },
+        {
+            "Name": "Compositor_B_RtspPush",
+            "URI": "rtmp://10.12.224.140/test/ch2",
+            "VideoCodecName": "Compositor_B_h264_Codec",
+            "AudioCodecName": "CompositorAudio_aac_Codec"
+        }
+    ]
+}

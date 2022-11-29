@@ -1,0 +1,17 @@
+{
+    "Name": "Pull_Preview",
+    "Type": "MCS",
+    "Description": "test mcs for create preview with audio",
+    "Version": "0.3",
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume": 25,
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+  "Name": "Basic_MCS",
+  "Type": "MCS",
+  "Description": "The four-channel AI scenario Basic MCS",
+  "Version": "0.3",
+  "VideoComposeSpecs": [
+      {
+          "Name": "Compositor",
+          "Width": 1920,
+          "Height": 1080,
+          "FrameRate": 30,
+          "CompositionSpec": [
+              {
+                  "Geometry": [
+                      0,
+                      0,
+                      1920,
+                      1080
+                  ],
+                  "ZOrder": 1,
+                  "SourceName": "__compose__"
+              },
+              {
+                  "Geometry": [
+                      960,
+                      0,
+                      960,
+                      540
+                  ],
+                  "ZOrder": 2,
+                  "SourceName": "Remote_pull_1"
+              }
+          ]
+      }
+  ]
+}

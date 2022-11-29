@@ -1,0 +1,28 @@
+{
+  "Name": "mcs0.3",
+  "Type": "MCS",
+  "Description": "test mcs for create preview",
+  "Version": "0.3",
+  "VideoSpecs": [
+    {
+      "Name": "",
+      "DeviceId": "",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "Format": "UYVY"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "DeviceId": "0800-0000",
+      "CompositionSpec": [
+        {
+          "Geometry": [0, 0, 960, 540],
+          "SourceName": ""
+        }
+      ]
+    }
+  ]
+}

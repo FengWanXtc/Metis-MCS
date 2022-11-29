@@ -1,0 +1,137 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Teacher,Student,Blackboard Ai Record And Pull",
+    "Version": "0.3",
+    "CodecStreamSpecs": [
+        {
+            "Name": "Remote_pull_2",
+            "VideoCodec": "h.264",
+            "URI": "wp://0.0.0.0:6675"
+        },
+        {
+            "Name": "Audio_pull_3",
+            "AudioCodec": "aac",
+            "SampleRate": 48000,
+            "Channels": 2,
+            "URI": "wp://0.0.0.0:6678"
+        }
+    ],
+    "PlaySpecs": [
+        {
+            "Name": "TcpAudioPull_Play",
+            "Sources": [
+                {
+                    "SourceName": "Audio_pull",
+                    "Volume": 70
+                },
+                {
+                    "SourceName": "Audio_pull_3",
+                    "Volume": 70
+                }
+            ]
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "TeacherAi_h264_Codec",
+            "SourceName": "Teacher_Ai",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "StudentAi_h264_Codec",
+            "SourceName": "Student_Ai",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "BlackboardAi_h264_Codec",
+            "SourceName": "Blackboard_Ai",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "TeacherAi_Record",
+            "VideoCodecName": "TeacherAi_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E6_TeacherAi_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "StudentAi_Record",
+            "VideoCodecName": "StudentAi_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E6_StudentAi_yyyy-mm-dd-hh-mm-ss.mp4"
+        },
+        {
+            "Name": "BlackboardAi_Record",
+            "VideoCodecName": "BlackboardAi_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E6_BlackboardAi_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Remote_pull_2"
+                }
+            ]
+        }
+    ]
+}

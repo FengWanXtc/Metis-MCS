@@ -1,0 +1,93 @@
+{
+    "Name": "S3E1",
+    "Type": "MCS",
+    "Description": "S3E1 Teacher MCS,4F-4.1RA-4.2T-4.3S-4.4RA",
+    "Version": "0.3",
+    "AudioSpecs": [
+        {
+          "Name": "AudioInDefault",
+          "DeviceId": "",
+          "SampleRate": 44100,
+          "Channels": 2
+        }
+      ],
+      "AudioCodecSpecs": [
+        {
+          "Name": "AudioInDefault_Codec",
+          "SourceName": "AudioInDefault",
+          "Codec": "pcm"
+        }
+      ],
+	  
+    "VideoSpecs": [
+        {
+            "Name": "Teacher",
+            "DeviceId": "0400-0000",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        },
+        {
+            "Name": "Student",
+            "DeviceId": "0400-0001",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30
+        }
+    ],
+	  "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume":75,
+                    "SourceName": "Teacher_pushpull"
+                }
+            ]
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+         "Name": "Teacher_Codec",
+         "SourceName": "Teacher",
+         "Codec": "h.264",
+         "iFrameInterval": 30,
+          "idrInterval": 30,
+          "BitRateMode": "vbr",
+          "BitRate": "4mbps",
+          "Profile": "main"
+      }
+    ],
+    "RtcStreamSpec":
+        {
+            "Name": "Teacher_pushpull",
+            "Protocol": "Agora",
+            "Channel": "S3E1_Channel",
+            "Identity": "S3E1_Teacher",
+            "VideoCodecName": "Teacher_Codec",
+            "AudioCodecName": "AudioInDefault_Codec"
+        },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [960, 0, 960, 540],
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [0, 540, 960, 540],
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [0, 0, 960, 540],
+                    "SourceName": "Teacher_pushpull"
+                },
+                {
+                    "Geometry": [960, 540, 960, 540],
+                    "SourceName": "Teacher_pushpull"
+                  }
+            ]
+        }
+    ]
+  }

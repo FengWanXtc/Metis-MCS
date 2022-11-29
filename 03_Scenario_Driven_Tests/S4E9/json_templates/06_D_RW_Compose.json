@@ -1,0 +1,52 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Director and Remote Compose 1+1",
+    "Version": "0.3",
+    "VideoComposeSpecs": [
+        {
+            "Name": "Compositor",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        270,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        270,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Remote_pull"
+                }
+            ]
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Compositor_h264_Codec",
+            "SourceName": "Compositor",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ]
+}

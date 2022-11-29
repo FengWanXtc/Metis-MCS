@@ -1,0 +1,15 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "VideoTransform Record",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "VideoTransform_Record",
+            "VideoCodecName": "VideoTransform_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "S4E10__Transform_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

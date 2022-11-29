@@ -1,0 +1,78 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "Compose for Teacher and Student",
+    "Version": "0.3",
+    "VideoComposeSpecs": [
+        {
+            "Name": "Compositor",
+            "Width": 1920,
+            "Height": 1080,
+            "FrameRate": 30,
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        1920,
+                        1080
+                    ],
+                    "ZOrder": 1,
+                    "SourceName": "Director"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 2,
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "ZOrder": 2,
+                    "SourceName": "Computer"
+                }
+            ]
+        }
+    ],
+    "VideoCodecSpecs": [
+        {
+            "Name": "Compositor_h264_Codec",
+            "SourceName": "Compositor",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Compose_Record",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "Format": "mp4",
+            "Path": "Compose(D+S+P)_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "Near-End",
+        "VideoCodecName": "Compositor_h264_Codec",
+        "AudioCodecName": "AudioInDefault_pcm_Codec"
+    }
+}

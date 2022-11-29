@@ -1,0 +1,15 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Compose Record Template",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "Compositor_Record",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "AudioCodecName": "AudioInDefault_aac_Codec",
+            "Format": "mp4",
+            "Path": "_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

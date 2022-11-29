@@ -1,0 +1,39 @@
+{
+    "Name": "AI_2_Pull",
+    "Type": "MCS",
+    "Description": "Far-End Director Push and Preview",
+    "Version": "0.3",
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "Far-End_local"
+    },
+    "PlaySpecs": [
+        {
+            "Name": "Audio_Play",
+            "Sources": [
+                {
+                    "Volume":100,
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ],
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ]
+}

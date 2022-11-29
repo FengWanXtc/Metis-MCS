@@ -1,0 +1,128 @@
+{
+    "Name": "Basic_MCS",
+    "Type": "MCS",
+    "Description": "The four-channel AI scenario Basic MCS",
+    "Version": "0.3",
+    "VideoCodecSpecs": [
+        {
+            "Name": "Teacher_h264_Codec",
+            "SourceName": "Teacher",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Student_h264_Codec",
+            "SourceName": "Student",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        },
+        {
+            "Name": "Computer_h264_Codec",
+            "SourceName": "Computer",
+            "Codec": "h.264",
+            "BitRateMode": "VBR",
+            "BitRate": "4mbps",
+            "iFrameInterval": "30",
+            "idrInterval": "30",
+            "QpRange": [
+                28,
+                28
+            ],
+            "Profile": "main"
+        }
+    ],
+    "RecordSpecs": [
+        {
+            "Name": "Compose_Record",
+            "VideoCodecName": "Compositor_h264_Codec",
+            "Format": "mp4",
+            "Path": "Compose(D+T)_yyyy-mm-dd-hh-mm-ss.mp4.mp4"
+        },
+        {
+            "Name": "Teacher_Record",
+            "VideoCodecName": "Teacher_h264_Codec",
+            "Format": "mp4",
+            "Path": "Teacher_yyyy-mm-dd-hh-mm-ss.mp4.mp4"
+        },
+        {
+            "Name": "Student_Record",
+            "VideoCodecName": "Student_h264_Codec",
+            "Format": "mp4",
+            "Path": "Student_yyyy-mm-dd-hh-mm-ss.mp4.mp4"
+        },
+        {
+            "Name": "Computer_Record",
+            "VideoCodecName": "Computer_h264_Codec",
+            "Format": "mp4",
+            "Path": "Computer_yyyy-mm-dd-hh-mm-ss.mp4.mp4"
+        }
+    ],
+    "RtcStreamSpec": {
+        "Name": "Rtc_Spec",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "Near-End",
+        "VideoCodecName": "Compositor_h264_Codec",
+        "AudioCodecName": "AudioInDefault_pcm_Codec"
+    },
+    "RenderSpecs": [
+        {
+            "Name": "Render_test",
+            "DeviceId": "0800-0000",
+            "CompositionSpec": [
+                {
+                    "Geometry": [
+                        0,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Compositor"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        0,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Teacher"
+                },
+                {
+                    "Geometry": [
+                        0,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Student"
+                },
+                {
+                    "Geometry": [
+                        960,
+                        540,
+                        960,
+                        540
+                    ],
+                    "SourceName": "Rtc_Spec"
+                }
+            ]
+        }
+    ]
+}

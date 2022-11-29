@@ -1,0 +1,10 @@
+{
+    "Name": "Basic_MCS",
+    "SpecNames": [
+        "Rtmp_Pull",
+        "rtmpAudioPull_Play",
+        "Rtmp_Pull_audio_Codec",
+        "Rtmp_Pull_video_Codec",
+        "Pull_Record"
+    ]
+}
