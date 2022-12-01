@@ -1,0 +1,16 @@
+{
+  "Name": "Agora_Basic",
+  "Type": "MCS",
+  "Description": "Audio Dynamic Change",
+  "Version": "0.3",
+    "RtcStreamSpec": {
+        "Name": "RtcStream",
+        "Protocol": "Agora",
+        "Channel": "Agora_Channel",
+        "Identity": "Agora_Basic",
+        "VideoCodecName": "Teacher_h264_Codec",
+        "AudioCodecName": "AudioPC_pcm_Codec",
+        "LowVideoCodecName": "NULL"
+    }
+}
+

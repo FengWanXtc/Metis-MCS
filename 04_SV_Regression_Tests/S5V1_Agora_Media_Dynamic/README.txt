@@ -1,0 +1,46 @@
+1. 环境要求
+至少2台小站
+近端：1个摄像头配置教师算法 1个配置学生算法，接上一台laptop（配置ppt识别算法），本地管理添加一路IPC摄像头（配置板书提取算法）
+远端：1个摄像头配置教师算法 1个配置学生算法，接上一台laptop（配置ppt识别算法），本地管理添加一路IPC摄像头（配置板书提取算法）
+显示器要求：分辨率1920*1080
+
+################################
+注：若脚本在小站上直接运行，下面脚本不跟
+   -ip 参数默认为当前小站IP地址
+################################
+
+
+2. 脚本执行方式
+Case 01 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_01】
+Steps: 1.python Agora_Basic.py -ip=近端小站IP地址，启基础任务
+       2.python Agora_Far.py -ip=远端小站IP地址，启基础任务,查看两台小站音视频是否正常
+       3.python Dynamic_Change_01.py  近端动态替换PC IN 音频流，远端不再接收到近端MIC 音频输入
+       4.python delete_all_tasks.py -ip=近端（远端）小站IP，停止两端的任务，两端正常结束
+
+Case 02 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_02】
+Steps: 1.python Agora_Basic.py -ip=近端小站IP地址，启基础任务
+       2.python Agora_Far.py -ip=远端小站IP地址，启基础任务,查看两台小站音视频是否正常
+       3.python Dynamic_Change_02.py  近端动态替换视频流，远端收到的视频画面发生改变，不影响两端的音频，依然为MIC输入
+       4.python delete_all_tasks.py -ip=近端（远端）小站IP，停止两端的任务，两端正常结束
+
+Case 03 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_03】
+Steps: 1.python Agora_Basic.py -ip=近端小站IP地址，启基础任务
+       2.python Agora_Far.py -ip=远端小站IP地址，启基础任务,查看两台小站音视频是否正常
+       3.python Dynamic_Change_03.py  -ip=近端小站IP 远端拉取的近端小站视频源和音频源都发生了变更
+       4.重复第3步，-ip改为远端小站IP   近端拉取的远端小站视频源和音频源都发生了变更
+       5.此时不删除两端任务，进行下一个Case
+
+Case 04 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_04】
+Steps: 1.python Dynamic_Change_04.py  -ip=近端小站IP 远端拉取的近端小站回显宫格位置发生改变，拉取的视频流畅正常
+       2.重复第2步，-ip改为远端小站IP   近端拉取的远端小站回显宫格位置发生改变，拉取的视频流畅正常
+       3.此时不删除两端任务，进行下一个Case
+
+Case 05 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_05】
+Steps: 1.python Dynamic_Change_04.py  -ip=近端小站IP 远端拉取的近端小站回显宫格位置发生改变，拉取的视频流畅正常
+       2.重复第2步，-ip改为远端小站IP   近端拉取的远端小站回显宫格位置发生改变，拉取的视频流畅正常
+       3.此时不删除两端任务，进行下一个Case
+
+Case 06 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_06】
+Steps: 1.python Dynamic_Change_04.py  -ip=近端小站IP 远端拉取的近端小站回显宫格位置发生改变，拉取的视频流畅正常
+       2.重复第2步，-ip改为远端小站IP   近端拉取的远端小站回显宫格位置发生改变，拉取的视频流畅正常
+       3.此时不删除两端任务，进行下一个Case
