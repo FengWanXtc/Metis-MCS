@@ -39,13 +39,6 @@
             "Name": "AudioPC_aac_Codec",
             "SourceName": "AudioInPC",
             "Codec": "aac"
-        },
-        {
-            "Name": "AudioPC_opus_Codec",
-            "SourceName": "AudioInPC",
-            "Codec": "opus",
-            "BitRateMode": "VBR",
-            "BitRate": "44Kbps"
         }
     ],
     "VideoSpecs": [

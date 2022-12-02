@@ -1,0 +1,16 @@
+{
+    "Name": "",
+    "Type": "MCS",
+    "Description": "Record Sources",
+    "Version": "0.3",
+    "RecordSpecs": [
+        {
+            "Name": "RecordSpec",
+            "VideoCodecName": "{}_h264_Codec",
+            "AudioCodecName": "Audio{}_aac_Codec",
+
+            "Format": "mp4",
+            "Path": "Record_{}_{}_yyyy-mm-dd-hh-mm-ss.mp4"
+        }
+    ]
+}

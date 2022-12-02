@@ -41,6 +41,35 @@ Steps: 1.python Dynamic_Change_04.py  -ip=近端小站IP 远端拉取的近端�
        3.此时不删除两端任务，进行下一个Case
 
 Case 06 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_06】
+Steps: 1.python Agora_Basic.py -ip=近端小站IP地址，启基础任务
+       2.python Agora_Far.py -ip=远端小站IP地址，启基础任务,查看两台小站音视频是否正常
+       3.python Record.py -ip=近端小站IP地址 -vs=Student -as=Mic  选择近端录制学生画面+Mic音频
+       4.python Record.py -ip=远端小站IP地址 -vs=Computer -as=PC  选择远端录制PPT画面+PC音频
+       5.python Dynamic_Change_02.py  -ip=近端小站IP地址
+         近端动态替换视频流，远端收到的视频画面发生改变，不影响两端的音频，依然为MIC输入
+         也不影响录制任务继续进行
+       6.python delete_all_tasks.py -ip=近端（远端）小站IP，停止两端的任务，两端正常结束,检查两端录制文件是否符合要求
+
+
+Case 07 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_07】
+Steps: 1.python Agora_Basic.py -ip=近端小站IP地址，启基础任务
+       2.python Agora_Far.py -ip=远端小站IP地址，启基础任务,查看两台小站音视频是否正常
+       3.python Record.py -ip=近端小站IP地址 -vs=Student -as=Mic  选择近端录制学生画面+Mic音频
+       4.python Record.py -ip=远端小站IP地址 -vs=Computer -as=PC  选择远端录制PPT画面+PC音频
+       5.python Dynamic_Change_02.py  -ip=近端小站IP地址  -vs=NULL   不推送近端视频源，查看远端拉取的是否为黑屏
+       6.python Dynamic_Change_02.py  -ip=近端小站IP地址  -vs=其他字符串，如st，1a  等等 ，MA应当返回错误码
+       7.python delete_all_tasks.py -ip=近端（远端）小站IP，停止两端的任务，两端正常结束,检查两端录制文件是否符合要求
+
+Case 08 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_08】
+Steps: 1.python Agora_Basic.py -ip=近端小站IP地址，启基础任务
+       2.python Agora_Far.py -ip=远端小站IP地址，启基础任务,查看两台小站音视频是否正常
+       3.python Record.py -ip=近端小站IP地址 -vs=Student -as=Mic  选择近端录制学生画面+Mic音频
+       4.python Record.py -ip=远端小站IP地址 -vs=Computer -as=PC  选择远端录制PPT画面+PC音频
+       5.python Dynamic_Change_01.py  -ip=近端小站IP地址  -vs=NULL   不推送近端音频源，对着MIC说话，远端不接收声音
+       6.python Dynamic_Change_01.py  -ip=近端小站IP地址  -vs=其他字符串，如st，1a  等等 ，MA应当返回错误码
+       7.此时不删除两端任务，进行下一个Case
+
+Case 09 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_09】
 Steps: 1.python Dynamic_Change_04.py  -ip=近端小站IP 远端拉取的近端小站回显宫格位置发生改变，拉取的视频流畅正常
        2.重复第2步，-ip改为远端小站IP   近端拉取的远端小站回显宫格位置发生改变，拉取的视频流畅正常
        3.此时不删除两端任务，进行下一个Case

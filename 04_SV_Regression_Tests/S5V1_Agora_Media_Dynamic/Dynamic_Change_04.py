@@ -7,7 +7,7 @@ from mediatasklib import *
 
 
 def mcs_task(host_ip):
-    mcs_data = read_json_file('json_templates/Dynamic_Change_03.json')
+    mcs_data = read_json_file('Dynamic_Change_04.json')
     # print(json.dumps(mcs_data, indent=2))
     task_name = get_mt_tasks(ip=host_ip).json()['Names'][0]
     mcs_data['Name'] = task_name

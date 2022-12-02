@@ -8,7 +8,7 @@
         "Protocol": "Agora",
         "Channel": "Agora_Channel",
         "Identity": "Agora_Basic",
-        "VideoCodecName": "Teacher_h264_Codec",
+        "VideoCodecName": "Director_h264_Codec",
         "AudioCodecName": "AudioPC_pcm_Codec",
         "LowVideoCodecName": "NULL"
     }

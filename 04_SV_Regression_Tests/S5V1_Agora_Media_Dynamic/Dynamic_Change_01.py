@@ -7,13 +7,23 @@ from functionlib import *
 from mediatasklib import *
 from mediadevicelib import *
 
+AS = ["Mic", "PC"]
 
-def mcs_task(Host, TCam, SCam):
+
+def mcs_task(host_ip, audio_src):
     mcs_data = read_json_file('Dynamic_Change_01.json')
-    print(json.dumps(mcs_data, indent=2))
 
+    task_name = get_mt_tasks(ip=host_ip).json()['Names'][0]
+    mcs_data['Name'] = task_name
+
+    if audio_src in AS and audio_src != "NULL":
+        mcs_data['RtcStreamSpec']["AudioCodecName"] = "Audio{}_pcm_Codec".format(audio_src)
+    else:
+        mcs_data['RtcStreamSpec']["AudioCodecName"] = "{}".format(audio_src)
+
+    print(json.dumps(mcs_data, indent=2))
     try:
-        response = post_mt_create_update(ip=Host, data=mcs_data)
+        response = post_mt_create_update(ip=host_ip, data=mcs_data)
     except:
         print('Post Create Task Failed')
         print(response.status_code)
@@ -31,11 +41,8 @@ def mcs_task(Host, TCam, SCam):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='usage: python3 delete_all_tasks --ip=10.12.224.135')
     parser.add_argument('-ip', type=str, default='', help='The IP address of the METIS')
-    parser.add_argument('-TCam', type=str, default=Global_TeacherCamType, help='The Teacher Cam Type')
-    parser.add_argument('-SCam', type=str, default=Global_StudentCamType, help='The Student Cam Type')
+    parser.add_argument('-as', '--audioSrc', type=str, default='Mic', help='Record Audio Source:Mic,PC')
     args = parser.parse_args()
     IP = args.ip
-    SCAM = args.SCam
-    TCAM = args.TCam
-
-    mcs_task(IP, TCAM, SCAM)
+    AUDIOSRC = args.audioSrc
+    mcs_task(IP, AUDIOSRC)

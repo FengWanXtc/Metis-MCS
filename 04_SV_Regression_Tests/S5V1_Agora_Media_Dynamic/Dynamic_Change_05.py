@@ -7,15 +7,16 @@ from mediatasklib import *
 
 
 def mcs_task(host_ip):
-    mcs_data = read_json_file('json_templates/Dynamic_Change_03.json')
+    mcs_data = read_json_file('Dynamic_Change_05.json')
     # print(json.dumps(mcs_data, indent=2))
     task_name = get_mt_tasks(ip=host_ip).json()['Names'][0]
     mcs_data['Name'] = task_name
 
     # Remove Render Part
-    remove_data = {"Name": task_name, "SpecNames": "Render_test"}
-    post_mt_remove(ip=host_ip, data=remove_data)
-
+    print("Remove Render And Sleep 5 seconds")
+    remove_data = {"Name": task_name, "SpecNames": ["Render_test"]}
+    res = post_mt_remove(ip=host_ip, data=remove_data)
+    time.sleep(5)
     # Re Create Render
     response = post_mt_create_update(ip=host_ip, data=mcs_data)
     if response.json()['Code'] == 201:
