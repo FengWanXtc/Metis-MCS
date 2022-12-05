@@ -49,7 +49,7 @@ def create_one_frame_preview(argc_ip, name, camType, camNum, geometry):
         print(response.status_code)
         return False
 
-    if (response.json()['Code'] == 201):
+    if response.json()['Code'] == 201:
         print('Create one frame preview {} Success'.format(name))
         return True
     else:

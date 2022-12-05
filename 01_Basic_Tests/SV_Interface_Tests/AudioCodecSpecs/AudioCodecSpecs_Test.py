@@ -2,7 +2,7 @@ import argparse
 import json
 import sys
 
-sys.path.append('../../Libraries')
+sys.path.append('../../../Libraries')
 from mediatasklib import *
 from functionlib import *
 from mediadevicelib import get_md_audio_in

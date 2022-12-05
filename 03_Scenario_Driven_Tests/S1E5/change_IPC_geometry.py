@@ -22,7 +22,7 @@ def change_geometry(geometry):
     else:
         print('Change IPC Frame Position Fail!')
         print(response.json())
-        return False
+        return response.json()
 
 
 def main():

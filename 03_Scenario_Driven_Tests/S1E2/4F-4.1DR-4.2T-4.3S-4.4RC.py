@@ -50,7 +50,8 @@ def S1E2_test():
     else:
         print('S1E2 Test Fail')
         print(response.json())
-        return False
+        print(json.dumps(S1E2_data, indent=2))
+        return response.json()
 
 
 if __name__ == '__main__':

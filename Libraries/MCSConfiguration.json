@@ -1,12 +1,124 @@
 {
-    "CameraType": {
-        "Global_TeacherCamType": "HDMI",
-        "Global_StudentCamType": "IPC",
-        "Global_BlackBoardCamType": "IPC",
-        "Global_PPTCamType": "HDMI",
-        "Global_GeneralCamType": "IPC",
-        "Global_GeneralCamType_other": "HDMI"
-    },
-    "IsLogFile": false,
-    "FileName": "AT.log"
+  "CameraType": {
+    "Global_TeacherCamType": "HDMI",
+    "Global_StudentCamType": "IPC",
+    "Global_BlackBoardCamType": "IPC",
+    "Global_PPTCamType": "HDMI",
+    "Global_GeneralCamType": "IPC",
+    "Global_GeneralCamType_other": "HDMI"
+  },
+  "IsLogFile": false,
+  "FileName": "AT.log",
+  "VideoDirectorSpec": {
+    "Name": "Director",
+    "Width": 1920,
+    "Height": 1080,
+    "FrameRate": 30,
+    "VideoSourceSet": [
+      "Student",
+      "Teacher",
+      "Student_Ai",
+      "Teacher_Ai",
+      "Computer_Ai",
+      "Blackboard_Ai"
+    ],
+    "FrameSpec": {
+      "Template": "single frame",
+      "LayoutSpecs": [
+        {
+          "Position": 1,
+          "SelectionSpecs": [
+            {
+              "State": "Stand_N",
+              "Priority": 1,
+              "VideoSource": "Student",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 180
+            },
+            {
+              "State": "Stand_1",
+              "Priority": 2,
+              "VideoSource": "Student_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 180
+            },
+            {
+              "State": "PptMouseAction",
+              "Priority": 3,
+              "VideoSource": "Computer_Ai",
+              "Delay": 0,
+              "Hold": 15,
+              "Timeout": 3600
+            },
+            {
+              "State": "Many",
+              "Priority": 4,
+              "VideoSource": "Teacher_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Write",
+              "Priority": 6,
+              "VideoSource": "Blackboard_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Move",
+              "Priority": 7,
+              "VideoSource": "Teacher_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Stand",
+              "Priority": 8,
+              "VideoSource": "Teacher_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Out",
+              "Priority": 9,
+              "VideoSource": "Teacher",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Sit",
+              "Priority": 10,
+              "VideoSource": "Student",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "NoTeacher",
+              "Priority": 11,
+              "VideoSource": "Teacher",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Others",
+              "Priority": 12,
+              "VideoSource": "Teacher",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

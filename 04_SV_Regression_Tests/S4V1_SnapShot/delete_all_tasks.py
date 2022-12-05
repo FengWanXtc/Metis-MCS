@@ -7,7 +7,7 @@ from mediatasklib import *
 
 def main():
     parser = argparse.ArgumentParser(description='usage: python3 delete_all_tasks --ip=10.12.224.135')
-    parser.add_argument('-ip', type=str, default='', help='The IP address of the METIS')
+    parser.add_argument('-ip', type=str, default='10.12.224.51', help='The IP address of the METIS')
     args = parser.parse_args()
     IP = args.ip
     response = get_mt_tasks(ip=IP)

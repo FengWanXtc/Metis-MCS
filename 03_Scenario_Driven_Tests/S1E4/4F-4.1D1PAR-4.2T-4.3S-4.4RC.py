@@ -1,5 +1,6 @@
 import argparse
 import sys
+
 sys.path.append('../../Libraries')
 from environmentlib import *
 from mediatasklib import *
@@ -33,12 +34,12 @@ def S1E4_Teacher():
         print("POST Create Teacher Task Fail!")
         print(response.json())
 
-
-    if (response.json()['Code'] == 201):
+    if response.json()['Code'] == 201:
         print('S1E4 (Teacher) Test Pass!')
     else:
         print(response.json())
         print('S1E4 (Teacher) Test Fail!')
+        return response.json()
 
 
 if __name__ == '__main__':

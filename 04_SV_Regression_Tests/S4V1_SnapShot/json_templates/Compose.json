@@ -1,19 +1,18 @@
-{
-  "Name": "S1E4_Teacher",
+{"Name": "Basic_MCS",
   "Type": "MCS",
-  "Description": "S1E4_Teacher MCS,4F-4.1D1PAR-4.2T-4.3S-4.4RC",
+  "Description": "The four-channel AI scenario Basic MCS",
   "Version": "0.3",
   "VideoSpecs": [
     {
       "Name": "Teacher",
-      "DeviceId": "",
+      "DeviceId": "0403-0003",
       "Width": 1920,
       "Height": 1080,
       "FrameRate": 30
     },
     {
       "Name": "Student",
-      "DeviceId": "",
+      "DeviceId": "0403-0001",
       "Width": 1920,
       "Height": 1080,
       "FrameRate": 30
@@ -151,53 +150,40 @@
       ]
     }
   },
-  "VideoCodecSpecs": [
+  "VideoComposeSpecs": [
     {
-      "Name": "Director_Codec",
-      "SourceName": "Director",
-      "Codec": "h.264",
-      "iFrameInterval": 30,
-      "idrInterval": 30,
-      "BitRateMode": "vbr",
-      "BitRate": "4mbps",
-      "Profile": "main"
-    },
-    {
-      "Name": "Director_AgoraPush_Codec",
-      "SourceName": "Director",
-      "Codec": "h.264",
-      "iFrameInterval": 30,
-      "idrInterval": 30,
-      "BitRateMode": "vbr",
-      "BitRate": "4mbps",
-      "Profile": "main"
+      "Name": "Compositor",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            270,
+            960,
+            540
+          ],
+          "ZOrder": 1,
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [
+            960,
+            270,
+            960,
+            540
+          ],
+          "ZOrder": 1,
+          "SourceName": "Student"
+        }
+      ]
     }
   ],
-  "RecordSpecs": [
-    {
-      "Name": "Director_Record",
-      "VideoCodecName": "Director_Codec",
-      "Format": "mp4",
-      "Path": "/home/user/Videos/eswin/S1E4_Teacher_Record.mp4"
-    }
-  ],
-  "CodecStreamSpecs": [
-    {
-      "Name": "CodecStreamSpec_pull",
-      "VideoCodec": "h.264",
-      "URI": "rtsp://10.12.224.57/ch2"
-    }
-  ],
-  "RtcStreamSpec": {
-    "Name": "Director_push",
-    "Protocol": "Agora",
-    "Channel": "S1E4_Channel",
-    "Identity": "S1E4_Teacher",
-    "VideoCodecName": "Director_AgoraPush_Codec"
-  },
   "RenderSpecs": [
     {
       "Name": "Render_test",
+      "DeviceId": "0800-0000",
       "CompositionSpec": [
         {
           "Geometry": [
@@ -233,7 +219,7 @@
             960,
             540
           ],
-          "SourceName": "CodecStreamSpec_pull"
+          "SourceName": "Compositor"
         }
       ]
     }

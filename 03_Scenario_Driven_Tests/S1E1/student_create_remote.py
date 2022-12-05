@@ -46,6 +46,7 @@ def create_remote():
         print('S1E1 Student Test Fail!')
         print(json.dumps(cre_rem_data, indent=2))
         print(response.json())
+        return response.json()
 
 
 if __name__ == '__main__':

@@ -39,7 +39,7 @@ def S1E5_Main():
     else:
         print('S1E5 Action (Create 3 Frames) Test Fail!')
         print(response.json())
-        return False
+        return response.json()
 
 
 if __name__ == '__main__':

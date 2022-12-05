@@ -50,7 +50,7 @@ def S1E1_Test():
         print('S1E1 Teacher Test Fail!')
         print(json.dumps(S1E1_data, indent=2))
         print(response.json())
-
+        return response.json()
 
 if __name__ == '__main__':
     S1E1_Test()

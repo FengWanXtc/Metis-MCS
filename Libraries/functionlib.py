@@ -19,8 +19,18 @@ def read_json_file(filename):
     # path = 'json_templates'
     filepath = path + '/' + filename
     file = open(filepath, 'r')
-    data = json.load(file)
-    return data
+    mcs_data = json.load(file)
+    file.close()
+
+    # 读取的JSON文件如果有导播算法，就替换对应内容
+    if "VideoDirectorSpec" in mcs_data:
+        DirectorSpec = \
+            json.load(open("{}/MCSConfiguration.json".format(os.path.dirname(os.path.abspath(__file__))), 'r'))[
+                "VideoDirectorSpec"]
+        # print(DirectorSpec)
+        mcs_data["VideoDirectorSpec"] = DirectorSpec
+        # print(json.dumps(mcs_data, indent=4))
+    return mcs_data
 
 
 # *************For New Version Change********************
@@ -156,7 +166,8 @@ def get_DeviceId_by_aiStrategy(ip, camType, aiStrategy, token=''):
     response = requests.get(url=tempurl, headers=tempheaders, json=databody)
     # 内部接口尽量避免打印Log
     for item in response.json():
-        if item['deviceName'].find(camType) != -1 and item['aiStrategy'].find(aiStrategy) != -1 and item['isOpen'] is True:
+        if item['deviceName'].find(camType) != -1 and item['aiStrategy'].find(aiStrategy) != -1 and item[
+            'isOpen'] is True:
             return item["deviceId"]
             # 脚本在此处就会进行跳出操作，如果没有获取到相应的摄像头DeviceId
             # 就根据 Mediadevice 接口 获取已经配置的摄像头Id

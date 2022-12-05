@@ -1,20 +1,25 @@
+import json
+
 import requests
 import threading
 import time
 
-URL = "http://10.12.224.46:6689/mediatask/snapshot"
+from functionlib import read_json_file
+
+URL = "http://10.12.224.51:6689/mediatask/snapshot"
 Header = {'Content-type': 'application/json'}
 
 
 def post_thread_1():
-    data = {}
+    p1_data = read_json_file('snap.json')
+
     global RIGHT_NUM
     global ERROR_NUM
-    times = 10
+    times = 1
     while times > 0:
         try:
-            teURL = "http://10.12.224.46:6689/mediadevice/audio/in"
-            r = requests.get(url=teURL, headers=Header, json=data)
+            teURL = "http://10.12.224.51:6689/mediatask/snapshot"
+            r = requests.post(url=teURL, headers=Header, json=p1_data)
             if r.json()['Code'] == 200:
                 RIGHT_NUM += 1
                 print(r.json())
@@ -28,15 +33,16 @@ def post_thread_1():
 
 
 def post_thread_2():
-    data = {}
+    data = read_json_file('Compose.json')
+    # print(json.dumps(data, indent=2))
     global RIGHT_NUM
     global ERROR_NUM
-    times = 10
+    times = 1
     while times > 0:
         try:
-            teURL = "http://10.12.224.46:6689/mediadevice/audio/out"
-            r = requests.get(url=teURL, headers=Header, json=data)
-            if r.json()['Code'] == 200:
+            teURL = "http://10.12.224.51:6689/mediatask/create_update"
+            r = requests.post(url=teURL, headers=Header, json=data)
+            if r.json()['Code'] == 201:
                 RIGHT_NUM += 1
                 print(r.json())
             else:
@@ -108,9 +114,9 @@ def run1():
     # 等待5S是为了让全局变量进行更新
     time.sleep(10)
     print("===============测试结果===================")
-    print("并发数:", 10)
+    print("并发数:", 1)
     print("总耗时(秒):", time2 - time1)
-    print("每次请求耗时(秒):", (time2 - time1) / 10)
+    print("每次请求耗时(秒):", (time2 - time1) / 1)
     print("正确数量:", RIGHT_NUM)
     print("错误数量:", ERROR_NUM)
 

@@ -52,6 +52,8 @@ def create_one_frame_preview(argc_ip, name, camType, camNum, geometry):
         return False
 
 
+
+
 def main():
     parser = argparse.ArgumentParser(
         description='usage: python3 create_preview.py -n=teacher -ct=HDMI -cn=0 -g=0,0,960,540')

@@ -90,7 +90,14 @@
     "Width": 1920,
     "Height": 1080,
     "FrameRate": 30,
-    "VideoSourceSet":["Student","Teacher","Student_Ai","Teacher_Ai","Computer_Ai","Blackboard_Ai"],
+    "VideoSourceSet": [
+      "Student",
+      "Teacher",
+      "Student_Ai",
+      "Teacher_Ai",
+      "Computer_Ai",
+      "Blackboard_Ai"
+    ],
     "FrameSpec": {
       "Template": "single frame",
       "LayoutSpecs": [
@@ -98,81 +105,92 @@
           "Position": 1,
           "SelectionSpecs": [
             {
-              "Priority": 1,
-              "VideoSource": "Computer_Ai",
-              "State": "PptMouseAction",
-              "Delay": 1,
-              "Timeout": 3000
-            },
-            {
-              "Priority": 1,
-              "VideoSource": "Student_Ai",
-              "State": "Stand_1",
-              "Delay": 2,
-              "Timeout": 2700
-            },
-            {
-              "Priority": 1,
-              "VideoSource": "Blackboard_Ai",
-              "State": "Write",
-              "Delay": 2,
-              "Timeout": 2700
-            },
-            {
-              "Priority": 5,
-              "VideoSource": "Blackboard_Ai",
-              "State": "Move",
-              "Delay": 0,
-              "Timeout": 2700
-            },
-            {
-              "Priority": 6,
-              "VideoSource": "Teacher_Ai",
-              "State": "Stand",
-              "Delay": 0,
-              "Timeout": 2700
-            },
-            {
-              "Priority": 7,
-              "VideoSource": "Teacher",
-              "State": "Many",
-              "Delay": 0,
-              "Timeout": 2700
-            },
-            {
-              "Priority": 8,
-              "VideoSource": "Teacher",
-              "State": "Out",
-              "Delay": 2,
-              "Timeout": 2700
-            },
-            {
-              "Priority": 9,
-              "VideoSource": "Student",
               "State": "Stand_N",
-              "Delay": 2,
-              "Timeout": 600
+              "Priority": 1,
+              "VideoSource": "Student",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 180
             },
             {
+              "State": "Stand_1",
+              "Priority": 2,
+              "VideoSource": "Student_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 180
+            },
+            {
+              "State": "PptMouseAction",
+              "Priority": 3,
+              "VideoSource": "Computer_Ai",
+              "Delay": 0,
+              "Hold": 15,
+              "Timeout": 3600
+            },
+            {
+              "State": "Many",
+              "Priority": 4,
+              "VideoSource": "Teacher_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Write",
+              "Priority": 6,
+              "VideoSource": "Blackboard_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Move",
+              "Priority": 7,
+              "VideoSource": "Teacher_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Stand",
+              "Priority": 8,
+              "VideoSource": "Teacher_Ai",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Out",
+              "Priority": 9,
+              "VideoSource": "Teacher",
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
+            },
+            {
+              "State": "Sit",
               "Priority": 10,
               "VideoSource": "Student",
-              "State": "Sit",
-              "Delay": 2,
-              "Timeout": 600
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
             },
             {
+              "State": "NoTeacher",
               "Priority": 11,
               "VideoSource": "Teacher",
-              "State": "NoTeacher",
-              "Delay": 2,
-              "Timeout": 2700
+              "Delay": 0,
+              "Hold": 6,
+              "Timeout": 3600
             },
             {
+              "State": "Others",
               "Priority": 12,
               "VideoSource": "Teacher",
-              "State": "Others",
               "Delay": 0,
-              "Timeout": 2700
+              "Hold": 6,
+              "Timeout": 3600
             }
           ]
         }

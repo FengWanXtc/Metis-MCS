@@ -27,6 +27,7 @@ def stu_change_position(IP, SCAM):
     else:
         print('Change Student Position Test Fail!')
         print(response.json())
+        return response.json()
 
 
 def main():

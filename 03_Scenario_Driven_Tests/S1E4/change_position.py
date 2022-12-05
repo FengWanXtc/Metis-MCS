@@ -41,6 +41,7 @@ def change_position():
     else:
         print(response.json())
         print('Change Teacher Position Test Fail!')
+        return response.json()
 
 
 if __name__ == '__main__':

@@ -21,6 +21,7 @@ def S1E4_Student(IP, SCAM):
     else:
         print('S1E4 Student-End Test Fail!')
         print(response.json())
+        return response.json()
 
 
 def main():

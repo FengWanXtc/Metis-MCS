@@ -18,7 +18,7 @@ def create_remote_IPC():
     else:
         print('S1E5 Action::Create Remote IPC Test Fail!')
         print(response.json())
-        return False
+        return response.json()
 
 
 if __name__ == '__main__':
