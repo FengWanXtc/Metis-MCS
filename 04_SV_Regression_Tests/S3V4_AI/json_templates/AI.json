@@ -59,8 +59,7 @@
         "CodecSpec": {
             "Type": "h.264",
             "BitRateMode": "VBR",
-            "BitRate": "4mbps",
-            "Profile": "main"
+            "BitRate": "4mbps"
         },
         "FrameSpec": {
             "Template": "single frame",

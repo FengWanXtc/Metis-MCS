@@ -27,8 +27,7 @@
       "iFrameInterval": 30,
       "idrInterval": 30,
       "BitRateMode": "vbr",
-      "BitRate": "4mbps",
-      "Profile": "main"
+      "BitRate": "4mbps"
     },
     {
       "Name": "USB_Codec",
@@ -37,8 +36,7 @@
       "iFrameInterval": 30,
       "idrInterval": 30,
       "BitRateMode": "vbr",
-      "BitRate": "4mbps",
-      "Profile": "main"
+      "BitRate": "4mbps"
     }
   ],
   "ServerSpecs":[

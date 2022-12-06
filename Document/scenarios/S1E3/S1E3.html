@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.3.1. 外设配置 &mdash; DemoMCS Document 0.1 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="4.4. S1E4" href="../S1E4/index.html" />
+    <link rel="prev" title="4.3. S1E3" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> DemoMCS Document
+            <img src="../../_static/eswin.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface/index.html">1.前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">2.环境配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">3.Scripts API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">4.Scenario</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ExpendFunction/index.html">4.0. Expend Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E1/index.html">4.1. S1E1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E2/index.html">4.2. S1E2</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">4.3. S1E3</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.3.1. 外设配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demomcs">4.3.2. DemoMCS 演示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E4/index.html">4.4. S1E4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E5/index.html">4.5. S1E5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQs/index.html">5.FAQs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DemoMCS Document</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">4.Scenario</a> &raquo;</li>
+          <li><a href="index.html">4.3. S1E3</a> &raquo;</li>
+      <li>4.3.1. 外设配置</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>4.3.1. 外设配置<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p>1台Metis Station小站作为主讲端</p></li>
+<li><p>1个摄像头需要本地管理设置为开启状态</p></li>
+<li><p>显示器要求：分辨率1920*1080及以上</p></li>
+</ul>
+</section>
+<section id="demomcs">
+<h1>4.3.2. DemoMCS 演示<a class="headerlink" href="#demomcs" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p>场景内容： <br>
+①创建Background，小站背景变化;<br />②创建单宫格回显窗口，占左上角1/4屏;<br />③删除第②步创建的宫格;<br />④删除第①步的背景;<br />⑤重新执行第①步创建背景;<br />⑥重新执行第②步创建单宫格回显，占全屏;<br />⑦删除第⑤步创建的宫格窗口;<br />⑧删除第⑥步创建的背景,至此结束。</p></li>
+</ul>
+<br><ul>
+<li><p>脚本路径： <strong>/home/user/Metis-MCS/03_Scenario_Driven_Tests/S1E3/Act_Story.py</strong> <br>
+脚本详细执行步骤参考同目录下README.txt 文档。 <br> <br></p></li>
+<li><p><strong>MCS</strong>：</p>
+<ul class="simple">
+<li><p>Step 1：<br>
+调用接口: <strong><font color=#FF7F00>POST</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediadevice/video/out/background</span></code></strong></p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0800-0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;Background&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/usr/share/backgrounds/NVIDIA_Login_Logo.png&quot;</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>说明：<br />该MCS的操作为修改Metis-Station小站背景图片，支持 <code class="docutils literal notranslate"><span class="pre">png</span></code>, <code class="docutils literal notranslate"><span class="pre">jpg</span></code> 格式文件。该MCS中通过 修改 <code class="docutils literal notranslate"><span class="pre">Background</span></code>
+字段，修改不同的背景，若该字段为 <code class="docutils literal notranslate"><span class="pre">null</span></code> ，则为空背景,即第④步的操作。</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Step 2：<br>
+调用接口: <strong><font color=#FF7F00>POST</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediatask/create_update</span></code></strong></p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;S1E3_Preview&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MCS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;One Frame Preview for MCS 0.3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.3&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;VideoSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0400-0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;FrameRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">],</span><span class="w"></span>
+<span class="w"> </span><span class="nt">&quot;RenderSpecs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Render_SpecName&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;DeviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0800-0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="nt">&quot;CompositionSpec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">                 </span><span class="nt">&quot;Geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                     </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="mi">960</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="mi">540</span><span class="w"></span>
+<span class="w">                 </span><span class="p">],</span><span class="w"></span>
+<span class="w">                 </span><span class="nt">&quot;SourceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teacher&quot;</span><span class="w"></span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+<span class="w">         </span><span class="p">]</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="p">]</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul>
+<li><p>说明：<br />该MCS的操作为创建一宫格回显画面，通过 <code class="docutils literal notranslate"><span class="pre">RenderSpec</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> 用以控制回显画面大小，在显示屏幕的
+坐标位置, 其格式为 <strong>[x,y,width,height]</strong> , x 为回显宫格左上角距离显示屏左上角的水平方向位置，向右正增长；
+y 为 回显宫格左上角距离显示屏左上角的竖直方向位置，向下正增长， width和height则分别是回显宫格画面的宽与高。
+如场景内容中 第⑥步 与第②步 下发的MCS 区别就是 <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> 分别为 [0,0,960,540] 和 [0,0,1920,1080]。</p></li>
+<hr class="docutils" />
+<li><p>Step 3：<br>
+调用接口: <strong><font color=#FF0000>DELETE</font></strong> <strong><code class="docutils literal notranslate"><span class="pre">/mediatask/{MCS_Name}</span></code></strong></p></li>
+<li><p>说明：
+通过调用该接口删除对应的任务，对应场景内容的第③步内容。整个流程可以通过使用 <strong><a class="reference external" href="/scenarios/ExpendFunction/expend.html#logfile">LogFile功能</a></strong> ，
+打开LogFile开关可以查看一系列步骤执行下来使用的接口以及下发的MCS内容。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="4.3. S1E3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../S1E4/index.html" class="btn btn-neutral float-right" title="4.4. S1E4" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Thian Xtc.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -34,12 +34,7 @@
             "BitRateMode": "VBR",
             "BitRate": "2mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         },
         {
             "Name": "Remote_pull_Transform_Codec",
@@ -48,12 +43,7 @@
             "BitRateMode": "VBR",
             "BitRate": "2mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         },
         {
             "Name": "Remote_pull_2_Transform_Codec",
@@ -62,12 +52,7 @@
             "BitRateMode": "VBR",
             "BitRate": "2mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         }
     ]
 }

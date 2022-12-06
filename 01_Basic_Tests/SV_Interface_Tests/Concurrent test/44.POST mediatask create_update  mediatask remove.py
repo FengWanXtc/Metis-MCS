@@ -463,10 +463,7 @@ data3 = {
                 "BitRate": "4mbps",
                 "iFrameInterval": 900,
                 "idrInterval": 900,
-                "QpRange": [
-                    0,
-                    50
-                ],
+                
                 "Profile": "High",
                 "VbvSize": 4000000
             }

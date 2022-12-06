@@ -17,6 +17,9 @@ def main():
     # 设置对应的MCS
 
     data = read_json_file('Director_push.json')
+    Teacher_DeviceId = get_DeviceId_by_aiStrategy(ip=IP, camType='HDMI', aiStrategy='teacher')
+    data['VideoSpecs'][0]['DeviceId'] = Teacher_DeviceId
+
     Student_DeviceId = get_DeviceId_by_aiStrategy(ip=IP, camType='IPC', aiStrategy='student')
     data['VideoSpecs'][1]['DeviceId'] = Student_DeviceId
     data["ServerSpecs"][0]["URI"] = "wp://{}:6671".format(TARGET)

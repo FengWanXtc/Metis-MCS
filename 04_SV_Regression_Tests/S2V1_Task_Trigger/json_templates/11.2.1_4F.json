@@ -164,12 +164,7 @@
         "BitRateMode": "VBR",
         "BitRate": "4mbps",
         "iFrameInterval": "60",
-        "idrInterval": "60",
-        "QpRange": [
-            0,
-            30
-        ],
-        "Profile": "main"
+        "idrInterval": "60"
       }
   ],
   "RecordSpecs": [

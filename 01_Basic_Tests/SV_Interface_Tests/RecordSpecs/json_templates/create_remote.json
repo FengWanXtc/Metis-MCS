@@ -189,12 +189,7 @@
             "BitRateMode": "vbr",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "Teacher_h264_Codec",
@@ -203,12 +198,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "Student_h264_Codec",
@@ -217,12 +207,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         }
     ],
     "ServerSpecs": [

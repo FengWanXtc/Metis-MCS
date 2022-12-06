@@ -226,12 +226,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         },
         {
             "Name": "Teacher_h264_Codec",
@@ -240,12 +235,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "Student_h264_Codec",
@@ -254,12 +244,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "Compositor_h264_Codec",
@@ -268,12 +253,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         },
         {
             "Name": "TcpVideoA_pull_h264_Codec",
@@ -282,12 +262,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "TcpVideoB_pull_h264_Codec",
@@ -296,12 +271,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "TcpVideoC_pull_h264_Codec",
@@ -310,12 +280,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "Computer_h264_Codec",
@@ -324,12 +289,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         }
     ],
       "RecordSpecs": [

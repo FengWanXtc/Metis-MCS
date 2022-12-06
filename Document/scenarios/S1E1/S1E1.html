@@ -45,12 +45,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">2.环境配置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">3.Scripts API</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4.Scenario</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ExpendFunction/index.html">4.0. Expend Function</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">4.1. S1E1</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.1. 外设配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demomcs">4.1.2. DemoMCS 演示</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../S1E2/index.html">4.2. S1E2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E3/index.html">4.3. S1E3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E4/index.html">4.4. S1E4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E5/index.html">4.5. S1E5</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../FAQs/index.html">5.FAQs</a></li>
@@ -96,7 +100,7 @@
 教师端启动四宫带录制，第一宫为导播画面，第二宫为本地教师摄像头回显，第三宫为本地学生摄像头回显
 第四宫为声网拉流。学生端声网推送一路视频画面。    <br><br></p></li>
 <li><p>脚本路径：<strong>/home/user/EST/MCSScripts/DemoMCS/03_Scenario_Driven_Tests/S1E1/</strong> <br>
-脚本详细执行步骤参考同目录下README.txt 文档 <br> <br></p></li>
+脚本详细执行步骤参考同目录下README.txt 文档。 <br> <br></p></li>
 <li><p>下发的<strong>MCS</strong>：</p>
 <ul class="simple">
 <li><p>主讲端：</p></li>
@@ -348,6 +352,8 @@ width是矩形框的水平长度，height是矩形框的垂直高度。不指定
 <li><p>通过 <code class="docutils literal notranslate"><span class="pre">VideoSpec</span></code> 添加2个摄像头作为<strong>原始视频流</strong>，并且通过<code class="docutils literal notranslate"><span class="pre">VideoCodecSpecs</span></code>将原始视频流进行编码，随后作为
 声网推拉流Spec <code class="docutils literal notranslate"><span class="pre">RtcStreamSpec</span></code>中的<code class="docutils literal notranslate"><span class="pre">VideoSource</span></code>字段，实现视频的本地推流。</p></li>
 <li><p>各个Spec字段的详细描述请阅读 <a class="reference external" href="../../FAQs/FAQs.html#media-agent-api">MA API 文档</a>。 <br><br></p></li>
+<li><p>整个流程可以通过使用 <strong><a class="reference external" href="/scenarios/ExpendFunction/expend.html#logfile">LogFile功能</a></strong> ，
+打开LogFile开关可以查看一系列步骤执行下来使用的接口以及下发的MCS内容。</p></li>
 </ol>
 </li>
 </ul>

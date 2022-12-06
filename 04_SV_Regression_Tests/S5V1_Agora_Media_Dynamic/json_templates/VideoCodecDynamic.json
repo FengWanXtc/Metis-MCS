@@ -1,0 +1,18 @@
+{
+  "Name": "",
+  "Type": "MCS",
+  "Description": "Rtc Dynamic Change Module",
+  "Version": "0.3",
+  "VideoCodecSpecs": [
+        {
+            "Name": "Director_h264_Codec",
+            "SourceName": "Director",
+            "Codec": "h.264",
+            "BitRateMode": "CBR",
+            "BitRate": "1mbps",
+            "iFrameInterval": 60,
+            "idrInterval": 60
+        }
+      ]
+}
+

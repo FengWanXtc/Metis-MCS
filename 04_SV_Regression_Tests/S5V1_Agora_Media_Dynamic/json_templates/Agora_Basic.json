@@ -68,7 +68,8 @@
             "DeviceId": "",
             "Width": 1920,
             "Height": 1080,
-            "FrameRate": 30
+            "FrameRate": 30,
+            "Format": "H264"
         }
     ],
     "VideoAiSpecs": [
@@ -229,12 +230,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "Student_h264_Codec",
@@ -243,12 +239,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         },
         {
             "Name": "Computer_h264_Codec",
@@ -257,12 +248,16 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
+        },
+        {
+            "Name": "Director_h265_Codec",
+            "SourceName": "Director",
+            "Codec": "h.265",
+            "BitRateMode": "CBR",
+            "BitRate": "1mbps",
+            "iFrameInterval": 30,
+            "idrInterval": 30
         },
         {
             "Name": "Director_h264_Codec",
@@ -271,12 +266,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": 30,
-            "idrInterval": 30,
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": 30
         }
     ],
         "PlaySpecs": [

@@ -178,8 +178,7 @@
       "iFrameInterval": 30,
       "idrInterval": 30,
       "BitRateMode": "vbr",
-      "BitRate": "4mbps",
-      "Profile": "main"
+      "BitRate": "4mbps"
     },
     {
       "Name": "Teacher_codec",
@@ -188,8 +187,7 @@
       "iFrameInterval": 30,
       "idrInterval": 30,
       "BitRateMode": "vbr",
-      "BitRate": "4mbps",
-      "Profile": "main"
+      "BitRate": "4mbps"
     },
     {
       "Name": "Student_codec",
@@ -198,8 +196,7 @@
       "iFrameInterval": 30,
       "idrInterval": 30,
       "BitRateMode": "vbr",
-      "BitRate": "4mbps",
-      "Profile": "main"
+      "BitRate": "4mbps"
     }
   ],
   "RtcStreamSpec": {

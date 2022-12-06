@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.2.1 外设配置 &mdash; DemoMCS Document 0.1 文档</title>
+  <title>4.2.1. 外设配置 &mdash; DemoMCS Document 0.1 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
@@ -20,7 +20,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="5.FAQs" href="../../FAQs/index.html" />
+    <link rel="next" title="4.3. S1E3" href="../S1E3/index.html" />
     <link rel="prev" title="4.2. S1E2" href="index.html" /> 
 </head>
 
@@ -45,12 +45,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">2.环境配置</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/index.html">3.Scripts API</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">4.Scenario</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ExpendFunction/index.html">4.0. Expend Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../S1E1/index.html">4.1. S1E1</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">4.2. S1E2</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.2.1 外设配置</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.2.1. 外设配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demomcs">4.2.2. DemoMCS 演示</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E3/index.html">4.3. S1E3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E4/index.html">4.4. S1E4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../S1E5/index.html">4.5. S1E5</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../FAQs/index.html">5.FAQs</a></li>
@@ -72,7 +76,7 @@
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">4.Scenario</a> &raquo;</li>
           <li><a href="index.html">4.2. S1E2</a> &raquo;</li>
-      <li>4.2.1 外设配置</li>
+      <li>4.2.1. 外设配置</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -82,7 +86,7 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>4.2.1 外设配置<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<h1>4.2.1. 外设配置<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
 <ul class="simple">
 <li><p>1台Metis Station小站作为主讲端</p></li>
 <li><p>2个摄像头需要本地管理配置老师识别和学生识别， 加上 1个网络摄像头作为拉流回显。</p></li>
@@ -95,7 +99,7 @@
 <li><p>场景内容： <br>
 开启四宫格，1宫导播同时进行录制，2宫为教师摄像头回显，3宫为学生摄像头回显，4宫为拉取远端IPC网络摄像头拉流。<br><br></p></li>
 <li><p>脚本路径：<strong>/home/user/EST/MCSScripts/DemoMCS/03_Scenario_Driven_Tests/S1E2/</strong> <br>
-脚本详细执行步骤参考同目录下README.txt 文档 <br> <br></p></li>
+脚本详细执行步骤参考同目录下README.txt 文档。 <br> <br></p></li>
 <li><p>下发的<strong>MCS</strong>：</p>
 <ul class="simple">
 <li><p>主讲端：</p></li>
@@ -308,6 +312,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">CodecStreamSpecs</span></code>是拉流Spec，支持拉取<strong>RTSP</strong>,<strong>RTMP</strong>,<strong>TCP</strong>视频流，其<code class="docutils literal notranslate"><span class="pre">URI</span></code>字段填写正确的地址，即可拉取到远端视频流，在
 本例中通过<code class="docutils literal notranslate"><span class="pre">RenderSpecs</span></code>将拉取到的远端视频流回显出来。</p></li>
 <li><p>各个Spec字段的详细描述请阅读 <a class="reference external" href="../../FAQs/FAQs.html#media-agent-api">MA API 文档</a>。 <br><br></p></li>
+<li><p>整个流程可以通过使用 <strong><a class="reference external" href="/scenarios/ExpendFunction/expend.html#logfile">LogFile功能</a></strong> ，
+打开LogFile开关可以查看一系列步骤执行下来使用的接口以及下发的MCS内容。</p></li>
 </ol>
 </li>
 </ul>
@@ -318,7 +324,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="4.2. S1E2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="../../FAQs/index.html" class="btn btn-neutral float-right" title="5.FAQs" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../S1E3/index.html" class="btn btn-neutral float-right" title="4.3. S1E3" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,0 +1,91 @@
+{
+  "Name": "Agora_Basic",
+  "Type": "MCS",
+  "Description": "Audio Dynamic Change",
+  "Version": "0.3",
+  "VideoComposeSpecs": [
+    {
+      "Name": "Compositor",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            1920,
+            1080
+          ],
+          "ZOrder": 1,
+          "SourceName": "Director"
+        },
+        {
+          "Geometry": [
+            1300,
+            40,
+            580,
+            370
+          ],
+          "ZOrder": 2,
+          "SourceName": "Teacher"
+        }
+      ]
+    }
+  ],
+  "VideoCodecSpecs": [
+    {
+      "Name": "Compositor_h264_Codec",
+      "SourceName": "Compositor",
+      "Codec": "h.264",
+      "BitRateMode": "VBR",
+      "BitRate": "4mbps",
+      "iFrameInterval": "30",
+      "idrInterval": "30"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Compositor"
+        },
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        },
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "RtcStream"
+        }
+      ]
+    }
+  ]
+}
+

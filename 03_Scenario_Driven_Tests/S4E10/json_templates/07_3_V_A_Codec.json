@@ -11,12 +11,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         },
         {
             "Name": "Remote_pull_h264_Codec",
@@ -25,12 +20,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         },
         {
             "Name": "Remote_pull_2_h264_Codec",
@@ -39,12 +29,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         },
         {
             "Name": "Remote_pull_3_h264_Codec",
@@ -53,12 +38,7 @@
             "BitRateMode": "VBR",
             "BitRate": "4mbps",
             "iFrameInterval": "30",
-            "idrInterval": "30",
-            "QpRange": [
-                28,
-                28
-            ],
-            "Profile": "main"
+            "idrInterval": "30"
         }
     ],
     "AudioCodecSpecs": [

@@ -34,8 +34,7 @@ def mcs_task(host_ip, tea_camera, stu_camera, identity):
         if AudioOut['DeviceName'].find('BuiltIn USB Audio') != -1:
             mcs_data['PlaySpecs'][0]['DeviceId'] = AudioOut['DeviceId']
 
-    print(json.dumps(mcs_data, indent=2))
-
+    # print(json.dumps(mcs_data, indent=2))
 
     try:
         response = post_mt_create_update(ip=host_ip, data=mcs_data)

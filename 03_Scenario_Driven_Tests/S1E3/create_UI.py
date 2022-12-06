@@ -32,7 +32,7 @@ def create_UI(TYPE):
 
     elif TYPE == 'jpg':
         databody["Background"] = "/usr/share/backgrounds/buka_wallpaper_4k.jpg"
-    response = post_md_background(databody, TOKEN, ip='10.12.224.140')
+    response = post_md_background(databody, TOKEN, ip='')
 
     if response.json()['Code'] == 200:
         print('Create Background Pass!')
