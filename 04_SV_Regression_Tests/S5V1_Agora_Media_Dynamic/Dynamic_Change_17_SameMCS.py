@@ -30,12 +30,12 @@ def main():
     Judge_2 = os.popen('python Agora_Far.py -ip={}'.format(Far_IP)).read()
     if (Judge_1 + Judge_2).find("Fail") == -1:
         input(
-            "创建两端任务成功,按回车进行下一个步骤 :: 近端动态变换推流路编码VideoCodecSpec，由4mbps I帧30 IDR帧30 改为 1mbps I帧60 IDR帧60")
+            "创建两端任务成功,按回车进行下一个步骤 :: 并发下发相同MCS替换Audio和Video，查看远端效果")
     else:
         print(Judge_1)
         print(Judge_2)
         raise UserWarning("创建任务失败，请检查环境")
-
+    os.system("python Concurrent_SingleMCS.py -ip={} -t=100".format(Near_IP))
     # 对MCS进行动态修改
     task_name = get_mt_tasks(ip=IP).json()['Names'][0]
     rtc_dynamic(task_name, Near_IP)

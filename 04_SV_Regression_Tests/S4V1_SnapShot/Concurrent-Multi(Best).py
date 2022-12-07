@@ -31,7 +31,7 @@ class myThread(threading.Thread):
                 lock.acquire()  # 上锁
                 RIGHT_NUM += 1
                 lock.release()
-                print(r.json())
+                # print(r.json())
             else:
                 lock.acquire()
                 ERROR_NUM += 1

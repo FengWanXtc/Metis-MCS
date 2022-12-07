@@ -38,6 +38,7 @@ def create_UI(TYPE):
         print('Create Background Pass!')
     else:
         print('Create Background Fail!')
+        print(response.json())
         return response.json()
 
 

@@ -1,0 +1,101 @@
+{
+  "Name": "Basic_MCS",
+  "Type": "MCS",
+  "Description": "Compositor Transform",
+  "Version": "0.3",
+  "VideoTransformSpecs": [
+    {
+      "Name": "VideoTransform",
+      "SourceName": "Compositor",
+      "Operation": "Scale",
+      "Width": 1920,
+      "Height": 1080
+    },
+    {
+      "Name": "VideoTransform_720",
+      "SourceName": "Compositor",
+      "Operation": "Scale",
+      "Width": 1280,
+      "Height": 720
+    },
+    {
+      "Name": "VideoTransform_480",
+      "SourceName": "Compositor",
+      "Operation": "Scale",
+      "Width": 640,
+      "Height": 480
+    }
+  ],
+  "VideoCodecSpecs": [
+    {
+      "Name": "VideoTransform_Codec",
+      "SourceName": "VideoTransform",
+      "Codec": "h.264",
+      "BitRateMode": "VBR",
+      "BitRate": "4mbps",
+      "iFrameInterval": "30",
+      "idrInterval": "30"
+    },
+    {
+      "Name": "VideoTransform_720_Codec",
+      "SourceName": "VideoTransform_720",
+      "Codec": "h.264",
+      "BitRateMode": "VBR",
+      "BitRate": "4mbps",
+      "iFrameInterval": "30",
+      "idrInterval": "30"
+    },
+    {
+      "Name": "VideoTransform_480_Codec",
+      "SourceName": "VideoTransform_480",
+      "Codec": "h.264",
+      "BitRateMode": "VBR",
+      "BitRate": "4mbps",
+      "iFrameInterval": "30",
+      "idrInterval": "30"
+    }
+  ],
+  "RenderSpecs": [
+    {
+      "Name": "Render_test",
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "VideoTransform"
+        },
+        {
+          "Geometry": [
+            960,
+            0,
+            960,
+            540
+          ],
+          "SourceName": "Student"
+        },
+        {
+          "Geometry": [
+            0,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [
+            960,
+            540,
+            960,
+            540
+          ],
+          "SourceName": "RtcStream"
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,7 @@ scriptlist = ['create_UI.py -t=png',
 def act():
     for items in scriptlist:
         os.system('python {}'.format(items))
-        time.sleep(2)
+        time.sleep(5)
 
 
 if __name__ == '__main__':

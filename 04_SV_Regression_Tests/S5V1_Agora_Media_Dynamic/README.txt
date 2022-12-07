@@ -88,9 +88,29 @@ Steps: 1.python Dynamic_Change_11.py  根据提示依次输入两端小站IP地�
                   （4）删除两端任务
 
 Case 12 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_12】
-Steps: 1.python Dynamic_Change_11.py  根据提示依次输入两端小站IP地址
+Steps: 1.python Dynamic_Change_12.py  根据提示依次输入两端小站IP地址
        2.依照提示内容按回车执行下一个步骤
        3.场景内容为:（1）创建近端和远端任务
                   （2）动态修改推流视频编码格式，AudioCodecSpec 由H264改为H265 ，不改变RtcStreamSpec
                   （3）动态修改推流音频编码，由pcm Mic 改为opus Mic
                   （4）删除两端任务
+
+Case 13-15 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_13-15】
+Steps: 1.python Dynamic_Change_13-15.py  根据提示依次输入两端小站IP地址
+       2.依照提示内容按回车执行下一个步骤
+       3.场景内容为:（1）创建近端和远端任务
+                  （2）创建Compose画中画，回显第一宫格切换为画中画，检查近端画面是否流畅变化
+                  （3）动态推送本地画中画+PC音频么，查看远端是否动态切换成功，并且画面流畅
+                  （4）动态修改Compose内容，画中画改为教师+学生，远端正常流畅切换
+                  （5）动态修改Compose内容,画中画改为导播+PC，远端正常流畅切换
+                  （6）动态修改Compose内容,画中画改为二分屏，远端正常流畅切换
+                  （7）动态修改Compose内容,动态修改二分屏为老师+PC，远端正常流畅切换
+                  （8）动态修改Compose内容,二分屏修改为1+3模式，远端正常流畅切换
+                  （9）动态修改Compose内容,变换内部宫格位置，远端正常流畅切换
+                  （10）对Compose路进行Transform并且为第一宫格回显
+                  （11）动态推流TransformSpec 1080P，查看两端效果
+                  （12）动态推流TransformSpec 720P，查看两端效果
+                  （13）动态推流TransformSpec 480P，查看两端效果
+                  （10）删除两端任务
+
+Case 17 【Metis station Z510_BS&ESWIN_Agora_Media_Dynamic_Change_17】

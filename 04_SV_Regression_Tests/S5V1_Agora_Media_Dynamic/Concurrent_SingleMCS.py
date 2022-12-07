@@ -3,35 +3,33 @@ import requests
 import threading
 import time
 
-parser = argparse.ArgumentParser(description='usage: python3 delete_all_tasks --ip=10.12.224.135')
-parser.add_argument('--times', '-t', type=int, default=5, help='The Number of concurrent')
-parser.add_argument('--source', '-s', type=str, default="Teacher", help='The source of the camera')
-parser.add_argument('--type', '-tp', type=str, default="png", help='The snapshot Type')
+parser = argparse.ArgumentParser(description='usage: python3 Concurrent_SingleMCS.py -ip=10.XXXX -t=100')
+parser.add_argument('--times', '-t', type=int, default=100, help='The Number of concurrent')
+parser.add_argument('-ip', type=str, default='10.12.224.135', help='The IP address of the METIS')
 
 args = parser.parse_args()
 TIME = args.times
-SOURCE = args.source
-TYPE = args.type
+IP = args.ip
 
 data = {
     "times": TIME,  # 并发量
-    # "method": "POST",
-    "url": "http://10.12.224.135:6689/mediatask/create_update",
+    "method": "POST",
+    "url": "http://{}:6689/mediatask/create_update".format(IP),
     "header": {'Content-type': 'application/json'},
     "body": {
-        "Name": "Basic_MCS",
+        "Name": "Agora_Basic",
         "Type": "MCS",
-        "Description": "Compose Record Template",
+        "Description": "Dynamic Change",
         "Version": "0.3",
-        "RecordSpecs": [
-            {
-                "Name": "Compositor_Record",
-                "VideoCodecName": "Compositor_h264_Codec",
-                "AudioCodecName": "AudioInDefault_aac_Codec",
-                "Format": "mp4",
-                "Path": "Compose(Concur)_yyyy-mm-dd-hh-mm-ss.mp4"
-            }
-        ]
+        "RtcStreamSpec": {
+            "Name": "RtcStream",
+            "Protocol": "Agora",
+            "Channel": "Agora_Channel",
+            "Identity": "Agora_Basic",
+            "VideoCodecName": "Computer_h264_Codec",
+            "AudioCodecName": "AudioPC_pcm_Codec",
+            "LowVideoCodecName": "NULL"
+        }
     }
 }
 
@@ -41,14 +39,14 @@ def get_requests():
     global ERROR_NUM
     global Flag
     try:
-        print("Start Time:" + str(time.time()))
+        # print("Start Time:" + str(time.time()))
         r = requests.post(data["url"], headers=data["header"], json=data['body'])
         # print(r.status_code)
         if r.json()['Code'] == 201 or r.json()['Code'] == 202:
             lock.acquire()  # 上锁
             RIGHT_NUM += 1
             lock.release()
-            print(r.json())
+            # print(r.json())
         # print("RIGHT_NUM:",RIGHT_NUM)
         else:
             lock.acquire()  # 上锁
@@ -76,11 +74,13 @@ def run():
         # print(t)
         t.start()
 
-    # for t in Threads:
-    # t.join()
-
     time2 = time.time()
-    time.sleep(10)
+
+    for t in Threads:
+        t.join()
+
+
+    # time.sleep(10)
     print("===============测试结果===================")
     print("URL:", data["url"])
     print("并发数:", data["times"])
@@ -95,10 +95,10 @@ if __name__ == '__main__':
     ERROR_NUM = 0
     Flag = True
     lock = threading.Lock()  # 创建一把锁
-    print("测试启动")
+    print("测试启动,请等待所有请求发送完成")
     run()
     print("执行结束.")
     if Flag:
-        print("{} Test PASS".format(SOURCE))
+        print("Concurrent Post Same MCS to Dynamic Change RtcStreamSpec Test Pass")
     else:
-        print("{} Test FAIL".format(SOURCE))
+        print("Concurrent Post Same MCS to Dynamic Change RtcStreamSpec Test Fail")

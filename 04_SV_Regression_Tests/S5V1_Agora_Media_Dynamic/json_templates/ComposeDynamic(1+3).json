@@ -1,0 +1,57 @@
+{
+  "Name": "Agora_Basic",
+  "Type": "MCS",
+  "Description": "Audio Dynamic Change",
+  "Version": "0.3",
+  "VideoComposeSpecs": [
+    {
+      "Name": "Compositor",
+      "Width": 1920,
+      "Height": 1080,
+      "FrameRate": 30,
+      "CompositionSpec": [
+        {
+          "Geometry": [
+            0,
+            0,
+            1440,
+            1080
+          ],
+          "ZOrder": 1,
+          "SourceName": "Director"
+        },
+        {
+          "Geometry": [
+            1440,
+            0,
+            480,
+            360
+          ],
+          "ZOrder": 1,
+          "SourceName": "Student"
+        },
+        {
+          "Geometry": [
+            1440,
+            360,
+            480,
+            360
+          ],
+          "ZOrder": 1,
+          "SourceName": "Teacher"
+        },
+        {
+          "Geometry": [
+            1440,
+            720,
+            480,
+            360
+          ],
+          "ZOrder": 1,
+          "SourceName": "Computer"
+        }
+      ]
+    }
+  ]
+}
+
